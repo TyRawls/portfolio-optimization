@@ -1,4 +1,4 @@
-venv/
+.venv/
 analyses/
 target/
 dbt_packages/
@@ -13,3 +13,4 @@ seeds/
 
 .DS_Store
 README.md
+models/example
