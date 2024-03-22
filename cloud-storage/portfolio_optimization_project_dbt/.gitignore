@@ -1,4 +1,14 @@
-
+.venv/
+analyses/
 target/
 dbt_packages/
 logs/
+tests/
+target/
+dbt_packages/
+logs/
+macros/
+snapshots/
+seeds/
+.DS_Store
+README.md
