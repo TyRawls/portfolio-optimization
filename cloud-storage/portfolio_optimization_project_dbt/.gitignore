@@ -1,5 +1,4 @@
-.venv
-
+venv/
 analyses/
 target/
 dbt_packages/
