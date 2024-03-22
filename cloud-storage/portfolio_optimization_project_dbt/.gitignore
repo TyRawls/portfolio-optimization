@@ -1,4 +1,5 @@
-./.venv/
+.venv
+
 analyses/
 target/
 dbt_packages/
@@ -10,5 +11,6 @@ logs/
 macros/
 snapshots/
 seeds/
+
 .DS_Store
 README.md
