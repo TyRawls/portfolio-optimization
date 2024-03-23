@@ -1,3 +1,5 @@
+.DS_Store
+
 portfolio_optimization_project_dbt/.venv/
 portfolio_optimization_project_dbt/analyses/
 portfolio_optimization_project_dbt/target/
@@ -14,5 +16,7 @@ portfolio_optimization_project_dbt/README.md
 portfolio_optimization_project_dbt/models/example
 portfolio_optimization_project_dbt/models/.DS_Store
 portfolio_optimization_project_dbt/models/company_stock/.DS_Store
+
+aws-lambda-package/python
 
 
