@@ -1,7 +1,8 @@
+.DS_Store
+
 cloud-storage/.DS_Store
 cloud-storage/__pycache__
 cloud-storage/logs/
-
 cloud-storage/portfolio_optimization_project_dbt/.venv/
 cloud-storage/portfolio_optimization_project_dbt/analyses/
 cloud-storage/portfolio_optimization_project_dbt/target/
@@ -18,8 +19,11 @@ cloud-storage/portfolio_optimization_project_dbt/README.md
 cloud-storage/portfolio_optimization_project_dbt/models/example
 cloud-storage/portfolio_optimization_project_dbt/models/.DS_Store
 cloud-storage/portfolio_optimization_project_dbt/models/company_stock/.DS_Store
-
 cloud-storage/aws-lambda-package/python
+
+local-storage/.DS_Store
+cloud-storage/__pycache__
+cloud-storage/logs/
 
 docs/_build
 docs/_static
