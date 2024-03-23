@@ -10,7 +10,7 @@ logs/
 macros/
 snapshots/
 seeds/
-
 .DS_Store
 README.md
 models/example
+models/.DS_Store
