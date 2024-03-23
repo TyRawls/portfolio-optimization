@@ -21,5 +21,10 @@ portfolio_optimization_project_dbt/models/company_stock/.DS_Store
 
 aws-lambda-package/python
 
+docs/_build
+docs/_static
+docs/_templates
+
+
 
 
