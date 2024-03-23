@@ -1,5 +1,7 @@
+# root folder
 .DS_Store
 
+# cloud-storage folder
 cloud-storage/.DS_Store
 cloud-storage/__pycache__
 cloud-storage/logs/
@@ -20,13 +22,15 @@ cloud-storage/portfolio_optimization_project_dbt/models/example
 cloud-storage/portfolio_optimization_project_dbt/models/.DS_Store
 cloud-storage/portfolio_optimization_project_dbt/models/company_stock/.DS_Store
 cloud-storage/aws-lambda-package/python
-cloud-storage/aws-lambda-package/zip-files/.DS_Store
-
-
-local-storage/.DS_Store
+cloud-storage/aws-lambda-package/.DS_Store
 cloud-storage/__pycache__
 cloud-storage/logs/
 
+# local-storage folder
+local-storage/.DS_Store
+
+# docs folder
+docs/.DS_Store
 docs/_build
 docs/_static
 docs/_templates
