@@ -224,7 +224,7 @@ decisions and overall financial well-being. This project aims to do just that.</
 <li><p><strong>Cost-Effectiveness</strong>: ELT often proves to be more cost-effective because it utilizes existing database infrastructure for transformation tasks as opposed to managing separate transformation servers or expensive ETL tools</p></li>
 </ul>
 <figure class="align-default" id="id1">
-<img alt="This is an image" src="images/api_data_architecture.png" />
+<img alt="This is an image" src="_images/api_data_architecture.png" />
 <figcaption>
 <p><span class="caption-text">ELT architecture for ingesting stock data, storing it into a cloud database, and performing portfolio optimization</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
@@ -249,7 +249,7 @@ Conversely, if the ticker already exists in the database, only the new data is k
 <p>I utilized <a class="reference external" href="https://docs.getdbt.com/docs/introduction">dbt</a> (data build tool) to generate supplementary data tables with broader time intervals. By leveraging daily price data sourced from
 Y!Finance, I conducted transformations to produce four additional tables encompassing weekly, monthly, quarterly, and yearly stock information.</p>
 <figure class="align-default" id="id2">
-<img alt="This is an image" src="images/dbt_model.png" />
+<img alt="This is an image" src="_images/dbt_model.png" />
 <figcaption>
 <p><span class="caption-text">dbt model</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
@@ -262,14 +262,14 @@ Y!Finance, I conducted transformations to produce four additional tables encompa
 <p>The <code class="docutils literal notranslate"><span class="pre">company_info</span></code> table, sourced from the FMP API, functions as a reference table offering details about each ticker. It incorporates a primary key for data integrity assurance, preventing
 duplicate entries. Removal of a ticker from this table results in its deletion from any table where it serves as a foreign key.</p>
 <figure class="align-default" id="id3">
-<img alt="This is an image" src="images/company_info_sample_data.png" />
+<img alt="This is an image" src="_images/company_info_sample_data.png" />
 <figcaption>
 <p><span class="caption-text">Company info data in PostgreSQL</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>The <code class="docutils literal notranslate"><span class="pre">daily_stock_data</span></code> table, obtained from the Y!Finance API, possesses a foreign key linked to the <code class="docutils literal notranslate"><span class="pre">company_info</span></code> table, exhibiting a one-to-many relationship in terms of cardinality.</p>
 <figure class="align-default" id="id4">
-<img alt="This is an image" src="images/daily_stock_data_sample_data.png" />
+<img alt="This is an image" src="_images/daily_stock_data_sample_data.png" />
 <figcaption>
 <p><span class="caption-text">Daily stock data in PostgreSQL</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
 </figcaption>
@@ -284,7 +284,7 @@ intervals, such as weekly, monthly, quarterly, and yearly periods, through trans
 <li><p><code class="docutils literal notranslate"><span class="pre">company_stock__yearly_stock_data</span></code></p></li>
 </ul>
 <figure class="align-default" id="id5">
-<img alt="This is an image" src="images/entity_relationship_diagram_full.jpeg" />
+<img alt="This is an image" src="_images/entity_relationship_diagram_full.jpeg" />
 <figcaption>
 <p><span class="caption-text">ERD created using DDL and dbt</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
 </figcaption>
@@ -304,7 +304,7 @@ returns while minimizing the risk of losing money.</p>
 </ul>
 <p>In MVO, the goal is to find the allocation of assets in a portfolio that maximizes expected return while minimizing risk (variance).</p>
 <figure class="align-default" id="id6">
-<img alt="This is an image" src="images/mvo_plot_example.png" />
+<img alt="This is an image" src="_images/mvo_plot_example.png" />
 <figcaption>
 <p><span class="caption-text">MVO with Capital Allocation Line (CAL) and Efficient Frontier curve</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
 </figcaption>

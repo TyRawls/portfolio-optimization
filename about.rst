@@ -37,7 +37,7 @@ Instead of adhering to the conventional extract, transform, load (ETL) pipeline,
 * **Simplified Architecture**: ELT simplifies the data pipeline architecture by consolidating the transformation process within the database environment. This can lead to easier maintenance and management of the data pipeline.
 * **Cost-Effectiveness**: ELT often proves to be more cost-effective because it utilizes existing database infrastructure for transformation tasks as opposed to managing separate transformation servers or expensive ETL tools
 
-.. figure:: images/api_data_architecture.png
+.. figure:: _build/html/_images/api_data_architecture.png
    :alt: This is an image
 
    ELT architecture for ingesting stock data, storing it into a cloud database, and performing portfolio optimization
