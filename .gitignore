@@ -20,6 +20,8 @@ cloud-storage/portfolio_optimization_project_dbt/models/example
 cloud-storage/portfolio_optimization_project_dbt/models/.DS_Store
 cloud-storage/portfolio_optimization_project_dbt/models/company_stock/.DS_Store
 cloud-storage/aws-lambda-package/python
+cloud-storage/aws-lambda-package/zip-files/.DS_Store
+
 
 local-storage/.DS_Store
 cloud-storage/__pycache__
