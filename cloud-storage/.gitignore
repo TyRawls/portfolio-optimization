@@ -1,4 +1,6 @@
 .DS_Store
+__pycache__
+logs/
 
 portfolio_optimization_project_dbt/.venv/
 portfolio_optimization_project_dbt/analyses/
