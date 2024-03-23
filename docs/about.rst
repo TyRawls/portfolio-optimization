@@ -47,8 +47,8 @@ Data Extraction
 ^^^^^^^^^^^^^^^
 The data extraction process was done using two different financial APIs:
 
-* `Financial Marketing Prep (FMP) <https://site.financialmodelingprep.com/developer/docs>`_: used to extract company info (company name, exchange, ceo, industry, etc.)
-* `Y!Finance <https://pypi.org/project/yfinance/>`_: used to extract daily price data (open, high, low, close, etc.) 
+* `Financial Marketing Prep (FMP) <https://site.financialmodelingprep.com/developer/docs>`_: used to extract company info (i.e., company name, exchange, ceo, sector, industry, and market cap)
+* `Y!Finance <https://pypi.org/project/yfinance/>`_: used to extract daily price data (i.e., open, high, low, close, and volume) 
 
 
 Data Loading
