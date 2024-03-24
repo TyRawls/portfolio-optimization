@@ -6,7 +6,7 @@
 <link rel="author" title="About these documents" href="about.html" /><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="About" href="about.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>Project Setup - Portfolio Optimization v1.0.0 documentation</title>
+        <title>Getting Started - Portfolio Optimization v1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
@@ -156,12 +156,8 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="about.html">About</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of About</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Project Setup</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Project Setup</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Getting Started</a></li>
 </ul>
 
 </div>
@@ -196,23 +192,22 @@
           </label>
         </div>
         <article role="main">
-          <section id="project-setup">
-<h1>Project Setup<a class="headerlink" href="#project-setup" title="Link to this heading">#</a></h1>
-<p>There are two implementations for this project. One utilizes local storage, while the other relies on cloud storage.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This setup is designed to be compatible with the Apple MacBook (M2 Pro chip) running macOS Sonoma 14.3.1 and Python 3.11.4.
-Initially, it includes only the cloud storage setup, with the local setup planned for a future version. As of now, it
-has not undergone testing on Windows OS devices.</p>
+          <section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
+<p>There are two implementations for this project. One utilizes cloud storage, while the other relies on local storage.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Before settings up this project, install Python 3.8 or later; support for Python 3.7 and earlier is deprecated for some libraries in this project.</p>
 </div>
-<div class="toctree-wrapper compound">
+<section id="project-setup">
+<h2>Project Setup<a class="headerlink" href="#project-setup" title="Link to this heading">#</a></h2>
+<p>To begin this project you will first need to clone the GitHub repository to your desired directory by running the below command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tyrawls/portfolio-optimization.git
+</pre></div>
 </div>
-<section id="local-storage-setup">
-<h2>Local Storage Setup<a class="headerlink" href="#local-storage-setup" title="Link to this heading">#</a></h2>
-<p><strong>COMING SOON!!!</strong></p>
-</section>
-<section id="cloud-storage-setup">
-<h2>Cloud Storage Setup<a class="headerlink" href="#cloud-storage-setup" title="Link to this heading">#</a></h2>
+<p>You will then need to complete the steps for the Cloud Storage or Local Storage depending on which setup you want to deploy.</p>
+<section id="cloud-storage">
+<h3>Cloud Storage<a class="headerlink" href="#cloud-storage" title="Link to this heading">#</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>To configure this setup, you’ll be required to establish three components within Amazon Web Services (AWS).</p>
@@ -222,6 +217,23 @@ has not undergone testing on Windows OS devices.</p>
 <li><p><a class="reference external" href="https://aws.amazon.com/rds/?p=ft&amp;c=db&amp;z=3">Amazon RDS</a> (PostgreSQL instance)</p></li>
 </ul>
 </div>
+<p>Navigate to the cloud storage directory after you have cloned the GitHub repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>portfolio-optimization/cloud-storage
+</pre></div>
+</div>
+<p>Create a Python virtual environment and activate it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+</pre></div>
+</div>
+<p>Install the dependencies (requirements) for this project into the Python virtual environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</section>
+<section id="local-storage">
+<h3>Local Storage<a class="headerlink" href="#local-storage" title="Link to this heading">#</a></h3>
+<p><strong>COMING SOON!!!</strong></p>
+</section>
 </section>
 </section>
 
@@ -272,9 +284,12 @@ has not undergone testing on Windows OS devices.</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Project Setup</a><ul>
-<li><a class="reference internal" href="#local-storage-setup">Local Storage Setup</a></li>
-<li><a class="reference internal" href="#cloud-storage-setup">Cloud Storage Setup</a></li>
+<li><a class="reference internal" href="#">Getting Started</a><ul>
+<li><a class="reference internal" href="#project-setup">Project Setup</a><ul>
+<li><a class="reference internal" href="#cloud-storage">Cloud Storage</a></li>
+<li><a class="reference internal" href="#local-storage">Local Storage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

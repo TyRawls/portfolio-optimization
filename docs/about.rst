@@ -12,10 +12,6 @@ maintain desired asset allocations, ensuring they remain aligned with changing m
 portfolio enhances the potential for achieving long-term financial growth and stability, providing investors with greater confidence in their investment 
 decisions and overall financial well-being. This project aims to do just that.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
    
 ##########
 Objectives
