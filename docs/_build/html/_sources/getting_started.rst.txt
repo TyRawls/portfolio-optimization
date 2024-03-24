@@ -40,8 +40,9 @@ Navigate to the cloud storage directory after you have cloned the GitHub reposit
 Create a Python virtual environment and activate it::
 
     python -m venv .venv
-    
-Install the dependencies (requirements) for this project into the Python virtual environment::
+    source .venv/bin/activate
+
+Install the cloud dependencies (requirements) into the Python virtual environment::
 
     pip install -r requirements.txt
 
@@ -49,6 +50,17 @@ Install the dependencies (requirements) for this project into the Python virtual
 Local Storage 
 -------------
 
-**COMING SOON!!!**
+Navigate to the cloud storage directory after you have cloned the GitHub repository::
+
+    cd portfolio-optimization/local-storage
+
+Create a Python virtual environment and activate it::
+
+    python -m venv .venv
+    source .venv/bin/activate
+
+Install the local dependencies (requirements) into the Python virtual environment::
+
+    pip install -r requirements.txt
 
     
