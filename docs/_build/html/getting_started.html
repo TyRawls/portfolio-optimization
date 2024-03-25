@@ -204,17 +204,38 @@
 <h2>Project Setup<a class="headerlink" href="#project-setup" title="Link to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The below setup id for MAC OS only. I will be providing setup instructions for Windows OS in a later update.</p>
+<p>The below setup is for MAC OS only. I will be providing setup instructions for Windows OS in a later update.</p>
 </div>
 <p>To begin this project you will first need to clone the GitHub repository to your desired directory by running the below command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tyrawls/portfolio-optimization.git
 </pre></div>
 </div>
-<p>Download <a class="reference external" href="https://www.postgresql.org/download/">PostgreSQL</a> and setup a database connection</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://youtu.be/qw--VYLpxG4?si=KPDT8niVeJ_GPGOS&amp;t=654">MAC OS installation video</a></p></li>
-<li><p><a class="reference external" href="https://youtu.be/qw--VYLpxG4?si=sGzvdp0Fg9uTMey7&amp;t=1300">MAC OS PSQL setup</a></p></li>
-</ul>
+<p>Install <a class="reference external" href="https://postgresapp.com/downloads.html/">PostgreSQL</a> and start the database server. You can watch the
+<a class="reference external" href="https://youtu.be/qw--VYLpxG4?si=KPDT8niVeJ_GPGOS&amp;t=654">MAC OS installation video</a> to assist you with the installation.</p>
+<p>After installing PostgreSQL, you will need to complete the below steps so that the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command will work in Terminal:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>Open the PostgreSQL app and make sure the server is runnning by clicking Start.</p></li>
+<li><dl>
+<dt>Click on Server Settings and copy the Binaries path.</dt><dd><figure class="align-default">
+<img alt="This is an image" src="_images/postgresql_binaries_path.png" />
+</figure>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Open Terminal, paste <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/paths</span></code>, and press Enter.</dt><dd><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will be prompted to enter a password to edit the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><p>Paste the Binaries path in the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
+<li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
+</ol>
+</div></blockquote>
 <p>You will then need to complete the steps for the cloud or local storage depending on which setup you want to deploy.</p>
 <section id="cloud-storage">
 <h3>Cloud Storage<a class="headerlink" href="#cloud-storage" title="Link to this heading">#</a></h3>

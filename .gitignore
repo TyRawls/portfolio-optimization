@@ -45,4 +45,4 @@ local-storage/portfolio_optimization_project_dbt/models/company_stock/.DS_Store
 docs/_static
 docs/.DS_Store
 docs/_templates
-docs/images/.DS_Store
+docs/images/

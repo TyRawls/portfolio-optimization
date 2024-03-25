@@ -17,20 +17,28 @@ Project Setup
 
 .. note::
 
-    The below setup id for MAC OS only. I will be providing setup instructions for Windows OS in a later update.
+    The below setup is for MAC OS only. I will be providing setup instructions for Windows OS in a later update.
 
 To begin this project you will first need to clone the GitHub repository to your desired directory by running the below command::
 
     git clone https://github.com/tyrawls/portfolio-optimization.git
 
-Download `PostgreSQL <https://www.postgresql.org/download/>`_ and setup a database connection
+Install `PostgreSQL <https://postgresapp.com/downloads.html/>`_ and start the database server. You can watch the 
+`MAC OS installation video <https://youtu.be/qw--VYLpxG4?si=KPDT8niVeJ_GPGOS&t=654>`_ to assist you with the installation.
 
-* `MAC OS installation video <https://youtu.be/qw--VYLpxG4?si=KPDT8niVeJ_GPGOS&t=654>`_
-* `MAC OS PSQL setup <https://youtu.be/qw--VYLpxG4?si=sGzvdp0Fg9uTMey7&t=1300>`_
+After installing PostgreSQL, you will need to complete the below steps so that the ``psql`` command will work in Terminal:
 
-
-
-
+    #. Open the PostgreSQL app and make sure the server is runnning by clicking Start. 
+    #. Click on Server Settings and copy the Binaries path.
+        .. figure:: images/postgresql_binaries_path.png
+           :alt: This is an image
+    #. Open Terminal, paste ``sudo nano /etc/paths``, and press Enter. 
+        .. note::
+            
+            You will be prompted to enter a password to edit the ``paths`` file.
+    #. Paste the Binaries path in the ``paths`` file.
+    #. Press ``Control + O``, then Enter to write to the ``paths`` file.
+    #. Lastly, press ``Control + X`` to exit the ``paths`` file.
 
 You will then need to complete the steps for the cloud or local storage depending on which setup you want to deploy.
 
