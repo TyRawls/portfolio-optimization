@@ -46,8 +46,8 @@ Navigate to the cloud storage directory after you have cloned the GitHub reposit
 
 Create a Python virtual environment and activate it::
 
-    python -m venv .venv              # create virtual environment
-    source .venv/bin/activate         # activate the virtual environment for Mac and Linux
+    python -m venv .venv              # create the environment
+    source .venv/bin/activate         # activate the environment for Mac and Linux
 
 Install the cloud dependencies (requirements) into the Python virtual environment::
 
@@ -57,17 +57,28 @@ Install the cloud dependencies (requirements) into the Python virtual environmen
 Local Storage 
 -------------
 
-Navigate to the cloud storage directory after you have cloned the GitHub repository::
+Navigate to the local storage directory after you have cloned the GitHub repository::
 
     cd portfolio-optimization/local-storage
 
 Create a Python virtual environment and activate it::
 
-    python -m venv .venv              # create virtual environment
-    source .venv/bin/activate         # activate the virtual environment for Mac and Linux
+    python -m venv .venv              # create the environment
+    source .venv/bin/activate         # activate the environment for Mac and Linux
 
 Install the local dependencies (requirements) into the Python virtual environment::
 
     pip install -r requirements.txt
+
+Navigate to the dbt project folder::
+
+    cd portfolio_optimization_project_dbt
+
+Create a Python virtual environment for the dbt project and activate it::
+
+    python -m venv dbt-env            # create the environment
+    source dbt-env/bin/activate       # activate the environment for Mac and Linux 
+
+
 
     
