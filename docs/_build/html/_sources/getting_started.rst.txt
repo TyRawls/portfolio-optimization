@@ -15,14 +15,20 @@ There are two implementations for this project. One utilizes cloud storage, whil
 Project Setup
 #############
 
+.. note::
+
+    The below setup id for MAC OS only. I will be providing setup instructions for Windows OS in a later update.
+
 To begin this project you will first need to clone the GitHub repository to your desired directory by running the below command::
 
     git clone https://github.com/tyrawls/portfolio-optimization.git
 
-You will then need to complete the steps for the cloud or local storage depending on which setup you want to deploy.
+Download `PostgreSQL <https://www.postgresql.org/download/>`_
 
-.. tip::
-    I would suggest setting up the local storage as the cloud storage requires AWS services as a prerequisite.
+* `MAC OS installation video <https://youtu.be/qw--VYLpxG4?si=KPDT8niVeJ_GPGOS&t=654>`_
+* `MAC OS PSQL setup <https://youtu.be/qw--VYLpxG4?si=sGzvdp0Fg9uTMey7&t=1300>`_
+
+You will then need to complete the steps for the cloud or local storage depending on which setup you want to deploy.
 
 
 Cloud Storage
