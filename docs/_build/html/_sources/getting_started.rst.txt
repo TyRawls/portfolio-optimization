@@ -126,6 +126,8 @@ Open profiles.yml files and paste the below::
           pass: 'YOUR_PASSWORD'
           dbname: company_stock
           schema: public
+          
+      target: local  
 
 ##########
 Deployment
