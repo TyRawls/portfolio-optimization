@@ -9,7 +9,6 @@ cloud-storage/portfolio_optimization_project_dbt/.venv/
 cloud-storage/portfolio_optimization_project_dbt/analyses/
 cloud-storage/portfolio_optimization_project_dbt/target/
 cloud-storage/portfolio_optimization_project_dbt/dbt_packages/
-cloud-storage/portfolio_optimization_project_dbt/logs/
 cloud-storage/portfolio_optimization_project_dbt/tests/
 cloud-storage/portfolio_optimization_project_dbt/target/
 cloud-storage/portfolio_optimization_project_dbt/logs/
@@ -27,7 +26,6 @@ cloud-storage/aws-lambda-package/.DS_Store
 
 # local-storage folder
 local-storage/.DS_Store
-local-storage/.DS_Store
 local-storage/__pycache__
 local-storage/logs/
 local-storage/portfolio_optimization_project_dbt/.venv/
@@ -37,7 +35,6 @@ local-storage/portfolio_optimization_project_dbt/dbt_packages/
 local-storage/portfolio_optimization_project_dbt/logs/
 local-storage/portfolio_optimization_project_dbt/tests/
 local-storage/portfolio_optimization_project_dbt/target/
-local-storage/portfolio_optimization_project_dbt/logs/
 local-storage/portfolio_optimization_project_dbt/macros/
 local-storage/portfolio_optimization_project_dbt/snapshots/
 local-storage/portfolio_optimization_project_dbt/seeds/
@@ -49,12 +46,6 @@ local-storage/portfolio_optimization_project_dbt/models/company_stock/.DS_Store
 
 # docs folder
 docs/.DS_Store
-# docs/_build
 docs/_static
 docs/_templates
 docs/images/.DS_Store
-
-
-
-
-
