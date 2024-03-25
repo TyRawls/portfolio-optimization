@@ -23,7 +23,7 @@ To begin this project you will first need to clone the GitHub repository to your
 
     git clone https://github.com/tyrawls/portfolio-optimization.git
 
-Install `PostgreSQL <https://postgresapp.com/downloads.html/>`_ and start the database server. You can watch the 
+Install `PostgreSQL <https://postgresapp.com/>`_ and start the database server. You can watch the 
 `MAC OS installation video <https://youtu.be/qw--VYLpxG4?si=KPDT8niVeJ_GPGOS&t=654>`_ to assist you with the installation.
 
 After installing PostgreSQL, you will need to complete the below steps so that the ``psql`` command will work in Terminal:
@@ -40,7 +40,11 @@ After installing PostgreSQL, you will need to complete the below steps so that t
     #. Press ``Control + O``, then Enter to write to the ``paths`` file.
     #. Lastly, press ``Control + X`` to exit the ``paths`` file.
 
-You will then need to complete the steps for the cloud or local storage depending on which setup you want to deploy.
+Now, when opening Terminal, you will be able to use the ``psql`` command.
+.. warning::
+
+    If you do not complete the above steps, you will 
+
 
 
 Cloud Storage
