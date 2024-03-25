@@ -19,10 +19,6 @@ Project Setup
 
     The below setup is for MAC OS only. I will be providing setup instructions for Windows OS in a later update.
 
-To begin this project you will first need to clone the GitHub repository to your desired directory by running the below command::
-
-    git clone https://github.com/tyrawls/portfolio-optimization.git
-
 Install `PostgreSQL <https://postgresapp.com/>`_ and start the database server. You can watch the 
 `MAC OS installation video <https://youtu.be/qw--VYLpxG4?si=KPDT8niVeJ_GPGOS&t=654>`_ to assist you with the installation.
 
@@ -41,11 +37,14 @@ After installing PostgreSQL, you will need to complete the below steps so that t
     #. Lastly, press ``Control + X`` to exit the ``paths`` file.
 
 Now, when opening Terminal, you will be able to use the ``psql`` command.
-.. warning::
 
-    If you do not complete the above steps, you will 
+.. caution::
 
+    If you do not complete the above steps, then you will get ``psql: command not found`` when trying to execute the ``psql`` command in Terminal.
 
+To begin this project you will first need to clone the GitHub repository to your desired directory by running the below command in Terminal::
+
+    git clone https://github.com/tyrawls/portfolio-optimization.git
 
 Cloud Storage
 -------------
