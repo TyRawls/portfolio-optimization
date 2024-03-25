@@ -79,6 +79,12 @@ Create a Python virtual environment for the dbt project and activate it::
     python -m venv dbt-env            # create the environment
     source dbt-env/bin/activate       # activate the environment for Mac and Linux 
 
+Install the dbt-postgres adapter::
+
+    python -m pip install dbt-postgres
+
+
+
 
 
     
