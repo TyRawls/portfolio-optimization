@@ -112,6 +112,7 @@ Open a new Terminal window. Create ``.dbt`` folder and ``profiles.yml`` files fo
     mkdir .dbt              # create .dbt folder
     cd .dbt                 # switch to .dbt folder
     touch profiles.yml      # create yml file for database connections
+    nano profiles.yml       # open yml file for editing
 
 Open ``profiles.yml`` file for editing::
 
