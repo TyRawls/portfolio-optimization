@@ -206,10 +206,6 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tyrawls/portfolio-optimization.git
 </pre></div>
 </div>
-<p>Upgrade pip version:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
-</pre></div>
-</div>
 <p>You will then need to complete the steps for the cloud or local storage depending on which setup you want to deploy.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -251,6 +247,10 @@
 <span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">         </span><span class="c1"># activate the environment for Mac and Linux</span>
 </pre></div>
 </div>
+<p>Upgrade pip version:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+</pre></div>
+</div>
 <p>Install the local dependencies (requirements) into the Python virtual environment:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </pre></div>
@@ -265,7 +265,11 @@
 </pre></div>
 </div>
 <p>Install the dbt-postgres adapter:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>dbt-postgres
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>dbt-postgres<span class="o">==</span><span class="m">1</span>.7.0
+</pre></div>
+</div>
+<p>Install dbt-init:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>dbt<span class="w"> </span>dbt-init
 </pre></div>
 </div>
 </section>

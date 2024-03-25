@@ -19,10 +19,6 @@ To begin this project you will first need to clone the GitHub repository to your
 
     git clone https://github.com/tyrawls/portfolio-optimization.git
 
-Upgrade pip version::
-
-    pip install --upgrade pip
-
 You will then need to complete the steps for the cloud or local storage depending on which setup you want to deploy.
 
 .. tip::
@@ -66,6 +62,11 @@ Create a Python virtual environment and activate it::
     python -m venv .venv              # create the environment
     source .venv/bin/activate         # activate the environment for Mac and Linux
 
+Upgrade pip version::
+
+    pip install --upgrade pip
+
+
 Install the local dependencies (requirements) into the Python virtual environment::
 
     pip install -r requirements.txt
@@ -81,7 +82,15 @@ Create a Python virtual environment for the dbt project and activate it::
 
 Install the dbt-postgres adapter::
 
-    python -m pip install dbt-postgres
+    python -m pip install dbt-postgres==1.7.0
+
+Install dbt-init::
+
+    pip install dbt dbt-init
+
+
+
+
 
 
 
