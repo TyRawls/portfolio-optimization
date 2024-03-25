@@ -20,6 +20,7 @@ Objectives
 Data Architecture
 #################
 
+
 Extract, Load, Transform (ELT) Pipeline
 ---------------------------------------
 Instead of adhering to the conventional extract, transform, load (ETL) pipeline, I opted for an alternative approach by selecting an extract, load, transform (ELT) architecture for 3 reasons:
@@ -94,9 +95,11 @@ intervals, such as weekly, monthly, quarterly, and yearly periods, through trans
 
    ERD created using DDL and dbt
 
+
 ######################
 Stock Prediction Model
 ######################
+
 
 Mean-Variance Optimization (MVO)
 --------------------------------

@@ -14,14 +14,19 @@ There are two implementations for this project. One utilizes cloud storage, whil
 #############
 Project Setup
 #############
-
 .. note::
 
     The below setup is for MAC OS only. I will be providing setup instructions for Windows OS in a later update.
 
+
+PostgreSQL Installation
+-----------------------
 Install `PostgreSQL <https://postgresapp.com/>`_ and start the database server. You can watch the 
 `MAC OS installation video <https://youtu.be/qw--VYLpxG4?si=KPDT8niVeJ_GPGOS&t=654>`_ to assist you with the installation.
 
+
+PSQL Setup
+----------
 After installing PostgreSQL, you will need to complete the below steps so that the ``psql`` command will work in Terminal:
 
     #. Open the PostgreSQL app and make sure the server is runnning by clicking Start. 
@@ -46,9 +51,9 @@ To begin this project you will first need to clone the GitHub repository to your
 
     git clone https://github.com/tyrawls/portfolio-optimization.git
 
+
 Cloud Storage
 -------------
-
 .. note::
 
     To configure this setup, you'll be required to establish three components within Amazon Web Services (AWS).
@@ -73,7 +78,6 @@ Install the cloud dependencies (requirements) into the Python virtual environmen
 
 Local Storage 
 -------------
-
 Navigate to the local storage directory after you have cloned the GitHub repository::
 
     cd portfolio-optimization/local-storage
