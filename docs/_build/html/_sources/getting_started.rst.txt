@@ -23,10 +23,14 @@ To begin this project you will first need to clone the GitHub repository to your
 
     git clone https://github.com/tyrawls/portfolio-optimization.git
 
-Download `PostgreSQL <https://www.postgresql.org/download/>`_
+Download `PostgreSQL <https://www.postgresql.org/download/>`_ and setup a database connection
 
 * `MAC OS installation video <https://youtu.be/qw--VYLpxG4?si=KPDT8niVeJ_GPGOS&t=654>`_
 * `MAC OS PSQL setup <https://youtu.be/qw--VYLpxG4?si=sGzvdp0Fg9uTMey7&t=1300>`_
+
+
+
+
 
 You will then need to complete the steps for the cloud or local storage depending on which setup you want to deploy.
 
