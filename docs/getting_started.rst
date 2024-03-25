@@ -19,7 +19,10 @@ To begin this project you will first need to clone the GitHub repository to your
 
     git clone https://github.com/tyrawls/portfolio-optimization.git
 
-You will then need to complete the steps for the Cloud Storage or Local Storage depending on which setup you want to deploy.
+You will then need to complete the steps for the cloud or local storage depending on which setup you want to deploy.
+
+.. tip::
+    I would suggest setting up the local storage as the cloud storage requires AWS services as a prerequisite.
 
 
 Cloud Storage
