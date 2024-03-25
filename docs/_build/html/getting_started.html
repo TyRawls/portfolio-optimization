@@ -301,27 +301,31 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>dbt-postgres<span class="o">==</span><span class="m">1</span>.7.0
 </pre></div>
 </div>
-<p>Create .dbt folder and profiles.yml files for dbt project:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w">                 </span><span class="c1"># switch to root directory</span>
-mkdir<span class="w"> </span>.dbt<span class="w">           </span><span class="c1"># create .dbt folder</span>
-<span class="nb">cd</span><span class="w"> </span>.dbt<span class="w">              </span><span class="c1"># switch to .dbt folder</span>
-touch<span class="w"> </span>profiles.yml<span class="w">   </span><span class="c1"># create yml file for database connections</span>
+<p>Open a new Terminal window. Create <code class="docutils literal notranslate"><span class="pre">.dbt</span></code> folder and <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> files for dbt project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w">                    </span><span class="c1"># switch to root directory</span>
+mkdir<span class="w"> </span>.dbt<span class="w">              </span><span class="c1"># create .dbt folder</span>
+<span class="nb">cd</span><span class="w"> </span>.dbt<span class="w">                 </span><span class="c1"># switch to .dbt folder</span>
+touch<span class="w"> </span>profiles.yml<span class="w">      </span><span class="c1"># create yml file for database connections</span>
 </pre></div>
 </div>
-<p>Open profiles.yml files and paste the below:</p>
+<p>Open <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file for editing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>profiles.yml
+</pre></div>
+</div>
+<p>Paste the below in the profiles.yml file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>portfolio_optimization_project_dbt:
-<span class="linenos"> 2</span><span class="w">  </span>outputs:
+<span class="linenos"> 2</span><span class="w">    </span>outputs:
 <span class="linenos"> 3</span><span class="w">    </span>local:
-<span class="linenos"> 4</span><span class="w">      </span>type:<span class="w"> </span>postgres
-<span class="linenos"> 5</span><span class="w">      </span>threads:<span class="w"> </span><span class="m">1</span>
-<span class="linenos"> 6</span><span class="w">      </span>host:<span class="w"> </span>localhost
-<span class="linenos"> 7</span><span class="w">      </span>port:<span class="w"> </span><span class="m">5432</span>
-<span class="linenos"> 8</span><span class="w">      </span>user:<span class="w"> </span>YOUR_USERNAME
-<span class="linenos"> 9</span><span class="w">      </span>pass:<span class="w"> </span><span class="s1">&#39;YOUR_PASSWORD&#39;</span>
-<span class="linenos">10</span><span class="w">      </span>dbname:<span class="w"> </span>company_stock
-<span class="linenos">11</span><span class="w">      </span>schema:<span class="w"> </span>public
+<span class="linenos"> 4</span><span class="w">        </span>type:<span class="w"> </span>postgres
+<span class="linenos"> 5</span><span class="w">        </span>threads:<span class="w"> </span><span class="m">1</span>
+<span class="linenos"> 6</span><span class="w">        </span>host:<span class="w"> </span>localhost
+<span class="linenos"> 7</span><span class="w">        </span>port:<span class="w"> </span><span class="m">5432</span>
+<span class="linenos"> 8</span><span class="w">        </span>user:<span class="w"> </span>YOUR_USERNAME
+<span class="linenos"> 9</span><span class="w">        </span>pass:<span class="w"> </span><span class="s1">&#39;YOUR_PASSWORD&#39;</span>
+<span class="linenos">10</span><span class="w">        </span>dbname:<span class="w"> </span>company_stock
+<span class="linenos">11</span><span class="w">        </span>schema:<span class="w"> </span>public
 <span class="linenos">12</span>
-<span class="linenos">13</span><span class="w">  </span>target:<span class="w"> </span><span class="nb">local</span>
+<span class="linenos">13</span><span class="w">    </span>target:<span class="w"> </span><span class="nb">local</span>
 </pre></div>
 </div>
 </section>
