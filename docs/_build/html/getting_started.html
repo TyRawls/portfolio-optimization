@@ -211,8 +211,10 @@
 <p>Install <a class="reference external" href="https://postgresapp.com/">PostgreSQL</a> and start the database server. You can watch the
 <a class="reference external" href="https://youtu.be/qw--VYLpxG4?si=KPDT8niVeJ_GPGOS&amp;t=654">MAC OS installation video</a> to assist you with the installation.</p>
 <p>After installing PostgreSQL, you will need to complete the below steps so that the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command will work in Terminal:</p>
-<blockquote>
-<div><ol class="arabic">
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If you do not complete the above steps, then you will get <code class="docutils literal notranslate"><span class="pre">psql:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code> when trying to execute the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command in Terminal.</p>
+<ol class="arabic">
 <li><p>Open the PostgreSQL app and make sure the server is runnning by clicking Start.</p></li>
 <li><dl>
 <dt>Click on Server Settings and copy the Binaries path.</dt><dd><figure class="align-default">
@@ -222,7 +224,7 @@
 </dl>
 </li>
 <li><dl>
-<dt>Open Terminal, paste <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/paths</span></code>, and press Enter.</dt><dd><div class="admonition note">
+<dt>Open Terminal and type <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/paths</span></code>, then press Enter.</dt><dd><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You will be prompted to enter a password to edit the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p>
 </div>
@@ -233,16 +235,9 @@
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
 <li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
 </ol>
-</div></blockquote>
-<p>Now, when opening Terminal, you will be able to use the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command.</p>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>If you do not complete the above steps, then you will get <code class="docutils literal notranslate"><span class="pre">psql:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code> when trying to execute the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command in Terminal.</p>
 </div>
-<p>To begin this project you will first need to clone the GitHub repository to your desired directory by running the below command in Terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tyrawls/portfolio-optimization.git
-</pre></div>
-</div>
+<p>Now, when opening Terminal, you should be able to use the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command.</p>
+<p>From here you will need to decide whether you want to deploy the <a class="reference internal" href="#cloud-storage"><span class="std std-ref">Cloud Storage</span></a> or <a class="reference internal" href="#local-storage"><span class="std std-ref">Local Storage</span></a>.</p>
 </section>
 <section id="cloud-storage">
 <h3>Cloud Storage<a class="headerlink" href="#cloud-storage" title="Link to this heading">#</a></h3>
@@ -254,6 +249,10 @@
 <li><p><a class="reference external" href="https://aws.amazon.com/pm/lambda/">Amazon Lambda</a></p></li>
 <li><p><a class="reference external" href="https://aws.amazon.com/rds/?p=ft&amp;c=db&amp;z=3">Amazon RDS</a> (PostgreSQL instance)</p></li>
 </ul>
+</div>
+<p>Start this setup by cloning the GitHub repository to your desired directory by running the below command in Terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tyrawls/portfolio-optimization.git
+</pre></div>
 </div>
 <p>Navigate to the cloud storage directory after you have cloned the GitHub repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>portfolio-optimization/cloud-storage
@@ -275,6 +274,10 @@
 </section>
 <section id="local-storage">
 <h3>Local Storage<a class="headerlink" href="#local-storage" title="Link to this heading">#</a></h3>
+<p>Start this setup by cloning the GitHub repository to your desired directory by running the below command in Terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tyrawls/portfolio-optimization.git
+</pre></div>
+</div>
 <p>Navigate to the local storage directory after you have cloned the GitHub repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>portfolio-optimization/local-storage
 </pre></div>
@@ -297,6 +300,9 @@
 </pre></div>
 </div>
 </section>
+</section>
+<section id="deployment">
+<h2>Deployment<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -354,6 +360,7 @@
 <li><a class="reference internal" href="#local-storage">Local Storage</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#deployment">Deployment</a></li>
 </ul>
 </li>
 </ul>
