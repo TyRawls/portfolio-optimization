@@ -15,11 +15,11 @@ source ~/.zshrc
 
 echo "PROCESS: Creating database and tables, if they do not exist"
 # Create database and tables, if it does not exist
-export PGPASSWORD=$PASS
-createdb -h $HOST -p $PORT -U $USER $DBNAME                   # Create 'company_stock' database
-psql -h $HOST -p $PORT -U $USER -d $DBNAME -f stock_data.sql  # Create 'company_info' and 'daily_stock_price' tables
+export PGPASSWORD=$CLOUD_PASS
+createdb -h $CLOUD_HOST -p $CLOUD_PORT -U $CLOUD_USER $CLOUD_DBNAME                   # Create 'company_stock' database
+psql -h $CLOUD_HOST -p $CLOUD_PORT -U $CLOUD_USER -d $CLOUD_DBNAME -f stock_data.sql  # Create 'company_info' and 'daily_stock_price' tables
 
-unset $PASS
+unset $CLOUD_PASS
 unset PGPASSWORD
 
 echo

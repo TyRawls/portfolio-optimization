@@ -1,8 +1,3 @@
-.. Portfolio Optimization documentation master file, created by
-   sphinx-quickstart on Thu Mar 21 15:30:48 2024.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 About
 =====
 Optimizing a stock portfolio is crucial for several reasons. Firstly, it aims to maximize returns while minimizing risk, aligning with an investor's financial 

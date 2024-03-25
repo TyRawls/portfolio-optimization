@@ -45,12 +45,12 @@ def get_info(ticker):
 def read_stock_database(interval='daily'):      
     # Connect to the PostgreSQL database in AWS RDS
     conn = psycopg2.connect(
-        dbname   = os.environ.get('DBNAME'),
-        user     = os.environ.get('USER'),
-        password = os.environ.get('PASS'),
-        host     = os.environ.get('HOST'),
-        port     = os.environ.get('PORT'),  # Default PostgreSQL port       
-        connect_timeout = 30                # Set timeout to 30 seconds
+        dbname   = os.environ.get('CLOUD_DBNAME'),
+        user     = os.environ.get('CLOUD_USER'),
+        password = os.environ.get('CLOUD_PASS'),
+        host     = os.environ.get('CLOUD_HOST'),
+        port     = os.environ.get('CLOUD_PORT'),  # Default PostgreSQL port       
+        connect_timeout = 30                      # Set timeout to 30 seconds
     )
 
     # Create a cursor object to execute queries
