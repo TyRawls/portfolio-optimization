@@ -210,9 +210,6 @@
 <h3>PostgreSQL Installation<a class="headerlink" href="#postgresql-installation" title="Link to this heading">#</a></h3>
 <p>Install <a class="reference external" href="https://postgresapp.com/">PostgreSQL</a> and start the database server. You can watch the
 <a class="reference external" href="https://youtu.be/qw--VYLpxG4?si=KPDT8niVeJ_GPGOS&amp;t=654">MAC OS installation video</a> to assist you with the installation.</p>
-</section>
-<section id="psql-setup">
-<h3>PSQL Setup<a class="headerlink" href="#psql-setup" title="Link to this heading">#</a></h3>
 <p>After installing PostgreSQL, you will need to complete the below steps so that the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command will work in Terminal:</p>
 <blockquote>
 <div><ol class="arabic">
@@ -265,6 +262,10 @@
 <p>Create a Python virtual environment and activate it:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w">              </span><span class="c1"># create the environment</span>
 <span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">         </span><span class="c1"># activate the environment for Mac and Linux</span>
+</pre></div>
+</div>
+<p>Upgrade pip version:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 </pre></div>
 </div>
 <p>Install the cloud dependencies (requirements) into the Python virtual environment:</p>
@@ -349,7 +350,6 @@
 <li><a class="reference internal" href="#">Getting Started</a><ul>
 <li><a class="reference internal" href="#project-setup">Project Setup</a><ul>
 <li><a class="reference internal" href="#postgresql-installation">PostgreSQL Installation</a></li>
-<li><a class="reference internal" href="#psql-setup">PSQL Setup</a></li>
 <li><a class="reference internal" href="#cloud-storage">Cloud Storage</a></li>
 <li><a class="reference internal" href="#local-storage">Local Storage</a></li>
 </ul>

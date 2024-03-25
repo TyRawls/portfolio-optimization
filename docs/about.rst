@@ -7,7 +7,6 @@ maintain desired asset allocations, ensuring they remain aligned with changing m
 portfolio enhances the potential for achieving long-term financial growth and stability, providing investors with greater confidence in their investment 
 decisions and overall financial well-being. This project aims to do just that.
 
-   
 ##########
 Objectives
 ##########
@@ -15,11 +14,9 @@ Objectives
 * **Data Focused** (`upstream process`): Retrieve pertinent stock data from a dependable data source and securely store it in a database.
 * **Analysis Focused** (`downstream process`): Leverage stored data to identify the most advantageous asset allocation for an investment portfolio, customized to the chosen stocks.
 
-
 #################
 Data Architecture
 #################
-
 
 Extract, Load, Transform (ELT) Pipeline
 ---------------------------------------
@@ -34,7 +31,6 @@ Instead of adhering to the conventional extract, transform, load (ETL) pipeline,
 
    ELT architecture for ingesting stock data, storing it in either a cloud or local database, and performing portfolio optimization
 
-
 Data Extraction
 ^^^^^^^^^^^^^^^
 The data extraction process was done using two different financial APIs:
@@ -42,14 +38,12 @@ The data extraction process was done using two different financial APIs:
 * `Financial Marketing Prep (FMP) <https://site.financialmodelingprep.com/developer/docs>`_: used to extract company info (i.e., company name, exchange, ceo, sector, industry, and market cap)
 * `Y!Finance <https://pypi.org/project/yfinance/>`_: used to extract daily price data (i.e., open, high, low, close, and volume) 
 
-
 Data Loading
 ^^^^^^^^^^^^
 The Y!Finance API retrieves a decade's worth of data for each ticker and compares it with the existing database records. If a ticker is not present in the database, all 
 10 years of data from Y!Finance are stored in an `Amazon S3 <https://aws.amazon.com/s3/>`_ bucket (using `Boto3 <https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html#>`_). 
 This action triggers an `Amazon Lambda <https://aws.amazon.com/pm/lambda/>`_ function, which then pushes the data to a PostgreSQL instance in `Amazon RDS <https://aws.amazon.com/rds/?p=ft&c=db&z=3>`_. 
 Conversely, if the ticker already exists in the database, only the new data is kept and stored.
-
 
 Data Transformation
 ^^^^^^^^^^^^^^^^^^^
@@ -60,7 +54,6 @@ Y!Finance, I conducted transformations to produce four additional tables encompa
    :alt: This is an image
 
    dbt model
-
 
 #################################
 Entity Relationship Diagram (ERD)
@@ -100,7 +93,6 @@ intervals, such as weekly, monthly, quarterly, and yearly periods, through trans
 Stock Prediction Model
 ######################
 
-
 Mean-Variance Optimization (MVO)
 --------------------------------
 MVO is a technique used in finance to find the optimal allocation of assets in an investment portfolio. It helps investors build portfolios that aim to maximize 
@@ -118,7 +110,6 @@ In MVO, the goal is to find the allocation of assets in a portfolio that maximiz
    :alt: This is an image
 
    MVO with Capital Allocation Line (CAL) and Efficient Frontier curve
-
 
 Input Parameters
 -----------------
