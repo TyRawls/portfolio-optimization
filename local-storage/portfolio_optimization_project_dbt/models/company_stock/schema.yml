@@ -1,0 +1,228 @@
+version: 2
+
+sources:
+  - name: company_stock
+    description: 'Database of publicly traded companies in the stock market.'
+    database: company_stock
+    schema: public
+    tables: 
+      - name: company_info
+        description: 'Resourceful information about publicly traded companies stored in the database.'
+      - name: daily_stock_data
+        description: 'Daily stock price data.'
+
+models:
+  - name: company_stock__daily_stock_data
+    description: 'Daily stock price data.'
+    columns:
+      - name: date
+        description: 'The date of the stock price data.'  
+        tests:
+          - not_null  
+      - name: ticker
+        description: 'Stock symbol.'
+        tests:
+          - not_null 
+          - relationships:
+              to: ref('company_info')
+              field: ticker
+      - name: open
+        description: 'The first price at which a stock trades during regular market hours.'
+        tests:
+          - not_null         
+      - name: high
+        description: 'The highest price the stock reached that day during regular market hours.'
+        tests:
+          - not_null 
+      - name: low
+        description: 'The lowest price the stock reached that day during regular market hours.'
+        tests:
+          - not_null 
+      - name: close
+        description: 'The last trade price for that day.'
+        tests:
+          - not_null 
+      - name: volume
+        description: 'The total number of shares traded in a day.'
+        tests:
+          - not_null         
+      - name: ingested_at
+        description: 'The date and time the stock data was added to the database.'  
+        tests:
+          - not_null 
+
+  - name: company_stock__weekly_stock_data
+    description: 'Weekly stock price data.'
+    columns:
+      - name: week
+        description: 'The week of the stock price data.'  
+        tests:
+          - not_null  
+      - name: week_start_date
+        description: 'The start date of the week.'  
+        tests:
+          - not_null  
+      - name: week_end_date
+        description: 'The end date of the week.'  
+        tests:
+          - not_null 
+      - name: days_in_week
+        description: 'The number of trading days in that week.'  
+        tests:
+          - not_null      
+      - name: ticker
+        description: 'Stock symbol.'
+        tests:
+          - not_null 
+      - name: weekly_open
+        description: 'The average first price at which a stock trades during regular market hours in a week.'
+        tests:
+          - not_null         
+      - name: weekly_high
+        description: 'The average highest price the stock reaches during regular market hours in a week.'
+        tests:
+          - not_null 
+      - name: weekly_low
+        description: 'The average lowest price the stock reaches during regular market hours in a week.'
+        tests:
+          - not_null 
+      - name: weekly_close
+        description: 'The average last trade during a week'
+        tests:
+          - not_null 
+      - name: weekly_volume
+        description: 'The total number of shares traded in a week.'
+        tests:
+          - not_null   
+
+  - name: company_stock__monthly_stock_data
+    description: 'Monthly stock price data.'
+    columns:
+      - name: month
+        description: 'The month of the stock price data.'  
+        tests:
+          - not_null  
+      - name: month_start_date
+        description: 'The start date of the month.'  
+        tests:
+          - not_null  
+      - name: month_end_date
+        description: 'The end date of the month.'  
+        tests:
+          - not_null 
+      - name: days_in_month
+        description: 'The number of trading days in that month.'  
+        tests:
+          - not_null      
+      - name: ticker
+        description: 'Stock symbol.'
+        tests:
+          - not_null 
+      - name: monthly_open
+        description: 'The average first price at which a stock trades during regular market hours in a month.'
+        tests:
+          - not_null         
+      - name: monthly_high
+        description: 'The average highest price the stock reaches during regular market hours in a month.'
+        tests:
+          - not_null 
+      - name: monthly_low
+        description: 'The average lowest price the stock reaches during regular market hours in a month.'
+        tests:
+          - not_null 
+      - name: monthly_close
+        description: 'The average last trade during a month.'
+        tests:
+          - not_null 
+      - name: monthly_volume
+        description: 'The total number of shares traded in a month.'
+        tests:
+          - not_null 
+
+  - name: company_stock__quarterly_stock_data
+    description: 'Quarterly stock price data.'
+    columns:
+      - name: quarter
+        description: 'The quarter of the stock price data.'  
+        tests:
+          - not_null  
+      - name: quarter_start_date
+        description: 'The start date of the quarter.'  
+        tests:
+          - not_null  
+      - name: quarter_end_date
+        description: 'The end date of the quarter.'  
+        tests:
+          - not_null 
+      - name: days_in_quarter
+        description: 'The number of trading days in that quarter.'  
+        tests:
+          - not_null      
+      - name: ticker
+        description: 'Stock symbol.'
+        tests:
+          - not_null 
+      - name: quarterly_open
+        description: 'The average first price at which a stock trades during regular market hours in a quarter.'
+        tests:
+          - not_null         
+      - name: quarterly_high
+        description: 'The average highest price the stock reaches during regular market hours in a quarter.'
+        tests:
+          - not_null 
+      - name: quarterly_low
+        description: 'The average lowest price the stock reaches during regular market hours in a quarter.'
+        tests:
+          - not_null 
+      - name: quarterly_close
+        description: 'The average last trade during a quarter.'
+        tests:
+          - not_null 
+      - name: quarterly_volume
+        description: 'The total number of shares traded in a quarter.'
+        tests:
+          - not_null
+
+  - name: company_stock__yearly_stock_data
+    description: 'Yearly stock price data.'
+    columns:
+      - name: year
+        description: 'The year of the stock price data.'  
+        tests:
+          - not_null  
+      - name: year_start_date
+        description: 'The start date of the year.'  
+        tests:
+          - not_null  
+      - name: year_end_date
+        description: 'The end date of the year.'  
+        tests:
+          - not_null 
+      - name: days_in_year
+        description: 'The number of trading days in that year.'  
+        tests:
+          - not_null      
+      - name: ticker
+        description: 'Stock symbol.'
+        tests:
+          - not_null 
+      - name: yearly_open
+        description: 'The average first price at which a stock trades during regular market hours in a year.'
+        tests:
+          - not_null         
+      - name: yearly_high
+        description: 'The average highest price the stock reaches during regular market hours in a year.'
+        tests:
+          - not_null 
+      - name: yearly_low
+        description: 'The average lowest price the stock reaches during regular market hours in a year.'
+        tests:
+          - not_null 
+      - name: yearly_close
+        description: 'The average last trade during a year.'
+        tests:
+          - not_null 
+      - name: yearly_volume
+        description: 'The total number of shares traded in a year.'
+        tests:
+          - not_null
