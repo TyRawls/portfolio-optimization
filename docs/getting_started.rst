@@ -27,9 +27,6 @@ Install `PostgreSQL <https://postgresapp.com/>`_ and start the database server. 
 
 After installing PostgreSQL, you will need to complete the below steps so that the ``psql`` command will work in Terminal:
 
-.. caution::
-
-    If you do not complete the above steps, then you will get ``psql: command not found`` when trying to execute the ``psql`` command in Terminal.
 
     #. Open the PostgreSQL app and make sure the server is runnning by clicking Start. 
     #. Click on Server Settings and copy the Binaries path.
@@ -42,6 +39,10 @@ After installing PostgreSQL, you will need to complete the below steps so that t
     #. Paste the Binaries path in the ``paths`` file.
     #. Press ``Control + O``, then Enter to write to the ``paths`` file.
     #. Lastly, press ``Control + X`` to exit the ``paths`` file.
+
+.. caution::
+
+    If you do not complete the above steps, then you will get ``psql: command not found`` when trying to execute the ``psql`` command in Terminal.
 
 Now, when opening Terminal, you should be able to use the ``psql`` command.
 
