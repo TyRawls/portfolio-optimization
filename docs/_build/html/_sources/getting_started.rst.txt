@@ -46,8 +46,8 @@ Navigate to the cloud storage directory after you have cloned the GitHub reposit
 
 Create a Python virtual environment and activate it::
 
-    python -m venv .venv
-    source .venv/bin/activate          # activate the environment for Mac and Linux
+    python -m venv .venv              # create virtual environment
+    source .venv/bin/activate         # activate the virtual environment for Mac and Linux
 
 Install the cloud dependencies (requirements) into the Python virtual environment::
 
@@ -63,8 +63,8 @@ Navigate to the cloud storage directory after you have cloned the GitHub reposit
 
 Create a Python virtual environment and activate it::
 
-    python -m venv .venv
-    source .venv/bin/activate
+    python -m venv .venv              # create virtual environment
+    source .venv/bin/activate         # activate the virtual environment for Mac and Linux
 
 Install the local dependencies (requirements) into the Python virtual environment::
 
