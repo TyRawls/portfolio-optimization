@@ -66,27 +66,19 @@ Upgrade pip version::
 
     pip install --upgrade pip
 
-
 Install the local dependencies (requirements) into the Python virtual environment::
 
     pip install -r requirements.txt
-
-Navigate to the dbt project folder::
-
-    cd portfolio_optimization_project_dbt
-
-Create a Python virtual environment for the dbt project and activate it::
-
-    python -m venv dbt-env            # create the environment
-    source dbt-env/bin/activate       # activate the environment for Mac and Linux 
 
 Install the dbt-postgres adapter::
 
     python -m pip install dbt-postgres==1.7.0
 
-Install dbt-init::
+Navigate to the dbt project folder::
 
-    pip install dbt dbt-init
+    cd portfolio_optimization_project_dbt
+
+
 
 
 
