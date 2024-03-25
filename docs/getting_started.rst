@@ -19,6 +19,10 @@ To begin this project you will first need to clone the GitHub repository to your
 
     git clone https://github.com/tyrawls/portfolio-optimization.git
 
+Upgrade pip version::
+
+    pip install --upgrade pip
+
 You will then need to complete the steps for the cloud or local storage depending on which setup you want to deploy.
 
 .. tip::
