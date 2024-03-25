@@ -70,13 +70,11 @@ Install the local dependencies (requirements) into the Python virtual environmen
 
     pip install -r requirements.txt
 
-Install the dbt-postgres adapter::
+Install the dbt-postgres adapter version used for this project::
 
     python -m pip install dbt-postgres==1.7.0
 
-Navigate to the dbt project folder::
 
-    cd portfolio_optimization_project_dbt
 
 
 
