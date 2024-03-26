@@ -1,6 +1,6 @@
 .. Allow bash inline coding. Will only include line numbers if code has 5 of more lines.
 .. highlight:: bash
-   :linenothreshold: 5 
+   :linenothreshold: 50 
 
 
 Getting Started
@@ -106,7 +106,7 @@ Install the ``dbt-postgres`` adapter version used for this project::
 
     python -m pip install dbt-postgres==1.7.0
 
-After the installation, check the dbt version::
+After the installation, check the ``dbt`` version::
 
     dbt --version
 
@@ -127,7 +127,7 @@ Open a new Terminal window. Copy and paste the below::
     touch profiles.yml      # create yml file for database connections
     nano profiles.yml       # open yml file for editing
        
-Paste the below in the profiles.yml file::
+Paste the below in the ``profiles.yml`` file::
 
     portfolio_optimization_project_dbt:
         outputs:
@@ -142,6 +142,9 @@ Paste the below in the profiles.yml file::
             schema: public
 
         target: local  
+
+* Press ``Control + O``, then Enter to write to the ``profiles.yml`` file.
+* Lastly, press ``Control + X`` to exit the ``profiles.yml`` file.
 
 ##########
 Deployment

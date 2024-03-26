@@ -301,43 +301,47 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>dbt-postgres<span class="o">==</span><span class="m">1</span>.7.0
 </pre></div>
 </div>
-<p>After the installation, check the dbt version:</p>
+<p>After the installation, check the <code class="docutils literal notranslate"><span class="pre">dbt</span></code> version:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dbt<span class="w"> </span>--version
 </pre></div>
 </div>
 <p>You should see:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>Core:
-<span class="linenos">2</span>-<span class="w"> </span>installed:<span class="w"> </span><span class="m">1</span>.7.0
-<span class="linenos">3</span>-<span class="w"> </span>latest:<span class="w">    </span><span class="m">1</span>.7.10<span class="w"> </span>-<span class="w"> </span>Update<span class="w"> </span>available!
-<span class="linenos">4</span>
-<span class="linenos">5</span>Plugins:
-<span class="linenos">6</span>-<span class="w"> </span>postgres:<span class="w"> </span><span class="m">1</span>.7.0<span class="w"> </span>-<span class="w"> </span>Update<span class="w"> </span>available!
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Core:
+-<span class="w"> </span>installed:<span class="w"> </span><span class="m">1</span>.7.0
+-<span class="w"> </span>latest:<span class="w">    </span><span class="m">1</span>.7.10<span class="w"> </span>-<span class="w"> </span>Update<span class="w"> </span>available!
+
+Plugins:
+-<span class="w"> </span>postgres:<span class="w"> </span><span class="m">1</span>.7.0<span class="w"> </span>-<span class="w"> </span>Update<span class="w"> </span>available!
 </pre></div>
 </div>
 <p>Open a new Terminal window. Copy and paste the below:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">cd</span><span class="w"> </span>~<span class="w">                    </span><span class="c1"># switch to root directory</span>
-<span class="linenos">2</span>mkdir<span class="w"> </span>.dbt<span class="w">              </span><span class="c1"># create .dbt folder</span>
-<span class="linenos">3</span><span class="nb">cd</span><span class="w"> </span>.dbt<span class="w">                 </span><span class="c1"># switch to .dbt folder</span>
-<span class="linenos">4</span>touch<span class="w"> </span>profiles.yml<span class="w">      </span><span class="c1"># create yml file for database connections</span>
-<span class="linenos">5</span>nano<span class="w"> </span>profiles.yml<span class="w">       </span><span class="c1"># open yml file for editing</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w">                    </span><span class="c1"># switch to root directory</span>
+mkdir<span class="w"> </span>.dbt<span class="w">              </span><span class="c1"># create .dbt folder</span>
+<span class="nb">cd</span><span class="w"> </span>.dbt<span class="w">                 </span><span class="c1"># switch to .dbt folder</span>
+touch<span class="w"> </span>profiles.yml<span class="w">      </span><span class="c1"># create yml file for database connections</span>
+nano<span class="w"> </span>profiles.yml<span class="w">       </span><span class="c1"># open yml file for editing</span>
 </pre></div>
 </div>
-<p>Paste the below in the profiles.yml file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>portfolio_optimization_project_dbt:
-<span class="linenos"> 2</span><span class="w">    </span>outputs:
-<span class="linenos"> 3</span><span class="w">    </span>local:
-<span class="linenos"> 4</span><span class="w">        </span>type:<span class="w"> </span>postgres
-<span class="linenos"> 5</span><span class="w">        </span>threads:<span class="w"> </span><span class="m">1</span>
-<span class="linenos"> 6</span><span class="w">        </span>host:<span class="w"> </span>localhost
-<span class="linenos"> 7</span><span class="w">        </span>port:<span class="w"> </span><span class="m">5432</span>
-<span class="linenos"> 8</span><span class="w">        </span>user:<span class="w"> </span>YOUR_USERNAME
-<span class="linenos"> 9</span><span class="w">        </span>pass:<span class="w"> </span><span class="s1">&#39;YOUR_PASSWORD&#39;</span>
-<span class="linenos">10</span><span class="w">        </span>dbname:<span class="w"> </span>company_stock
-<span class="linenos">11</span><span class="w">        </span>schema:<span class="w"> </span>public
-<span class="linenos">12</span>
-<span class="linenos">13</span><span class="w">    </span>target:<span class="w"> </span><span class="nb">local</span>
+<p>Paste the below in the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>portfolio_optimization_project_dbt:
+<span class="w">    </span>outputs:
+<span class="w">    </span>local:
+<span class="w">        </span>type:<span class="w"> </span>postgres
+<span class="w">        </span>threads:<span class="w"> </span><span class="m">1</span>
+<span class="w">        </span>host:<span class="w"> </span>localhost
+<span class="w">        </span>port:<span class="w"> </span><span class="m">5432</span>
+<span class="w">        </span>user:<span class="w"> </span>YOUR_USERNAME
+<span class="w">        </span>pass:<span class="w"> </span><span class="s1">&#39;YOUR_PASSWORD&#39;</span>
+<span class="w">        </span>dbname:<span class="w"> </span>company_stock
+<span class="w">        </span>schema:<span class="w"> </span>public
+
+<span class="w">    </span>target:<span class="w"> </span><span class="nb">local</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file.</p></li>
+<li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file.</p></li>
+</ul>
 </section>
 </section>
 <section id="deployment">
