@@ -106,18 +106,14 @@ Install the ``dbt-postgres`` adapter version used for this project::
 
     python -m pip install dbt-postgres==1.7.0
 
-Open a new Terminal window. Create ``.dbt`` folder and ``profiles.yml`` files for dbt project::
+Open a new Terminal window. Copy and paste the below:
 
     cd ~                    # switch to root directory
     mkdir .dbt              # create .dbt folder
     cd .dbt                 # switch to .dbt folder
     touch profiles.yml      # create yml file for database connections
     nano profiles.yml       # open yml file for editing
-
-Open ``profiles.yml`` file for editing::
-
-    nano profiles.yml    
-    
+       
 Paste the below in the profiles.yml file::
 
     portfolio_optimization_project_dbt:

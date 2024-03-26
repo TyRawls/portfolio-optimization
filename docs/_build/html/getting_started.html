@@ -301,18 +301,14 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>dbt-postgres<span class="o">==</span><span class="m">1</span>.7.0
 </pre></div>
 </div>
-<p>Open a new Terminal window. Create <code class="docutils literal notranslate"><span class="pre">.dbt</span></code> folder and <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> files for dbt project:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nb">cd</span><span class="w"> </span>~<span class="w">                    </span><span class="c1"># switch to root directory</span>
-<span class="linenos">2</span>mkdir<span class="w"> </span>.dbt<span class="w">              </span><span class="c1"># create .dbt folder</span>
-<span class="linenos">3</span><span class="nb">cd</span><span class="w"> </span>.dbt<span class="w">                 </span><span class="c1"># switch to .dbt folder</span>
-<span class="linenos">4</span>touch<span class="w"> </span>profiles.yml<span class="w">      </span><span class="c1"># create yml file for database connections</span>
-<span class="linenos">5</span>nano<span class="w"> </span>profiles.yml<span class="w">       </span><span class="c1"># open yml file for editing</span>
-</pre></div>
-</div>
-<p>Open <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file for editing:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>profiles.yml
-</pre></div>
-</div>
+<p>Open a new Terminal window. Copy and paste the below:</p>
+<blockquote>
+<div><p>cd ~                    # switch to root directory
+mkdir .dbt              # create .dbt folder
+cd .dbt                 # switch to .dbt folder
+touch profiles.yml      # create yml file for database connections
+nano profiles.yml       # open yml file for editing</p>
+</div></blockquote>
 <p>Paste the below in the profiles.yml file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>portfolio_optimization_project_dbt:
 <span class="linenos"> 2</span><span class="w">    </span>outputs:
