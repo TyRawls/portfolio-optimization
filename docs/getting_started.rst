@@ -106,6 +106,19 @@ Install the ``dbt-postgres`` adapter version used for this project::
 
     python -m pip install dbt-postgres==1.7.0
 
+After the installation, check the dbt version::
+
+    dbt --version
+
+You should see::
+
+    Core:
+    - installed: 1.7.0 
+    - latest:    1.7.10 - Update available!
+
+    Plugins:
+    - postgres: 1.7.0 - Update available!
+
 Open a new Terminal window. Copy and paste the below::
 
     cd ~                    # switch to root directory
