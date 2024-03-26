@@ -6,7 +6,7 @@
 <link rel="author" title="About these documents" href="about.html" /><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="About" href="about.html" />
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
-        <title>Getting Started - Portfolio Optimization v1.0.0 documentation</title>
+        <title>Project Setup - Portfolio Optimization v1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
@@ -158,7 +158,7 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Project Setup</a></li>
 </ul>
 
 </div>
@@ -193,54 +193,145 @@
           </label>
         </div>
         <article role="main">
-          <section id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
+          <section id="project-setup">
+<h1>Project Setup<a class="headerlink" href="#project-setup" title="Link to this heading">#</a></h1>
 <p>There are two implementations for this project. One utilizes cloud storage, while the other relies on local storage.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Before settings up this project, install Python 3.8 or later; support for Python 3.7 and earlier is deprecated for some libraries in this project.</p>
 </div>
-<section id="project-setup">
-<h2>Project Setup<a class="headerlink" href="#project-setup" title="Link to this heading">#</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The below setup is for MAC OS only. I will be providing setup instructions for Windows OS in a later update.</p>
+<p>This setup is for MAC OS only. I will be providing setup instructions for Windows OS in a later update.</p>
 </div>
-<section id="postgresql-installation">
-<h3>PostgreSQL Installation<a class="headerlink" href="#postgresql-installation" title="Link to this heading">#</a></h3>
+<section id="postgresql-installation-configuration">
+<h2>PostgreSQL Installation &amp; Configuration<a class="headerlink" href="#postgresql-installation-configuration" title="Link to this heading">#</a></h2>
 <p>Install <a class="reference external" href="https://postgresapp.com/">PostgreSQL</a> and start the database server. You can watch the
 <a class="reference external" href="https://youtu.be/qw--VYLpxG4?si=KPDT8niVeJ_GPGOS&amp;t=654">MAC OS installation video</a> to assist you with the installation.</p>
-<p>After installing PostgreSQL, you will need to complete the below steps so that the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command will work in Terminal:</p>
+<p>After installing PostgreSQL, you will need to complete the below steps so that the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command will work in Terminal.
+These steps will add the PostgreSQL binaries path to the <code class="docutils literal notranslate"><span class="pre">paths</span></code> files on your computer:</p>
 <blockquote>
 <div><ol class="arabic">
-<li><p>Open the PostgreSQL app and make sure the server is runnning by clicking Start.</p></li>
 <li><dl>
-<dt>Click on Server Settings and copy the Binaries path.</dt><dd><figure class="align-default">
-<img alt="This is an image" src="_images/postgresql_binaries_path.png" />
-</figure>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt>Open Terminal and type <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/paths</span></code>, then press Enter.</dt><dd><div class="admonition note">
+<dt>Open Terminal and type <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/paths</span></code>, then press Enter to open the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</dt><dd><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You will be prompted to enter a password to edit the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p>
 </div>
 </dd>
 </dl>
 </li>
-<li><p>Paste the Binaries path in the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
-<li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
+<li><p>Open the PostgreSQL app and make sure the server is runnning by clicking Start.</p></li>
+<li><dl>
+<dt>Click on Server Settings and copy the binaries path.</dt><dd><figure class="align-default">
+<img alt="This is an image" src="_images/postgresql_binaries_path.png" />
+</figure>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Paste the binaries path in the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file in Terminal.</dt><dd><figure class="align-default">
+<img alt="This is an image" src="_images/paths_file_content.png" />
+</figure>
+</dd>
+</dl>
+</li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to save the contents to the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
 <li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
 </ol>
 </div></blockquote>
+<p>Upon opening Terminal, you should find that you can utilize the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>If you do not complete the above steps, then you will get <code class="docutils literal notranslate"><span class="pre">psql:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code> when trying to execute the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command in Terminal.</p>
 </div>
-<p>Now, when opening Terminal, you should be able to use the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command.</p>
-<p>From here you will need to decide whether you want to deploy the <a class="reference internal" href="#cloud-storage"><span class="std std-ref">Cloud Storage</span></a> or <a class="reference internal" href="#local-storage"><span class="std std-ref">Local Storage</span></a>.</p>
 </section>
+<section id="clone-github-repo">
+<h2>Clone GitHub Repo<a class="headerlink" href="#clone-github-repo" title="Link to this heading">#</a></h2>
+<p>Open Terminal and navigate to a directory of you choise. Clone the GitHub repository by running the below command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tyrawls/portfolio-optimization.git
+</pre></div>
+</div>
+<p>This will copy all the project files to your directory.</p>
+</section>
+<section id="install-project-dependencies">
+<h2>Install Project Dependencies<a class="headerlink" href="#install-project-dependencies" title="Link to this heading">#</a></h2>
+<p>Navigate to the cloud or local storage directory after you have cloned the GitHub repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>portfolio-optimization/cloud-storage<span class="w">      </span><span class="c1"># directory for cloud setup</span>
+<span class="nb">cd</span><span class="w"> </span>portfolio-optimization/local-storage<span class="w">      </span><span class="c1"># directory for local setup</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You only need to choose one directory. The local directory is more simple, but the cloud directory requires more setup.
+To configure the cloud setup, you’ll be required to establish three components within Amazon Web Services (AWS).</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://aws.amazon.com/s3/">Amazon S3</a> storage for staging data</p></li>
+<li><p><a class="reference external" href="https://aws.amazon.com/pm/lambda/">Amazon Lambda</a> to trigger data transfer to the database</p></li>
+<li><p><a class="reference external" href="https://aws.amazon.com/rds/?p=ft&amp;c=db&amp;z=3">Amazon RDS</a> for PostgreSQL database storage</p></li>
+</ul>
+</div>
+<p>Create a Python virtual environment and activate it:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w">              </span><span class="c1"># create the environment</span>
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">         </span><span class="c1"># activate the environment for Mac and Linux</span>
+</pre></div>
+</div>
+<p>Upgrade pip version:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+</pre></div>
+</div>
+<p>Install the dependencies (requirements) into the Python virtual environment:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</section>
+<section id="dbt-installation-configuration">
+<h2>dbt Installation &amp; Configuration<a class="headerlink" href="#dbt-installation-configuration" title="Link to this heading">#</a></h2>
+<p>Install the <code class="docutils literal notranslate"><span class="pre">dbt-postgres</span></code> adapter version used for this project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>dbt-postgres<span class="o">==</span><span class="m">1</span>.7.0
+</pre></div>
+</div>
+<p>After the installation, check the <code class="docutils literal notranslate"><span class="pre">dbt</span></code> version:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dbt<span class="w"> </span>--version
+</pre></div>
+</div>
+<p>You should see:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Core:
+-<span class="w"> </span>installed:<span class="w"> </span><span class="m">1</span>.7.0
+-<span class="w"> </span>latest:<span class="w">    </span><span class="m">1</span>.7.10<span class="w"> </span>-<span class="w"> </span>Update<span class="w"> </span>available!
+
+Plugins:
+-<span class="w"> </span>postgres:<span class="w"> </span><span class="m">1</span>.7.0<span class="w"> </span>-<span class="w"> </span>Update<span class="w"> </span>available!
+</pre></div>
+</div>
+<p>Open a new Terminal window. Copy and paste the below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w">                    </span><span class="c1"># switch to root directory</span>
+mkdir<span class="w"> </span>.dbt<span class="w">              </span><span class="c1"># create .dbt folder</span>
+<span class="nb">cd</span><span class="w"> </span>.dbt<span class="w">                 </span><span class="c1"># switch to .dbt folder</span>
+touch<span class="w"> </span>profiles.yml<span class="w">      </span><span class="c1"># create yml file for database connections</span>
+nano<span class="w"> </span>profiles.yml<span class="w">       </span><span class="c1"># open yml file for editing</span>
+</pre></div>
+</div>
+<p>Paste the below in the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>portfolio_optimization_project_dbt:
+<span class="w">    </span>outputs:
+<span class="w">    </span>local:
+<span class="w">        </span>type:<span class="w"> </span>postgres
+<span class="w">        </span>threads:<span class="w"> </span><span class="m">1</span>
+<span class="w">        </span>host:<span class="w"> </span>localhost
+<span class="w">        </span>port:<span class="w"> </span><span class="m">5432</span>
+<span class="w">        </span>user:<span class="w"> </span>YOUR_USERNAME
+<span class="w">        </span>pass:<span class="w"> </span><span class="s1">&#39;YOUR_PASSWORD&#39;</span>
+<span class="w">        </span>dbname:<span class="w"> </span>company_stock
+<span class="w">        </span>schema:<span class="w"> </span>public
+
+<span class="w">    </span>target:<span class="w"> </span><span class="nb">local</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Add your credentials to <code class="docutils literal notranslate"><span class="pre">user</span></code> and <code class="docutils literal notranslate"><span class="pre">pass</span></code>.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file.</p></li>
+<li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file.</p></li>
+</ul>
 <section id="cloud-storage">
 <h3>Cloud Storage<a class="headerlink" href="#cloud-storage" title="Link to this heading">#</a></h3>
 <div class="admonition note">
@@ -280,8 +371,8 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tyrawls/portfolio-optimization.git
 </pre></div>
 </div>
-<p>Navigate to the local storage directory after you have cloned the GitHub repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>portfolio-optimization/local-storage
+<p>Navigate to the cloud storage directory after you have cloned the GitHub repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>portfolio-optimization/cloud-storage
 </pre></div>
 </div>
 <p>Create a Python virtual environment and activate it:</p>
@@ -343,10 +434,10 @@ nano<span class="w"> </span>profiles.yml<span class="w">       </span><span clas
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file.</p></li>
 <li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file.</p></li>
 </ul>
-</section>
-</section>
 <section id="deployment">
-<h2>Deployment<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h2>
+<h4>Deployment<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h4>
+</section>
+</section>
 </section>
 </section>
 
@@ -397,14 +488,18 @@ nano<span class="w"> </span>profiles.yml<span class="w">       </span><span clas
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Getting Started</a><ul>
-<li><a class="reference internal" href="#project-setup">Project Setup</a><ul>
-<li><a class="reference internal" href="#postgresql-installation">PostgreSQL Installation</a></li>
+<li><a class="reference internal" href="#">Project Setup</a><ul>
+<li><a class="reference internal" href="#postgresql-installation-configuration">PostgreSQL Installation &amp; Configuration</a></li>
+<li><a class="reference internal" href="#clone-github-repo">Clone GitHub Repo</a></li>
+<li><a class="reference internal" href="#install-project-dependencies">Install Project Dependencies</a></li>
+<li><a class="reference internal" href="#dbt-installation-configuration">dbt Installation &amp; Configuration</a><ul>
 <li><a class="reference internal" href="#cloud-storage">Cloud Storage</a></li>
-<li><a class="reference internal" href="#local-storage">Local Storage</a></li>
+<li><a class="reference internal" href="#local-storage">Local Storage</a><ul>
+<li><a class="reference internal" href="#deployment">Deployment</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#deployment">Deployment</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

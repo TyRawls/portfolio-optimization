@@ -12,7 +12,7 @@ Portfolio Optimization documentation
    :caption: Contents:
 
    about
-   getting_started
+   project_setup
 
 
 
