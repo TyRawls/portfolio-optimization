@@ -143,6 +143,7 @@ Paste the below in the ``profiles.yml`` file::
 
         target: local  
 
+* Add your credentials to ``user`` and ``pass``.
 * Press ``Control + O``, then Enter to write to the ``profiles.yml`` file.
 * Lastly, press ``Control + X`` to exit the ``profiles.yml`` file.
 
