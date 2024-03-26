@@ -106,7 +106,7 @@ Install the ``dbt-postgres`` adapter version used for this project::
 
     python -m pip install dbt-postgres==1.7.0
 
-Open a new Terminal window. Copy and paste the below:
+Open a new Terminal window. Copy and paste the below::
 
     cd ~                    # switch to root directory
     mkdir .dbt              # create .dbt folder

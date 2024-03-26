@@ -5,7 +5,7 @@ matplotlib==3.8.3
 numpy==1.26.4
 pandas==2.2.1
 pandas-datareader==0.10.0
-plotly=5.20.0
+plotly==5.20.0
 psycopg2==2.9.9
 psycopg2-binary==2.9.9
 seaborn==0.13.2
