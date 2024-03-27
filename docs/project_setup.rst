@@ -10,7 +10,7 @@ There are two implementations for this project. One utilizes cloud storage, whil
 .. tip::
     Before settings up this project, install Python 3.8 or later; support for Python 3.7 and earlier is deprecated for some libraries in this project. 
 
-.. important::
+.. attention::
    This setup is for MAC OS only using Z shell (zsh). I will be providing setup instructions for Windows OS in a later update.
 
 ****************
@@ -46,12 +46,12 @@ Upon relaunching Terminal, you should find that you can now utilize the ``psql``
 .. caution::
     If you do not complete the above steps, then you will get ``psql: command not found`` when trying to execute the ``psql`` command in Terminal.
 
-.. note::
+
+Set Password & Create Database
+------------------------------
+.. attention::
     The below setup is for the local implementation only. If you're not using the local setup, please skip to :ref:`Clone GitHub Repo`. 
 
-
-Set Password
-------------
 We need to set a password for the local database connection which will be used later to connect ``dbt``.
 Enter the below in Terminal to launch the PostgreSQL command line::
 
@@ -59,8 +59,6 @@ Enter the below in Terminal to launch the PostgreSQL command line::
 
 To set the password, enter ``\password postgres``. You'll be prompted to create a password.
 
-Create Database
-----------------
 You must establish a database called ``company_stock`` to store the stock data. Upon successful creation, 
 you should observe it within the PostgreSQL app. 
 

@@ -205,8 +205,8 @@
 <p class="admonition-title">Tip</p>
 <p>Before settings up this project, install Python 3.8 or later; support for Python 3.7 and earlier is deprecated for some libraries in this project.</p>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
 <p>This setup is for MAC OS only using Z shell (zsh). I will be providing setup instructions for Windows OS in a later update.</p>
 </div>
 <section id="postgresql-setup">
@@ -255,22 +255,19 @@ These steps will add the PostgreSQL binaries path to the <code class="docutils l
 <p class="admonition-title">Caution</p>
 <p>If you do not complete the above steps, then you will get <code class="docutils literal notranslate"><span class="pre">psql:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code> when trying to execute the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command in Terminal.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+</section>
+<section id="set-password-create-database">
+<h3>Set Password &amp; Create Database<a class="headerlink" href="#set-password-create-database" title="Link to this heading">#</a></h3>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
 <p>The below setup is for the local implementation only. If you’re not using the local setup, please skip to <a class="reference internal" href="#clone-github-repo"><span class="std std-ref">Clone GitHub Repo</span></a>.</p>
 </div>
-</section>
-<section id="set-password">
-<h3>Set Password<a class="headerlink" href="#set-password" title="Link to this heading">#</a></h3>
 <p>We need to set a password for the local database connection which will be used later to connect <code class="docutils literal notranslate"><span class="pre">dbt</span></code>.
 Enter the below in Terminal to launch the PostgreSQL command line:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psql<span class="w"> </span>-U<span class="w"> </span>postgres
 </pre></div>
 </div>
 <p>To set the password, enter <code class="docutils literal notranslate"><span class="pre">\password</span> <span class="pre">postgres</span></code>. You’ll be prompted to create a password.</p>
-</section>
-<section id="create-database">
-<h3>Create Database<a class="headerlink" href="#create-database" title="Link to this heading">#</a></h3>
 <p>You must establish a database called <code class="docutils literal notranslate"><span class="pre">company_stock</span></code> to store the stock data. Upon successful creation,
 you should observe it within the PostgreSQL app.</p>
 <p>Enter the below command in the PostgreSQL command line:</p>
@@ -550,8 +547,7 @@ already you will need to sign up for this API in order to get a FREE key.</p>
 <li><a class="reference internal" href="#postgresql-setup">PostgreSQL Setup</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#configure-paths-file">Configure PATHS File</a></li>
-<li><a class="reference internal" href="#set-password">Set Password</a></li>
-<li><a class="reference internal" href="#create-database">Create Database</a></li>
+<li><a class="reference internal" href="#set-password-create-database">Set Password &amp; Create Database</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#clone-github-repo">Clone GitHub Repo</a></li>
