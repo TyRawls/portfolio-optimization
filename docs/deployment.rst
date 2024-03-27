@@ -40,8 +40,10 @@ This application accepts four key inputs from the user (see `About > Stock Predi
 Generated Output
 ----------------
 
-After inputting the necessary parameters, you'll need to select ``Run - Manual Input`` to manually load tickers or ``Run - CSV File`` to load tickers via a CSV file.
-If successful, you will see the asset allocation results for each ticker and a plot showing the Markowitz's Efficient Frontier using Sharpe Ratio and Captial Allocation Line (CAL).
+
+Once you've entered the essential parameters, you should choose ``Run - Manual Input`` to input tickers manually or ``Run - CSV File`` to load tickers from 
+a CSV file. Upon successful execution, you'll observe the asset allocation outcomes for each ticker along with a plot demonstrating Markowitz's Efficient 
+Frontier utilizing the Sharpe Ratio and Capital Allocation Line (CAL).
 
 .. figure:: images/streamlit_asset_allocation_results.png
    :width: 800
