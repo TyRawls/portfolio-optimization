@@ -148,26 +148,41 @@ Open a new Terminal window. Copy and paste the below::
     touch profiles.yml      # create yml file for database connections
     nano profiles.yml       # open yml file for editing
        
-Paste the below in the ``profiles.yml`` file. You will need to modify the items in CAPS::
+Copy and paste the below in the ``profiles.yml`` file::
 
     portfolio_optimization_project_dbt:
-        outputs:
-        TARGET_NAME:
-            type: postgres
-            threads: 1
-            host: HOST_ADDRESS
-            port: 5432
-            user: YOUR_USERNAME
-            pass: 'YOUR_PASSWORD'
-            dbname: company_stock
-            schema: public
+    outputs:
+        dev:
+        type: postgres
+        threads: 1
+        host: [host]
+        port: 5432
+        user: [dev_username]
+        pass: [dev_password]
+        dbname: company_stock
+        schema: public
 
-        target: TARGET_NAME  
+        prod:
+        type: postgres
+        threads: 1
+        host: [host]
+        port: [port]
+        user: [prod_username]
+        pass: [prod_password]
+        dbname: [dbname]
+        schema: [prod_schema]
 
-* ``TARGET_NAME``: You will enter local or cloud
-* ``HOST_ADDRESS``: For local you will type localhost and for cloud you will type the AWS RDS endpoint address
-* ``YOUR_USERNAME``: You will need to enter the username of the local or cloud database
-* ``YOUR_PASSWORD``: You will need to enter the password of the local or cloud database
+    target: dev 
+
+You will need to modify the inputs listed below:
+
+.. note::
+    The brackets will need to be removed for each input and the password would need to be in single quotes.
+
+* **host**: If you are configuring this locally, then assign this value to ``localhost``. If you're using the cloud setup then you will need to enter the AWS RDS endpoint you created.
+* **dev_username**: If you are configuring this locally, then assign this value to ``postgres``. If you're using the cloud setup then you will need to enter the AWS RDS username you created.
+* **dev_password**: If you are configuring this locally, then assign this value to the password you created in the :ref:`PostgreSQL Setup`. If you're using the cloud setup, then you will need to enter the AWS RDS username you created.
+
 
 To save the ``profiles.yml`` content:
 

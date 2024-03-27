@@ -353,27 +353,42 @@ touch<span class="w"> </span>profiles.yml<span class="w">      </span><span clas
 nano<span class="w"> </span>profiles.yml<span class="w">       </span><span class="c1"># open yml file for editing</span>
 </pre></div>
 </div>
-<p>Paste the below in the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file. You will need to modify the items in CAPS:</p>
+<p>Copy and paste the below in the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>portfolio_optimization_project_dbt:
-<span class="w">    </span>outputs:
-<span class="w">    </span>TARGET_NAME:
-<span class="w">        </span>type:<span class="w"> </span>postgres
-<span class="w">        </span>threads:<span class="w"> </span><span class="m">1</span>
-<span class="w">        </span>host:<span class="w"> </span>HOST_ADDRESS
-<span class="w">        </span>port:<span class="w"> </span><span class="m">5432</span>
-<span class="w">        </span>user:<span class="w"> </span>YOUR_USERNAME
-<span class="w">        </span>pass:<span class="w"> </span><span class="s1">&#39;YOUR_PASSWORD&#39;</span>
-<span class="w">        </span>dbname:<span class="w"> </span>company_stock
-<span class="w">        </span>schema:<span class="w"> </span>public
+outputs:
+<span class="w">    </span>dev:
+<span class="w">    </span>type:<span class="w"> </span>postgres
+<span class="w">    </span>threads:<span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>host:<span class="w"> </span><span class="o">[</span>host<span class="o">]</span>
+<span class="w">    </span>port:<span class="w"> </span><span class="m">5432</span>
+<span class="w">    </span>user:<span class="w"> </span><span class="o">[</span>dev_username<span class="o">]</span>
+<span class="w">    </span>pass:<span class="w"> </span><span class="o">[</span>dev_password<span class="o">]</span>
+<span class="w">    </span>dbname:<span class="w"> </span>company_stock
+<span class="w">    </span>schema:<span class="w"> </span>public
 
-<span class="w">    </span>target:<span class="w"> </span>TARGET_NAME
+<span class="w">    </span>prod:
+<span class="w">    </span>type:<span class="w"> </span>postgres
+<span class="w">    </span>threads:<span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>host:<span class="w"> </span><span class="o">[</span>host<span class="o">]</span>
+<span class="w">    </span>port:<span class="w"> </span><span class="o">[</span>port<span class="o">]</span>
+<span class="w">    </span>user:<span class="w"> </span><span class="o">[</span>prod_username<span class="o">]</span>
+<span class="w">    </span>pass:<span class="w"> </span><span class="o">[</span>prod_password<span class="o">]</span>
+<span class="w">    </span>dbname:<span class="w"> </span><span class="o">[</span>dbname<span class="o">]</span>
+<span class="w">    </span>schema:<span class="w"> </span><span class="o">[</span>prod_schema<span class="o">]</span>
+
+target:<span class="w"> </span>dev
 </pre></div>
 </div>
+<p>You will need to modify the inputs listed below:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The brackets will need to be removed for each input and the password would need to be in single quotes.</p>
+<p><strong>Example</strong>: ‘password_123’</p>
+</div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">TARGET_NAME</span></code>: You will enter local or cloud</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">HOST_ADDRESS</span></code>: For local you will type localhost and for cloud you will type the AWS RDS endpoint address</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">YOUR_USERNAME</span></code>: You will need to enter the username of the local or cloud database</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">YOUR_PASSWORD</span></code>: You will need to enter the password of the local or cloud database</p></li>
+<li><p><strong>host</strong>: If you are configuring this locally, then assign this value to <code class="docutils literal notranslate"><span class="pre">localhost</span></code>. If you’re using the cloud setup then you will need to enter the AWS RDS endpoint you created.</p></li>
+<li><p><strong>dev_username</strong>: If you are configuring this locally, then assign this value to <code class="docutils literal notranslate"><span class="pre">postgres</span></code>. If you’re using the cloud setup then you will need to enter the AWS RDS username you created.</p></li>
+<li><p><strong>dev_password</strong>: If you are configuring this locally, then assign this value to the password you created in the <a class="reference internal" href="#postgresql-setup"><span class="std std-ref">PostgreSQL Setup</span></a>. If you’re using the cloud setup, then you will need to enter the AWS RDS username you created.</p></li>
 </ul>
 <p>To save the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> content:</p>
 <ul class="simple">
