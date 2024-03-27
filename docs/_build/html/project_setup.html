@@ -360,7 +360,7 @@ version matches the <code class="docutils literal notranslate"><span class="pre"
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>portfolio_optimization_project_dbt<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>dbt<span class="w"> </span>init
 </pre></div>
 </div>
-<p>You will be prompted to select a database by entering a number. Enter the number for the Postgres data base and
+<p>You will be prompted to select a database by entering a number. Enter the number for the Postgres database and
 press enter. You should see the something like the below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Running<span class="w"> </span>with<span class="w"> </span><span class="nv">dbt</span><span class="o">=</span><span class="m">1</span>.7.0
 <span class="o">[</span>ConfigFolderDirectory<span class="o">]</span>:<span class="w"> </span>Unable<span class="w"> </span>to<span class="w"> </span>parse<span class="w"> </span>dict<span class="w"> </span><span class="o">{</span><span class="s1">&#39;dir&#39;</span>:<span class="w"> </span>PosixPath<span class="o">(</span><span class="s1">&#39;/Users/rootuser/.dbt&#39;</span><span class="o">)}</span>
@@ -428,12 +428,14 @@ nano<span class="w"> </span>profiles.yml<span class="w">       </span><span clas
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dbt<span class="w"> </span>debug
 </pre></div>
 </div>
-<p>If done correctly, the output will say “All checks passed!”. If not, you will need to verify the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file has the correct info.</p>
+<p>If done correctly, the output will say “All checks passed!”. If not, you will need to verify that the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file has the correct info.</p>
 </section>
 </section>
 <section id="z-shell-run-command-zshrc-configuration">
 <h2>Z Shell Run Command (.zshrc) Configuration<a class="headerlink" href="#z-shell-run-command-zshrc-configuration" title="Link to this heading">#</a></h2>
-<p>You will lastly need to modify the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> configuration file to add your database credentials and API informmation for. If you haven’t already you will need to sign up for this in order to get an API key.</p>
+<p>You will need to modify the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> configuration file to add your database credentials and key for the
+<a class="reference external" href="https://site.financialmodelingprep.com/developer/docs">Financial Marketing Prep (FMP)</a> API. If you haven’t
+already you will need to sign up for this API in order to get FREE key.</p>
 <p>To modify the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file, open a separate Terminal and execute the below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nano<span class="w"> </span>.zshrc
 </pre></div>

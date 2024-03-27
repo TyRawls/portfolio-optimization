@@ -33,7 +33,7 @@ Instead of adhering to the conventional extract, transform, load (ETL) pipeline,
 
 Data Extraction
 ^^^^^^^^^^^^^^^
-The data extraction process was done using two different financial APIs:
+The data extraction process was done using two financial APIs (both are FREE):
 
 * `Financial Marketing Prep (FMP) <https://site.financialmodelingprep.com/developer/docs>`_: used to extract company info (i.e., company name, exchange, ceo, sector, industry, and market cap)
 * `Y!Finance <https://pypi.org/project/yfinance/>`_: used to extract daily price data (i.e., open, high, low, close, and volume) 

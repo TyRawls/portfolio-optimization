@@ -218,13 +218,15 @@ Go back to the initial Terminal and test the database connection::
 
     dbt debug
 
-If done correctly, the output will say "All checks passed!". If not, you will need to verify the ``profiles.yml`` file has the correct info.
+If done correctly, the output will say "All checks passed!". If not, you will need to verify that the ``profiles.yml`` file has the correct info.
 
 ******************************************
 Z Shell Run Command (.zshrc) Configuration
 ******************************************
 
-You will lastly need to modify the ``.zshrc`` configuration file to add your database credentials and API informmation for. If you haven't already you will need to sign up for this in order to get an API key.
+You will need to modify the ``.zshrc`` configuration file to add your database credentials and key for the 
+`Financial Marketing Prep (FMP) <https://site.financialmodelingprep.com/developer/docs>`_ API. If you haven't 
+already you will need to sign up for this API in order to get FREE key.
 
 To modify the ``.zshrc`` file, open a separate Terminal and execute the below::
 
