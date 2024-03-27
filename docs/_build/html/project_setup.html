@@ -344,46 +344,49 @@ version matches the <code class="docutils literal notranslate"><span class="pre"
 </section>
 <section id="initialization">
 <h3>Initialization<a class="headerlink" href="#initialization" title="Link to this heading">#</a></h3>
-<p>Now you will need to create the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file to add your database credentials.
-Open a new Terminal window. Copy and paste the below:</p>
+<p>Switch to dbt project folder and initialize the project:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>portfolio_optimization_project_dbt<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>dbt<span class="w"> </span>init
+</pre></div>
+</div>
+<p>You will be prompted to select a database by entering a number. Enter the number for the Postgres data base and
+press enter. This will the create the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file to add your database credentials.
+Open a separate Terminal window. Copy and paste the below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w">                    </span><span class="c1"># switch to root directory</span>
-mkdir<span class="w"> </span>.dbt<span class="w">              </span><span class="c1"># create .dbt folder</span>
 <span class="nb">cd</span><span class="w"> </span>.dbt<span class="w">                 </span><span class="c1"># switch to .dbt folder</span>
-touch<span class="w"> </span>profiles.yml<span class="w">      </span><span class="c1"># create yml file for database connections</span>
 nano<span class="w"> </span>profiles.yml<span class="w">       </span><span class="c1"># open yml file for editing</span>
 </pre></div>
 </div>
-<p>Copy and paste the below in the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file:</p>
+<p>Edit the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file to look like the below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>portfolio_optimization_project_dbt:
-outputs:
+<span class="w">  </span>outputs:
+
 <span class="w">    </span>dev:
-<span class="w">    </span>type:<span class="w"> </span>postgres
-<span class="w">    </span>threads:<span class="w"> </span><span class="m">1</span>
-<span class="w">    </span>host:<span class="w"> </span><span class="o">[</span>host<span class="o">]</span>
-<span class="w">    </span>port:<span class="w"> </span><span class="m">5432</span>
-<span class="w">    </span>user:<span class="w"> </span><span class="o">[</span>dev_username<span class="o">]</span>
-<span class="w">    </span>pass:<span class="w"> </span><span class="o">[</span>dev_password<span class="o">]</span>
-<span class="w">    </span>dbname:<span class="w"> </span>company_stock
-<span class="w">    </span>schema:<span class="w"> </span>public
+<span class="w">      </span>type:<span class="w"> </span>postgres
+<span class="w">      </span>threads:<span class="w"> </span><span class="m">1</span>
+<span class="w">      </span>host:<span class="w"> </span><span class="o">[</span>host<span class="o">]</span>
+<span class="w">      </span>port:<span class="w"> </span><span class="m">5432</span>
+<span class="w">      </span>user:<span class="w"> </span><span class="o">[</span>dev_username<span class="o">]</span>
+<span class="w">      </span>pass:<span class="w"> </span><span class="o">[</span>dev_password<span class="o">]</span>
+<span class="w">      </span>dbname:<span class="w"> </span>company_stock
+<span class="w">      </span>schema:<span class="w"> </span>public
 
 <span class="w">    </span>prod:
-<span class="w">    </span>type:<span class="w"> </span>postgres
-<span class="w">    </span>threads:<span class="w"> </span><span class="m">1</span>
-<span class="w">    </span>host:<span class="w"> </span><span class="o">[</span>host<span class="o">]</span>
-<span class="w">    </span>port:<span class="w"> </span><span class="o">[</span>port<span class="o">]</span>
-<span class="w">    </span>user:<span class="w"> </span><span class="o">[</span>prod_username<span class="o">]</span>
-<span class="w">    </span>pass:<span class="w"> </span><span class="o">[</span>prod_password<span class="o">]</span>
-<span class="w">    </span>dbname:<span class="w"> </span><span class="o">[</span>dbname<span class="o">]</span>
-<span class="w">    </span>schema:<span class="w"> </span><span class="o">[</span>prod_schema<span class="o">]</span>
+<span class="w">      </span>type:<span class="w"> </span>postgres
+<span class="w">      </span>threads:<span class="w"> </span><span class="m">1</span>
+<span class="w">      </span>host:<span class="w"> </span><span class="o">[</span>host<span class="o">]</span>
+<span class="w">      </span>port:<span class="w"> </span><span class="o">[</span>port<span class="o">]</span>
+<span class="w">      </span>user:<span class="w"> </span><span class="o">[</span>prod_username<span class="o">]</span>
+<span class="w">      </span>pass:<span class="w"> </span><span class="o">[</span>prod_password<span class="o">]</span>
+<span class="w">      </span>dbname:<span class="w"> </span><span class="o">[</span>dbname<span class="o">]</span>
+<span class="w">      </span>schema:<span class="w"> </span><span class="o">[</span>prod_schema<span class="o">]</span>
 
-target:<span class="w"> </span>dev
+<span class="w">  </span>target:<span class="w"> </span>dev
 </pre></div>
 </div>
-<p>You will need to modify the inputs listed below:</p>
+<p>You will need to modify the following inputs:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The brackets will need to be removed for each input and the password would need to be in single quotes.</p>
-<p><strong>Example</strong>: ‘password_123’</p>
 </div>
 <ul class="simple">
 <li><p><strong>host</strong>: If you are configuring this locally, then assign this value to <code class="docutils literal notranslate"><span class="pre">localhost</span></code>. If you’re using the cloud setup then you will need to enter the AWS RDS endpoint you created.</p></li>
@@ -394,6 +397,64 @@ target:<span class="w"> </span>dev
 <ul class="simple">
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file.</p></li>
 <li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file.</p></li>
+<li><p>Close this Terminal</p></li>
+</ul>
+<p>Go back to the initial Terminal and test the database connection:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dbt<span class="w"> </span>debug
+</pre></div>
+</div>
+<p>If done correctly, the output will say “All checks passed!”. If not, you will need to verify the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file has the correct info.</p>
+</section>
+</section>
+<section id="zshrc-configuration">
+<h2>.zshrc Configuration<a class="headerlink" href="#zshrc-configuration" title="Link to this heading">#</a></h2>
+<p>You will lastly need to modify the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> configuration file to add your database credentials and API informmation for. If you haven’t already you will need to sign up for this in order to get an API key.</p>
+<p>To modify the .zshrc file, open a separate Terminal and execute the below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nano<span class="w"> </span>.zshrc
+</pre></div>
+</div>
+<section id="cloud-setup">
+<h3>Cloud Setup<a class="headerlink" href="#cloud-setup" title="Link to this heading">#</a></h3>
+<p>For cloud setup, add the below to the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># AWS RDS (PostgreSQL) credentials</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CLOUD_HOST</span><span class="o">=[</span>HOST<span class="o">]</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CLOUD_PORT</span><span class="o">=</span><span class="s2">&quot;5432&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CLOUD_USER</span><span class="o">=[</span>USERNAME<span class="o">]</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CLOUD_DBNAME</span><span class="o">=</span><span class="s2">&quot;company_stock&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">CLOUD_PASS</span><span class="o">=[</span>PASSWORD<span class="o">]</span>
+
+<span class="c1"># Financial Marketing Prep (FMP) API URL and key</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">FMP_API_URL</span><span class="o">=</span><span class="s2">&quot;https://financialmodelingprep.com/api/v3/profile/&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">FMP_API_KEY</span><span class="o">=[</span>APIKEY<span class="o">]</span>
+</pre></div>
+</div>
+<p>You will need to add your credentials to the inputs in the brackets.</p>
+<ul class="simple">
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file.</p></li>
+<li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file.</p></li>
+<li><p>Close this Terminal</p></li>
+</ul>
+</section>
+<section id="local-setup">
+<h3>Local Setup<a class="headerlink" href="#local-setup" title="Link to this heading">#</a></h3>
+<p>For local setup, add the below to the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Local (PostgreSQL) credentials</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LOCAL_HOST</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LOCAL_PORT</span><span class="o">=</span><span class="s2">&quot;5432&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LOCAL_USER</span><span class="o">=</span><span class="s2">&quot;postgres&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LOCAL_DBNAME</span><span class="o">=</span><span class="s2">&quot;company_stock&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LOCAL_PASS</span><span class="o">=[</span>PASSWORD<span class="o">]</span>
+
+<span class="c1"># Financial Marketing Prep (FMP) API URL and key</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">FMP_API_URL</span><span class="o">=</span><span class="s2">&quot;https://financialmodelingprep.com/api/v3/profile/&quot;</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">FMP_API_KEY</span><span class="o">=[</span>APIKEY<span class="o">]</span>
+</pre></div>
+</div>
+<p>You will need to add your credentials to the inputs in the brackets.</p>
+<ul class="simple">
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file.</p></li>
+<li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file.</p></li>
+<li><p>Close this Terminal</p></li>
 </ul>
 </section>
 </section>
@@ -459,6 +520,11 @@ target:<span class="w"> </span>dev
 <li><a class="reference internal" href="#dbt-setup">dbt Setup</a><ul>
 <li><a class="reference internal" href="#id1">Installation</a></li>
 <li><a class="reference internal" href="#initialization">Initialization</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#zshrc-configuration">.zshrc Configuration</a><ul>
+<li><a class="reference internal" href="#cloud-setup">Cloud Setup</a></li>
+<li><a class="reference internal" href="#local-setup">Local Setup</a></li>
 </ul>
 </li>
 </ul>

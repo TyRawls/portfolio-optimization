@@ -138,55 +138,118 @@ You should see::
 
 Initialization
 --------------
+Switch to dbt project folder and initialize the project::
 
-Now you will need to create the ``profiles.yml`` file to add your database credentials. 
-Open a new Terminal window. Copy and paste the below::
+    cd portfolio_optimization_project_dbt && dbt init
+
+You will be prompted to select a database by entering a number. Enter the number for the Postgres data base and 
+press enter. This will the create the ``profiles.yml`` file to add your database credentials.
+Open a separate Terminal window. Copy and paste the below::
 
     cd ~                    # switch to root directory
-    mkdir .dbt              # create .dbt folder
     cd .dbt                 # switch to .dbt folder
-    touch profiles.yml      # create yml file for database connections
     nano profiles.yml       # open yml file for editing
        
-Copy and paste the below in the ``profiles.yml`` file::
+Edit the ``profiles.yml`` file to look like the below::
 
     portfolio_optimization_project_dbt:
-    outputs:
+      outputs:
+
         dev:
-        type: postgres
-        threads: 1
-        host: [host]
-        port: 5432
-        user: [dev_username]
-        pass: [dev_password]
-        dbname: company_stock
-        schema: public
+          type: postgres
+          threads: 1
+          host: [host]
+          port: 5432
+          user: [dev_username]
+          pass: [dev_password]
+          dbname: company_stock
+          schema: public
 
         prod:
-        type: postgres
-        threads: 1
-        host: [host]
-        port: [port]
-        user: [prod_username]
-        pass: [prod_password]
-        dbname: [dbname]
-        schema: [prod_schema]
+          type: postgres
+          threads: 1
+          host: [host]
+          port: [port]
+          user: [prod_username]
+          pass: [prod_password]
+          dbname: [dbname]
+          schema: [prod_schema]
 
-    target: dev 
+      target: dev 
 
-You will need to modify the inputs listed below:
+You will need to modify the following inputs:
 
 .. note::
     The brackets will need to be removed for each input and the password would need to be in single quotes.
-    
-    **Example**: 'password_123'
 
 * **host**: If you are configuring this locally, then assign this value to ``localhost``. If you're using the cloud setup then you will need to enter the AWS RDS endpoint you created.
 * **dev_username**: If you are configuring this locally, then assign this value to ``postgres``. If you're using the cloud setup then you will need to enter the AWS RDS username you created.
 * **dev_password**: If you are configuring this locally, then assign this value to the password you created in the :ref:`PostgreSQL Setup`. If you're using the cloud setup, then you will need to enter the AWS RDS username you created.
 
-
 To save the ``profiles.yml`` content:
 
 * Press ``Control + O``, then Enter to write to the ``profiles.yml`` file.
 * Lastly, press ``Control + X`` to exit the ``profiles.yml`` file.
+* Close this Terminal
+
+Go back to the initial Terminal and test the database connection::
+
+    dbt debug
+
+If done correctly, the output will say "All checks passed!". If not, you will need to verify the ``profiles.yml`` file has the correct info.
+
+********************
+.zshrc Configuration
+********************
+
+You will lastly need to modify the ``.zshrc`` configuration file to add your database credentials and API informmation for. If you haven't already you will need to sign up for this in order to get an API key.
+
+To modify the .zshrc file, open a separate Terminal and execute the below::
+
+    cd ~ && nano .zshrc
+
+Cloud Setup
+-----------
+For cloud setup, add the below to the ``.zshrc`` file::
+
+    # AWS RDS (PostgreSQL) credentials
+    export CLOUD_HOST=[HOST]
+    export CLOUD_PORT="5432"
+    export CLOUD_USER=[USERNAME]
+    export CLOUD_DBNAME="company_stock"
+    export CLOUD_PASS=[PASSWORD]
+
+    # Financial Marketing Prep (FMP) API URL and key
+    export FMP_API_URL="https://financialmodelingprep.com/api/v3/profile/"
+    export FMP_API_KEY=[APIKEY]
+
+You will need to add your credentials to the inputs in the brackets.
+
+* Press ``Control + O``, then Enter to write to the ``.zshrc`` file.
+* Lastly, press ``Control + X`` to exit the ``.zshrc`` file.
+* Close this Terminal
+
+
+Local Setup
+----------
+For local setup, add the below to the ``.zshrc`` file::
+
+    # Local (PostgreSQL) credentials
+    export LOCAL_HOST="localhost"
+    export LOCAL_PORT="5432"
+    export LOCAL_USER="postgres"
+    export LOCAL_DBNAME="company_stock"
+    export LOCAL_PASS=[PASSWORD]
+
+    # Financial Marketing Prep (FMP) API URL and key
+    export FMP_API_URL="https://financialmodelingprep.com/api/v3/profile/"
+    export FMP_API_KEY=[APIKEY]
+
+You will need to add your credentials to the inputs in the brackets.
+
+* Press ``Control + O``, then Enter to write to the ``.zshrc`` file.
+* Lastly, press ``Control + X`` to exit the ``.zshrc`` file.
+* Close this Terminal
+
+
+
