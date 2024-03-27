@@ -204,8 +204,8 @@
 <p class="admonition-title">Note</p>
 <p>This setup is for MAC OS only. I will be providing setup instructions for Windows OS in a later update.</p>
 </div>
-<section id="postgresql">
-<h2>PostgreSQL<a class="headerlink" href="#postgresql" title="Link to this heading">#</a></h2>
+<section id="postgresql-setup">
+<h2>PostgreSQL Setup<a class="headerlink" href="#postgresql-setup" title="Link to this heading">#</a></h2>
 <section id="installation">
 <h3>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h3>
 <p>Install <a class="reference external" href="https://postgresapp.com/">PostgreSQL</a> and start the database server. You can watch the
@@ -244,11 +244,20 @@ These steps will add the PostgreSQL binaries path to the <code class="docutils l
 <li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
 </ol>
 </div></blockquote>
-<p>Upon opening Terminal, you should find that you can now utilize the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command.</p>
+<p>Upon relaunching Terminal, you should find that you can now utilize the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If you do not complete the above steps, then you will get <code class="docutils literal notranslate"><span class="pre">psql:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code> when trying to execute the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command in Terminal.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The below setup is for the local implementation only. If you’re not using the local setup, pleas skip to <a class="reference internal" href="#clone-github-repo"><span class="std std-ref">Clone GitHub Repo</span></a>.</p>
+</div>
 </section>
 <section id="set-password">
 <h3>Set Password<a class="headerlink" href="#set-password" title="Link to this heading">#</a></h3>
-<p>Enter the below in Terminal to launch the PostgreSQL commandline:</p>
+<p>We need to set a password for the database connection which will be used later to connect <code class="docutils literal notranslate"><span class="pre">dbt</span></code>.
+Enter the below in Terminal to launch the PostgreSQL commandline:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psql<span class="w"> </span>-U<span class="w"> </span>postgres
 </pre></div>
 </div>
@@ -256,16 +265,16 @@ These steps will add the PostgreSQL binaries path to the <code class="docutils l
 </section>
 <section id="create-database">
 <h3>Create Database<a class="headerlink" href="#create-database" title="Link to this heading">#</a></h3>
-<p>You will need to create a database named <code class="docutils literal notranslate"><span class="pre">company_stock</span></code> which where the stock data will be stoored.
-If the database creation was successful you should see it in the PostgreSQL application:</p>
+<p>You must establish a database called <code class="docutils literal notranslate"><span class="pre">company_stock</span></code> to store the stock data. Upon successful creation,
+you should observe it within the PostgreSQL app.</p>
+<p>Enter the below command in the PostgreSQL commandline:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>CREATE<span class="w"> </span>DATABASE<span class="w"> </span>company_stock<span class="p">;</span>
 </pre></div>
 </div>
-<p>Enter <code class="docutils literal notranslate"><span class="pre">\q</span></code> in the PostgreSQL commandline to exit.</p>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-<p>If you do not complete the above steps, then you will get <code class="docutils literal notranslate"><span class="pre">psql:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code> when trying to execute the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command in Terminal.</p>
-</div>
+<p>Enter <code class="docutils literal notranslate"><span class="pre">\q</span></code> in the PostgreSQL commandline to exit. Open the PostgreSQL app to verify that the database was created</p>
+<figure class="align-default">
+<img alt="This is an image" src="_images/postgresql_company_stock_database.png" />
+</figure>
 </section>
 </section>
 <section id="clone-github-repo">
@@ -276,8 +285,8 @@ If the database creation was successful you should see it in the PostgreSQL appl
 </div>
 <p>This will copy all the project files to your directory.</p>
 </section>
-<section id="install-project-dependencies">
-<h2>Install Project Dependencies<a class="headerlink" href="#install-project-dependencies" title="Link to this heading">#</a></h2>
+<section id="install-dependencies">
+<h2>Install Dependencies<a class="headerlink" href="#install-dependencies" title="Link to this heading">#</a></h2>
 <p>Navigate to the cloud or local storage directory in Terminal after you have cloned the GitHub repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>portfolio-optimization/cloud-storage<span class="w">      </span><span class="c1"># directory for cloud setup</span>
 <span class="nb">cd</span><span class="w"> </span>portfolio-optimization/local-storage<span class="w">      </span><span class="c1"># directory for local setup</span>
@@ -307,8 +316,10 @@ To configure the cloud setup, you’ll be required to establish three components
 </pre></div>
 </div>
 </section>
-<section id="dbt-installation-configuration">
-<h2>dbt Installation &amp; Configuration<a class="headerlink" href="#dbt-installation-configuration" title="Link to this heading">#</a></h2>
+<section id="dbt-setup">
+<h2>dbt Setup<a class="headerlink" href="#dbt-setup" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Installation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>Install the <code class="docutils literal notranslate"><span class="pre">dbt-postgres</span></code> adapter version used for this project:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>dbt-postgres<span class="o">==</span><span class="m">1</span>.7.0
 </pre></div>
@@ -330,6 +341,9 @@ Plugins:
 <p>It may say that there’s an update available, but this can be ignored. Just make sure that the <code class="docutils literal notranslate"><span class="pre">dbt-core</span></code>
 version matches the <code class="docutils literal notranslate"><span class="pre">dbt-postgres</span></code> version.</p>
 </div>
+</section>
+<section id="initialize">
+<h3>Initialize<a class="headerlink" href="#initialize" title="Link to this heading">#</a></h3>
 <p>Now you will need to create the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file to add your database credentials.
 Open a new Terminal window. Copy and paste the below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w">                    </span><span class="c1"># switch to root directory</span>
@@ -366,6 +380,7 @@ nano<span class="w"> </span>profiles.yml<span class="w">       </span><span clas
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file.</p></li>
 <li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file.</p></li>
 </ul>
+</section>
 </section>
 </section>
 
@@ -417,7 +432,7 @@ nano<span class="w"> </span>profiles.yml<span class="w">       </span><span clas
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Project Setup</a><ul>
-<li><a class="reference internal" href="#postgresql">PostgreSQL</a><ul>
+<li><a class="reference internal" href="#postgresql-setup">PostgreSQL Setup</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#configure-paths-file">Configure PATHS File</a></li>
 <li><a class="reference internal" href="#set-password">Set Password</a></li>
@@ -425,8 +440,12 @@ nano<span class="w"> </span>profiles.yml<span class="w">       </span><span clas
 </ul>
 </li>
 <li><a class="reference internal" href="#clone-github-repo">Clone GitHub Repo</a></li>
-<li><a class="reference internal" href="#install-project-dependencies">Install Project Dependencies</a></li>
-<li><a class="reference internal" href="#dbt-installation-configuration">dbt Installation &amp; Configuration</a></li>
+<li><a class="reference internal" href="#install-dependencies">Install Dependencies</a></li>
+<li><a class="reference internal" href="#dbt-setup">dbt Setup</a><ul>
+<li><a class="reference internal" href="#id1">Installation</a></li>
+<li><a class="reference internal" href="#initialize">Initialize</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

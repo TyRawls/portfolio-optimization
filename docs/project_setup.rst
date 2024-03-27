@@ -13,9 +13,10 @@ There are two implementations for this project. One utilizes cloud storage, whil
 .. note::
    This setup is for MAC OS only. I will be providing setup instructions for Windows OS in a later update.
 
-**********
-PostgreSQL 
-**********
+****************
+PostgreSQL Setup
+****************
+
 Installation
 ------------
 Install `PostgreSQL <https://postgresapp.com/>`_ and start the database server. You can watch the 
@@ -39,13 +40,18 @@ These steps will add the PostgreSQL binaries path to the ``paths`` file on your 
     #. Press ``Control + O``, then Enter to save the contents to the ``paths`` file.
     #. Lastly, press ``Control + X`` to exit the ``paths`` file.
 
-Upon opening Terminal, you should find that you can now utilize the ``psql`` command. 
+Upon relaunching Terminal, you should find that you can now utilize the ``psql`` command. 
 
 .. caution::
     If you do not complete the above steps, then you will get ``psql: command not found`` when trying to execute the ``psql`` command in Terminal.
 
+.. note::
+    The below setup is for the local implementation only. If you're not using the local setup, pleas skip to :ref:`Clone GitHub Repo`. 
+
+
 Set Password
 ------------
+We need to set a password for the database connection which will be used later to connect ``dbt``.
 Enter the below in Terminal to launch the PostgreSQL commandline::
 
     psql -U postgres
@@ -55,11 +61,18 @@ To set the password, enter ``\password postgres``. You'll be prompted to create 
 Create Database
 ----------------
 You must establish a database called ``company_stock`` to store the stock data. Upon successful creation, 
-you should observe it within the PostgreSQL application.::
+you should observe it within the PostgreSQL app. 
+
+Enter the below command in the PostgreSQL commandline::
 
     CREATE DATABASE company_stock;
 
-Enter ``\q`` in the PostgreSQL commandline to exit. 
+Enter ``\q`` in the PostgreSQL commandline to exit. Open the PostgreSQL app to verify that the database was created
+
+.. figure:: images/postgresql_company_stock_database.png
+    :alt: This is an image
+
+
 
 
 *****************
@@ -71,9 +84,9 @@ Open Terminal and navigate to a directory of you choise. Clone the GitHub reposi
 
 This will copy all the project files to your directory.
 
-****************************
-Install Project Dependencies
-****************************
+********************
+Install Dependencies
+********************
 Navigate to the cloud or local storage directory in Terminal after you have cloned the GitHub repository::
 
     cd portfolio-optimization/cloud-storage      # directory for cloud setup
@@ -100,9 +113,12 @@ Install the dependencies (requirements) into the Python virtual environment::
 
     pip install -r requirements.txt
 
-********************************
-dbt Installation & Configuration
-********************************
+*********
+dbt Setup
+*********
+
+Installation
+------------
 Install the ``dbt-postgres`` adapter version used for this project::
 
     python -m pip install dbt-postgres==1.7.0
@@ -122,6 +138,9 @@ You should see::
 .. note::
     It may say that there's an update available, but this can be ignored. Just make sure that the ``dbt-core`` 
     version matches the ``dbt-postgres`` version.
+
+Initialization
+--------------
 
 Now you will need to create the ``profiles.yml`` file to add your database credentials. 
 Open a new Terminal window. Copy and paste the below::
