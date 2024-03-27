@@ -15,3 +15,6 @@ Execute the below in Terminal to deploy the application::
 
 You should see an application interface that looks like the below.
 
+.. figure:: images/streamlit_local_deploy.png
+   :alt: This is an image
+
