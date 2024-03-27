@@ -5,10 +5,13 @@
 
 Deployment
 ==========
-There are two implementations for this project. One utilizes cloud storage, while the other relies on local storage.
+This project was deployed using `Streamlit`. To deploy `Streamlit`, you will need to navigate to the ``local-storage`` or 
+``cloud-storage`` folder via Terminal depending on which setup you configured. This folder will contain a file called ``app.py`` 
+which will be used to deploy the application.
 
-.. tip::
-    Before settings up this project, install Python 3.8 or later; support for Python 3.7 and earlier is deprecated for some libraries in this project. 
+Execute the below in Terminal to deploy the application::
 
-.. note::
-   This setup is for MAC OS only. I will be providing setup instructions for Windows OS in a later update
+   streamlit run app.py
+
+You should see an application interface that looks like the below.
+

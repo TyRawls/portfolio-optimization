@@ -200,15 +200,14 @@
         <article role="main">
           <section id="deployment">
 <h1>Deployment<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h1>
-<p>There are two implementations for this project. One utilizes cloud storage, while the other relies on local storage.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Before settings up this project, install Python 3.8 or later; support for Python 3.7 and earlier is deprecated for some libraries in this project.</p>
+<p>This project was deployed using <cite>Streamlit</cite>. To deploy <cite>Streamlit</cite>, you will need to navigate to the <code class="docutils literal notranslate"><span class="pre">local-storage</span></code> or
+<code class="docutils literal notranslate"><span class="pre">cloud-storage</span></code> folder via Terminal depending on which setup you configured. This folder will contain a file called <code class="docutils literal notranslate"><span class="pre">app.py</span></code>
+which will be used to deploy the application.</p>
+<p>Execute the below in Terminal to deploy the application:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>streamlit<span class="w"> </span>run<span class="w"> </span>app.py
+</pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This setup is for MAC OS only. I will be providing setup instructions for Windows OS in a later update</p>
-</div>
+<p>You should see an application interface that looks like the below.</p>
 </section>
 
         </article>
