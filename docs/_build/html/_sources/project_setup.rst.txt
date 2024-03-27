@@ -231,7 +231,7 @@ You will need to add your credentials to the inputs in the brackets.
 
 
 Local Setup
-----------
+-----------
 For local setup, add the below to the ``.zshrc`` file::
 
     # Local (PostgreSQL) credentials
