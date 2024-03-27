@@ -146,12 +146,26 @@ You should see::
 
 Initialization
 --------------
-Switch to dbt project folder and initialize the project::
+Switch to the dbt project folder and initialize the project::
 
     cd portfolio_optimization_project_dbt && dbt init
 
 You will be prompted to select a database by entering a number. Enter the number for the Postgres data base and 
-press enter. This will the create the ``profiles.yml`` file to add your database credentials.
+press enter. You should see the something like the below::
+    
+    Running with dbt=1.7.0
+    [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/Users/rootuser/.dbt')}
+    Creating dbt configuration folder at 
+    Setting up your profile.
+    Which database would you like to use?
+    [1] postgres
+
+    Enter a number: 1
+    Profile portfolio_optimization_project_dbt written to /Users/rootuser/.dbt/profiles.yml using targets sample 
+    configuration. Once updated, youll be able to start developing with dbt.
+
+This will the create the ``profiles.yml`` file to add your database credentials.
+
 Open a separate Terminal window. Copy and paste the below::
 
     cd ~                    # switch to root directory
