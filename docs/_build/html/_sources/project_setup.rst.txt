@@ -226,7 +226,11 @@ Z Shell Run Command (.zshrc) Configuration
 
 You will need to modify the ``.zshrc`` configuration file to add your database credentials and key for the 
 `Financial Marketing Prep (FMP) <https://site.financialmodelingprep.com/developer/docs>`_ API. If you haven't 
-already you will need to sign up for this API in order to get FREE key.
+already you will need to sign up for this API in order to get a FREE key.
+
+.. admonition:: Example: FMP API Key
+
+    FMP_API_KEY="?apikey=257u72xb87f2953y557example407n41"
 
 To modify the ``.zshrc`` file, open a separate Terminal and execute the below::
 
@@ -274,6 +278,3 @@ You will need to add your credentials to the inputs in the brackets.
 * Press ``Control + O``, then Enter to write to the ``.zshrc`` file.
 * Lastly, press ``Control + X`` to exit the ``.zshrc`` file.
 * Close this Terminal
-
-
-
