@@ -70,7 +70,7 @@ Create a Python virtual environment and activate it::
     python -m venv .venv              # create the environment
     source .venv/bin/activate         # activate the environment for Mac and Linux
 
-Upgrade pip version::
+Upgrade the pip version::
 
     pip install --upgrade pip
 
@@ -93,112 +93,15 @@ You should see::
 
     Core:
     - installed: 1.7.0 
-    - latest:    1.7.10 - Update available!
 
     Plugins:
-    - postgres: 1.7.0 - Update available!
+    - postgres: 1.7.0
 
-Open a new Terminal window. Copy and paste the below::
-
-    cd ~                    # switch to root directory
-    mkdir .dbt              # create .dbt folder
-    cd .dbt                 # switch to .dbt folder
-    touch profiles.yml      # create yml file for database connections
-    nano profiles.yml       # open yml file for editing
-       
-Paste the below in the ``profiles.yml`` file::
-
-    portfolio_optimization_project_dbt:
-        outputs:
-        local:
-            type: postgres
-            threads: 1
-            host: localhost
-            port: 5432
-            user: YOUR_USERNAME
-            pass: 'YOUR_PASSWORD'
-            dbname: company_stock
-            schema: public
-
-        target: local  
-
-* Add your credentials to ``user`` and ``pass``.
-* Press ``Control + O``, then Enter to write to the ``profiles.yml`` file.
-* Lastly, press ``Control + X`` to exit the ``profiles.yml`` file.
-
-
-Cloud Storage
--------------
 .. note::
+    It may say that there's an update available, but this can be ignored. Just make sure that the ``dbt-core`` 
+    version matches the ``dbt-postgres`` version.
 
-    To configure this setup, you'll be required to establish three components within Amazon Web Services (AWS).
-
-    - `Amazon S3 <https://aws.amazon.com/s3/>`_
-    - `Amazon Lambda <https://aws.amazon.com/pm/lambda/>`_
-    - `Amazon RDS <https://aws.amazon.com/rds/?p=ft&c=db&z=3>`_ (PostgreSQL instance)
-
-Start this setup by cloning the GitHub repository to your desired directory by running the below command in Terminal::
-
-    git clone https://github.com/tyrawls/portfolio-optimization.git
-
-Navigate to the cloud storage directory after you have cloned the GitHub repository::
-
-    cd portfolio-optimization/cloud-storage
-
-Create a Python virtual environment and activate it::
-
-    python -m venv .venv              # create the environment
-    source .venv/bin/activate         # activate the environment for Mac and Linux
-
-Upgrade pip version::
-
-    pip install --upgrade pip
-
-Install the cloud dependencies (requirements) into the Python virtual environment::
-
-    pip install -r requirements.txt
-
-Local Storage 
--------------
-Start this setup by cloning the GitHub repository to your desired directory by running the below command in Terminal::
-
-    git clone https://github.com/tyrawls/portfolio-optimization.git
-
-
-Navigate to the cloud storage directory after you have cloned the GitHub repository::
-
-    cd portfolio-optimization/cloud-storage
-
-Create a Python virtual environment and activate it::
-
-    python -m venv .venv              # create the environment
-    source .venv/bin/activate         # activate the environment for Mac and Linux
-
-Upgrade pip version::
-
-    pip install --upgrade pip
-
-Install the local dependencies (requirements) into the Python virtual environment::
-
-    pip install -r requirements.txt
-
-Install the ``dbt-postgres`` adapter version used for this project::
-
-    python -m pip install dbt-postgres==1.7.0
-
-After the installation, check the ``dbt`` version::
-
-    dbt --version
-
-You should see::
-
-    Core:
-    - installed: 1.7.0 
-    - latest:    1.7.10 - Update available!
-
-    Plugins:
-    - postgres: 1.7.0 - Update available!
-
+Now you will need to create the ``profiles.yml`` file to add your database credentials. 
 Open a new Terminal window. Copy and paste the below::
 
     cd ~                    # switch to root directory
@@ -207,37 +110,28 @@ Open a new Terminal window. Copy and paste the below::
     touch profiles.yml      # create yml file for database connections
     nano profiles.yml       # open yml file for editing
        
-Paste the below in the ``profiles.yml`` file::
+Paste the below in the ``profiles.yml`` file. You will need to modify the items in CAPS::
 
     portfolio_optimization_project_dbt:
         outputs:
-        local:
+        TARGET_NAME:
             type: postgres
             threads: 1
-            host: localhost
+            host: HOST_ADDRESS
             port: 5432
             user: YOUR_USERNAME
             pass: 'YOUR_PASSWORD'
             dbname: company_stock
             schema: public
 
-        target: local  
+        target: TARGET_NAME  
 
-* Add your credentials to ``user`` and ``pass``.
+* ``TARGET_NAME``: You will enter local or cloud
+* ``HOST_ADDRESS``: For local you will type localhost and for cloud you will type the AWS RDS endpoint address
+* ``YOUR_USERNAME``: You will need to enter the username of the local or cloud database
+* ``YOUR_PASSWORD``: You will need to enter the password of the local or cloud database
+
+To save the ``profiles.yml`` content:
+
 * Press ``Control + O``, then Enter to write to the ``profiles.yml`` file.
 * Lastly, press ``Control + X`` to exit the ``profiles.yml`` file.
-
-##########
-Deployment
-##########
-
-
-
-
-
-
-
-
-
-
-    
