@@ -13,7 +13,7 @@ Portfolio Optimization documentation
 
    about
    project_setup
-   project_deployment
+   deployment
 
 
 

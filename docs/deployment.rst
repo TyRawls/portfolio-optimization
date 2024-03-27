@@ -3,8 +3,8 @@
    :linenothreshold: 50 
 
 
-Project Deployment
-==================
+Deployment
+==========
 There are two implementations for this project. One utilizes cloud storage, while the other relies on local storage.
 
 .. tip::
