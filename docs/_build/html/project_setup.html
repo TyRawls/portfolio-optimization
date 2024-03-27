@@ -251,12 +251,12 @@ These steps will add the PostgreSQL binaries path to the <code class="docutils l
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The below setup is for the local implementation only. If you’re not using the local setup, pleas skip to <a class="reference internal" href="#clone-github-repo"><span class="std std-ref">Clone GitHub Repo</span></a>.</p>
+<p>The below setup is for the local implementation only. If you’re not using the local setup, please skip to <a class="reference internal" href="#clone-github-repo"><span class="std std-ref">Clone GitHub Repo</span></a>.</p>
 </div>
 </section>
 <section id="set-password">
 <h3>Set Password<a class="headerlink" href="#set-password" title="Link to this heading">#</a></h3>
-<p>We need to set a password for the database connection which will be used later to connect <code class="docutils literal notranslate"><span class="pre">dbt</span></code>.
+<p>We need to set a password for the local database connection which will be used later to connect <code class="docutils literal notranslate"><span class="pre">dbt</span></code>.
 Enter the below in Terminal to launch the PostgreSQL commandline:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psql<span class="w"> </span>-U<span class="w"> </span>postgres
 </pre></div>
@@ -279,7 +279,7 @@ you should observe it within the PostgreSQL app.</p>
 </section>
 <section id="clone-github-repo">
 <h2>Clone GitHub Repo<a class="headerlink" href="#clone-github-repo" title="Link to this heading">#</a></h2>
-<p>Open Terminal and navigate to a directory of you choise. Clone the GitHub repository by running the below command:</p>
+<p>Open Terminal and navigate to a directory of your choice. Clone the GitHub repository by running the below command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tyrawls/portfolio-optimization.git
 </pre></div>
 </div>
@@ -342,8 +342,8 @@ Plugins:
 version matches the <code class="docutils literal notranslate"><span class="pre">dbt-postgres</span></code> version.</p>
 </div>
 </section>
-<section id="initialize">
-<h3>Initialize<a class="headerlink" href="#initialize" title="Link to this heading">#</a></h3>
+<section id="initialization">
+<h3>Initialization<a class="headerlink" href="#initialization" title="Link to this heading">#</a></h3>
 <p>Now you will need to create the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file to add your database credentials.
 Open a new Terminal window. Copy and paste the below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w">                    </span><span class="c1"># switch to root directory</span>
@@ -443,7 +443,7 @@ nano<span class="w"> </span>profiles.yml<span class="w">       </span><span clas
 <li><a class="reference internal" href="#install-dependencies">Install Dependencies</a></li>
 <li><a class="reference internal" href="#dbt-setup">dbt Setup</a><ul>
 <li><a class="reference internal" href="#id1">Installation</a></li>
-<li><a class="reference internal" href="#initialize">Initialize</a></li>
+<li><a class="reference internal" href="#initialization">Initialization</a></li>
 </ul>
 </li>
 </ul>

@@ -46,12 +46,12 @@ Upon relaunching Terminal, you should find that you can now utilize the ``psql``
     If you do not complete the above steps, then you will get ``psql: command not found`` when trying to execute the ``psql`` command in Terminal.
 
 .. note::
-    The below setup is for the local implementation only. If you're not using the local setup, pleas skip to :ref:`Clone GitHub Repo`. 
+    The below setup is for the local implementation only. If you're not using the local setup, please skip to :ref:`Clone GitHub Repo`. 
 
 
 Set Password
 ------------
-We need to set a password for the database connection which will be used later to connect ``dbt``.
+We need to set a password for the local database connection which will be used later to connect ``dbt``.
 Enter the below in Terminal to launch the PostgreSQL commandline::
 
     psql -U postgres
@@ -72,13 +72,10 @@ Enter ``\q`` in the PostgreSQL commandline to exit. Open the PostgreSQL app to v
 .. figure:: images/postgresql_company_stock_database.png
     :alt: This is an image
 
-
-
-
 *****************
 Clone GitHub Repo 
 *****************
-Open Terminal and navigate to a directory of you choise. Clone the GitHub repository by running the below command::
+Open Terminal and navigate to a directory of your choice. Clone the GitHub repository by running the below command::
 
     git clone https://github.com/tyrawls/portfolio-optimization.git
 
