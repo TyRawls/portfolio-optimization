@@ -13,14 +13,18 @@ There are two implementations for this project. One utilizes cloud storage, whil
 .. note::
    This setup is for MAC OS only. I will be providing setup instructions for Windows OS in a later update.
 
-***************************************
-PostgreSQL Installation & Configuration
-***************************************
+**********
+PostgreSQL 
+**********
+Installation
+------------
 Install `PostgreSQL <https://postgresapp.com/>`_ and start the database server. You can watch the 
 `MAC OS installation video <https://youtu.be/qw--VYLpxG4?si=KPDT8niVeJ_GPGOS&t=654>`_ to assist you with the installation.
 
+Configure PATHS File
+--------------------
 After installing PostgreSQL, you will need to complete the below steps so that the ``psql`` command will work in Terminal. 
-These steps will add the PostgreSQL binaries path to the ``paths`` files on your computer:
+These steps will add the PostgreSQL binaries path to the ``paths`` file on your computer:
 
     #. Open Terminal and type ``sudo nano /etc/paths``, then press Enter to open the ``paths`` file. 
         .. note::
@@ -35,7 +39,27 @@ These steps will add the PostgreSQL binaries path to the ``paths`` files on your
     #. Press ``Control + O``, then Enter to save the contents to the ``paths`` file.
     #. Lastly, press ``Control + X`` to exit the ``paths`` file.
 
-Upon opening Terminal, you should find that you can utilize the ``psql`` command.
+Upon opening Terminal, you should find that you can now utilize the ``psql`` command. 
+
+Set Password
+------------
+Enter the below in Terminal to launch the PostgreSQL commandline::
+
+    psql -U postgres
+
+To set the password, enter ``\password postgres``. You'll be prompted to create a password.
+
+Create Database
+----------------
+You will need to create a database named ``company_stock`` which where the stock data will be stoored. 
+If the database creation was successful you should see it in the PostgreSQL application::
+
+    CREATE DATABASE company_stock;
+
+Enter ``\q`` in the PostgreSQL commandline to exit. 
+
+
+
 
 .. caution::
     If you do not complete the above steps, then you will get ``psql: command not found`` when trying to execute the ``psql`` command in Terminal.
@@ -52,7 +76,7 @@ This will copy all the project files to your directory.
 ****************************
 Install Project Dependencies
 ****************************
-Navigate to the cloud or local storage directory after you have cloned the GitHub repository::
+Navigate to the cloud or local storage directory in Terminal after you have cloned the GitHub repository::
 
     cd portfolio-optimization/cloud-storage      # directory for cloud setup
     cd portfolio-optimization/local-storage      # directory for local setup

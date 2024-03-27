@@ -204,12 +204,17 @@
 <p class="admonition-title">Note</p>
 <p>This setup is for MAC OS only. I will be providing setup instructions for Windows OS in a later update.</p>
 </div>
-<section id="postgresql-installation-configuration">
-<h2>PostgreSQL Installation &amp; Configuration<a class="headerlink" href="#postgresql-installation-configuration" title="Link to this heading">#</a></h2>
+<section id="postgresql">
+<h2>PostgreSQL<a class="headerlink" href="#postgresql" title="Link to this heading">#</a></h2>
+<section id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h3>
 <p>Install <a class="reference external" href="https://postgresapp.com/">PostgreSQL</a> and start the database server. You can watch the
 <a class="reference external" href="https://youtu.be/qw--VYLpxG4?si=KPDT8niVeJ_GPGOS&amp;t=654">MAC OS installation video</a> to assist you with the installation.</p>
+</section>
+<section id="configure-paths-file">
+<h3>Configure PATHS File<a class="headerlink" href="#configure-paths-file" title="Link to this heading">#</a></h3>
 <p>After installing PostgreSQL, you will need to complete the below steps so that the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command will work in Terminal.
-These steps will add the PostgreSQL binaries path to the <code class="docutils literal notranslate"><span class="pre">paths</span></code> files on your computer:</p>
+These steps will add the PostgreSQL binaries path to the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file on your computer:</p>
 <blockquote>
 <div><ol class="arabic">
 <li><dl>
@@ -239,11 +244,29 @@ These steps will add the PostgreSQL binaries path to the <code class="docutils l
 <li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
 </ol>
 </div></blockquote>
-<p>Upon opening Terminal, you should find that you can utilize the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command.</p>
+<p>Upon opening Terminal, you should find that you can now utilize the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command.</p>
+</section>
+<section id="set-password">
+<h3>Set Password<a class="headerlink" href="#set-password" title="Link to this heading">#</a></h3>
+<p>Enter the below in Terminal to launch the PostgreSQL commandline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psql<span class="w"> </span>-U<span class="w"> </span>postgres
+</pre></div>
+</div>
+<p>To set the password, enter <code class="docutils literal notranslate"><span class="pre">\password</span> <span class="pre">postgres</span></code>. You’ll be prompted to create a password.</p>
+</section>
+<section id="create-database">
+<h3>Create Database<a class="headerlink" href="#create-database" title="Link to this heading">#</a></h3>
+<p>You will need to create a database named <code class="docutils literal notranslate"><span class="pre">company_stock</span></code> which where the stock data will be stoored.
+If the database creation was successful you should see it in the PostgreSQL application:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>CREATE<span class="w"> </span>DATABASE<span class="w"> </span>company_stock<span class="p">;</span>
+</pre></div>
+</div>
+<p>Enter <code class="docutils literal notranslate"><span class="pre">\q</span></code> in the PostgreSQL commandline to exit.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>If you do not complete the above steps, then you will get <code class="docutils literal notranslate"><span class="pre">psql:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code> when trying to execute the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command in Terminal.</p>
 </div>
+</section>
 </section>
 <section id="clone-github-repo">
 <h2>Clone GitHub Repo<a class="headerlink" href="#clone-github-repo" title="Link to this heading">#</a></h2>
@@ -255,7 +278,7 @@ These steps will add the PostgreSQL binaries path to the <code class="docutils l
 </section>
 <section id="install-project-dependencies">
 <h2>Install Project Dependencies<a class="headerlink" href="#install-project-dependencies" title="Link to this heading">#</a></h2>
-<p>Navigate to the cloud or local storage directory after you have cloned the GitHub repository:</p>
+<p>Navigate to the cloud or local storage directory in Terminal after you have cloned the GitHub repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>portfolio-optimization/cloud-storage<span class="w">      </span><span class="c1"># directory for cloud setup</span>
 <span class="nb">cd</span><span class="w"> </span>portfolio-optimization/local-storage<span class="w">      </span><span class="c1"># directory for local setup</span>
 </pre></div>
@@ -394,7 +417,13 @@ nano<span class="w"> </span>profiles.yml<span class="w">       </span><span clas
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Project Setup</a><ul>
-<li><a class="reference internal" href="#postgresql-installation-configuration">PostgreSQL Installation &amp; Configuration</a></li>
+<li><a class="reference internal" href="#postgresql">PostgreSQL</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#configure-paths-file">Configure PATHS File</a></li>
+<li><a class="reference internal" href="#set-password">Set Password</a></li>
+<li><a class="reference internal" href="#create-database">Create Database</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#clone-github-repo">Clone GitHub Repo</a></li>
 <li><a class="reference internal" href="#install-project-dependencies">Install Project Dependencies</a></li>
 <li><a class="reference internal" href="#dbt-installation-configuration">dbt Installation &amp; Configuration</a></li>
