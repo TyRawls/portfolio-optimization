@@ -120,6 +120,7 @@ Install the dependencies (requirements) into the Python virtual environment::
 *********
 dbt Setup
 *********
+In order to conduct data transformations within the database, we must configure dbt to run the data models for execution.
 
 Installation
 ------------

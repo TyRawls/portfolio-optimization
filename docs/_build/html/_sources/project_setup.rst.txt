@@ -120,6 +120,7 @@ Install the dependencies (requirements) into the Python virtual environment::
 *********
 dbt Setup
 *********
+In order to conduct data transformations within the database, we must configure dbt to run the data models for execution.
 
 Installation
 ------------
@@ -211,7 +212,7 @@ Z Shell Run Command (.zshrc) Configuration
 
 You will lastly need to modify the ``.zshrc`` configuration file to add your database credentials and API informmation for. If you haven't already you will need to sign up for this in order to get an API key.
 
-To modify the .zshrc file, open a separate Terminal and execute the below::
+To modify the ``.zshrc`` file, open a separate Terminal and execute the below::
 
     cd ~ && nano .zshrc
 
