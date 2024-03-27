@@ -205,9 +205,9 @@
 <p class="admonition-title">Tip</p>
 <p>Before settings up this project, install Python 3.8 or later; support for Python 3.7 and earlier is deprecated for some libraries in this project.</p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This setup is for MAC OS only. I will be providing setup instructions for Windows OS in a later update.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>This setup is for MAC OS only using Z shell (zsh). I will be providing setup instructions for Windows OS in a later update.</p>
 </div>
 <section id="postgresql-setup">
 <h2>PostgreSQL Setup<a class="headerlink" href="#postgresql-setup" title="Link to this heading">#</a></h2>
@@ -247,6 +247,7 @@ These steps will add the PostgreSQL binaries path to the <code class="docutils l
 </li>
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to save the contents to the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
 <li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
+<li><p>Close Terminal and relaunch it.</p></li>
 </ol>
 </div></blockquote>
 <p>Upon relaunching Terminal, you should find that you can now utilize the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command.</p>
@@ -262,7 +263,7 @@ These steps will add the PostgreSQL binaries path to the <code class="docutils l
 <section id="set-password">
 <h3>Set Password<a class="headerlink" href="#set-password" title="Link to this heading">#</a></h3>
 <p>We need to set a password for the local database connection which will be used later to connect <code class="docutils literal notranslate"><span class="pre">dbt</span></code>.
-Enter the below in Terminal to launch the PostgreSQL commandline:</p>
+Enter the below in Terminal to launch the PostgreSQL command line:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psql<span class="w"> </span>-U<span class="w"> </span>postgres
 </pre></div>
 </div>
@@ -272,11 +273,11 @@ Enter the below in Terminal to launch the PostgreSQL commandline:</p>
 <h3>Create Database<a class="headerlink" href="#create-database" title="Link to this heading">#</a></h3>
 <p>You must establish a database called <code class="docutils literal notranslate"><span class="pre">company_stock</span></code> to store the stock data. Upon successful creation,
 you should observe it within the PostgreSQL app.</p>
-<p>Enter the below command in the PostgreSQL commandline:</p>
+<p>Enter the below command in the PostgreSQL command line:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>CREATE<span class="w"> </span>DATABASE<span class="w"> </span>company_stock<span class="p">;</span>
 </pre></div>
 </div>
-<p>Enter <code class="docutils literal notranslate"><span class="pre">\q</span></code> in the PostgreSQL commandline to exit. Open the PostgreSQL app to verify that the database was created</p>
+<p>Enter <code class="docutils literal notranslate"><span class="pre">\q</span></code> in the PostgreSQL command line to exit. Open the PostgreSQL app to verify that the database was created</p>
 <figure class="align-default">
 <img alt="This is an image" src="_images/postgresql_company_stock_database.png" />
 </figure>
@@ -311,6 +312,11 @@ To configure the cloud setup, you’ll be required to establish three components
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w">              </span><span class="c1"># create the environment</span>
 <span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">         </span><span class="c1"># activate the environment for Mac and Linux</span>
 </pre></div>
+</div>
+<p>You should now be in your virtual environment (.venv).</p>
+<div class="admonition-example admonition">
+<p class="admonition-title">Example</p>
+<p>(.venv) (base) <a class="reference external" href="mailto:rootuser&#37;&#52;&#48;hostname">rootuser<span>&#64;</span>hostname</a> local-storage %</p>
 </div>
 <p>Upgrade the pip version:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
@@ -411,8 +417,8 @@ nano<span class="w"> </span>profiles.yml<span class="w">       </span><span clas
 <p>If done correctly, the output will say “All checks passed!”. If not, you will need to verify the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file has the correct info.</p>
 </section>
 </section>
-<section id="zshrc-configuration">
-<h2>.zshrc Configuration<a class="headerlink" href="#zshrc-configuration" title="Link to this heading">#</a></h2>
+<section id="z-shell-run-command-zshrc-configuration">
+<h2>Z Shell Run Command (.zshrc) Configuration<a class="headerlink" href="#z-shell-run-command-zshrc-configuration" title="Link to this heading">#</a></h2>
 <p>You will lastly need to modify the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> configuration file to add your database credentials and API informmation for. If you haven’t already you will need to sign up for this in order to get an API key.</p>
 <p>To modify the .zshrc file, open a separate Terminal and execute the below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nano<span class="w"> </span>.zshrc
@@ -535,7 +541,7 @@ nano<span class="w"> </span>profiles.yml<span class="w">       </span><span clas
 <li><a class="reference internal" href="#initialization">Initialization</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#zshrc-configuration">.zshrc Configuration</a><ul>
+<li><a class="reference internal" href="#z-shell-run-command-zshrc-configuration">Z Shell Run Command (.zshrc) Configuration</a><ul>
 <li><a class="reference internal" href="#cloud-setup">Cloud Setup</a></li>
 <li><a class="reference internal" href="#local-setup">Local Setup</a></li>
 </ul>

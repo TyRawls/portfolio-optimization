@@ -10,8 +10,8 @@ There are two implementations for this project. One utilizes cloud storage, whil
 .. tip::
     Before settings up this project, install Python 3.8 or later; support for Python 3.7 and earlier is deprecated for some libraries in this project. 
 
-.. note::
-   This setup is for MAC OS only. I will be providing setup instructions for Windows OS in a later update.
+.. important::
+   This setup is for MAC OS only using Z shell (zsh). I will be providing setup instructions for Windows OS in a later update.
 
 ****************
 PostgreSQL Setup
@@ -39,6 +39,7 @@ These steps will add the PostgreSQL binaries path to the ``paths`` file on your 
            :alt: This is an image
     #. Press ``Control + O``, then Enter to save the contents to the ``paths`` file.
     #. Lastly, press ``Control + X`` to exit the ``paths`` file.
+    #. Close Terminal and relaunch it.
 
 Upon relaunching Terminal, you should find that you can now utilize the ``psql`` command. 
 
@@ -52,7 +53,7 @@ Upon relaunching Terminal, you should find that you can now utilize the ``psql``
 Set Password
 ------------
 We need to set a password for the local database connection which will be used later to connect ``dbt``.
-Enter the below in Terminal to launch the PostgreSQL commandline::
+Enter the below in Terminal to launch the PostgreSQL command line::
 
     psql -U postgres
 
@@ -63,11 +64,11 @@ Create Database
 You must establish a database called ``company_stock`` to store the stock data. Upon successful creation, 
 you should observe it within the PostgreSQL app. 
 
-Enter the below command in the PostgreSQL commandline::
+Enter the below command in the PostgreSQL command line::
 
     CREATE DATABASE company_stock;
 
-Enter ``\q`` in the PostgreSQL commandline to exit. Open the PostgreSQL app to verify that the database was created
+Enter ``\q`` in the PostgreSQL command line to exit. Open the PostgreSQL app to verify that the database was created
 
 .. figure:: images/postgresql_company_stock_database.png
     :alt: This is an image
@@ -101,6 +102,12 @@ Create a Python virtual environment and activate it::
 
     python -m venv .venv              # create the environment
     source .venv/bin/activate         # activate the environment for Mac and Linux
+
+You should now be in your virtual environment (.venv).
+
+.. admonition:: Example
+
+    (.venv) (base) rootuser@hostname local-storage %
 
 Upgrade the pip version::
 
@@ -198,9 +205,9 @@ Go back to the initial Terminal and test the database connection::
 
 If done correctly, the output will say "All checks passed!". If not, you will need to verify the ``profiles.yml`` file has the correct info.
 
-********************
-.zshrc Configuration
-********************
+******************************************
+Z Shell Run Command (.zshrc) Configuration
+******************************************
 
 You will lastly need to modify the ``.zshrc`` configuration file to add your database credentials and API informmation for. If you haven't already you will need to sign up for this in order to get an API key.
 
