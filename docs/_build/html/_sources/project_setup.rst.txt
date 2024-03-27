@@ -141,7 +141,7 @@ You should see::
     - postgres: 1.7.0
 
 .. note::
-    It may say that there's an update available, but this can be ignored. Just make sure that the ``dbt-core`` 
+    You may see an available update, but this can be ignored. Just make sure that the ``dbt-core`` 
     version matches the ``dbt-postgres`` version.
 
 Initialization
