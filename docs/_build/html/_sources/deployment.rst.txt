@@ -43,7 +43,7 @@ Generated Output
 After inputting the necessary parameters, you'll need to select ``Run - Manual Input`` to manually load tickers or ``Run - CSV File`` to load tickers via a CSV file.
 If successful, you will see the asset allocation results for each ticker and a plot.
 
-.. figure:: images/streamlit_cloud_deploy.png
+.. figure:: images/streamlit_asset_allocation_results.png
    :width: 800
    :alt: This is an image
 
