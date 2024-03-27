@@ -27,6 +27,7 @@ Instead of adhering to the conventional extract, transform, load (ETL) pipeline,
 * **Cost-Effectiveness**: ELT often proves to be more cost-effective because it utilizes existing database infrastructure for transformation tasks as opposed to managing separate transformation servers or expensive ETL tools
 
 .. figure:: images/api_cloud_and_local_data_architecture.png
+   :width: 800   
    :alt: This is an image
 
    ELT architecture for ingesting stock data, storing it in either a cloud or local database, and performing portfolio optimization
@@ -51,6 +52,7 @@ I utilized `dbt <https://docs.getdbt.com/docs/introduction>`_ (data build tool) 
 Y!Finance, I conducted transformations to produce four additional tables encompassing weekly, monthly, quarterly, and yearly stock information.
 
 .. figure:: images/dbt_model.png
+   :width: 800   
    :alt: This is an image
 
    dbt model
@@ -63,6 +65,7 @@ The ``company_info`` table, sourced from the FMP API, functions as a reference t
 duplicate entries. Removal of a ticker from this table results in its deletion from any table where it serves as a foreign key.
 
 .. figure:: images/company_info_sample_data.png
+   :width: 800   
    :alt: This is an image
 
    Company info data in PostgreSQL 
@@ -70,6 +73,7 @@ duplicate entries. Removal of a ticker from this table results in its deletion f
 The ``daily_stock_data`` table, obtained from the Y!Finance API, possesses a foreign key linked to the ``company_info`` table, exhibiting a one-to-many relationship in terms of cardinality.
 
 .. figure:: images/daily_stock_data_sample_data.png
+   :width: 800   
    :alt: This is an image
 
    Daily stock data in PostgreSQL 
@@ -84,6 +88,7 @@ intervals, such as weekly, monthly, quarterly, and yearly periods, through trans
 * ``company_stock__yearly_stock_data``
 
 .. figure:: images/entity_relationship_diagram_full.jpeg
+   :width: 800   
    :alt: This is an image
 
    ERD created using DDL and dbt
@@ -107,6 +112,7 @@ Here's a simple breakdown:
 In MVO, the goal is to find the allocation of assets in a portfolio that maximizes expected return while minimizing risk (variance).
 
 .. figure:: images/mvo_plot_example.png
+   :width: 800   
    :alt: This is an image
 
    MVO with Capital Allocation Line (CAL) and Efficient Frontier curve

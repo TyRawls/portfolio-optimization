@@ -5,9 +5,13 @@
 
 Deployment
 ==========
-This project was deployed using `Streamlit`. To deploy `Streamlit`, you will need to navigate to the ``local-storage`` or 
-``cloud-storage`` folder via Terminal depending on which setup you configured. This folder will contain a file called ``app.py`` 
-which will be used to deploy the application.
+The deployment of this project utilized ``Streamlit``. To deploy with ``Streamlit``, you'll have to access either the 
+``local-storage`` or ``cloud-storage`` directory through Terminal, depending on your chosen setup configuration. Within this 
+directory, you'll find a file named ``app.py``, which serves as the deployment script for the application.
+
+*****************************
+Using the Portfolio Optimizer
+*****************************
 
 Execute the below in Terminal to deploy the application::
 
@@ -16,5 +20,35 @@ Execute the below in Terminal to deploy the application::
 You should see an application interface that looks like the below.
 
 .. figure:: images/streamlit_local_deploy.png
+   :width: 800
    :alt: This is an image
+
+User Input
+----------
+This application accepts four key inputs from the user (see `About > Stock Prediction Model >` :ref:`Input Parameters` for more details):
+
+* **List of Stock Tickers**:
+   * **Manual input** - list of tickers seperated by a comma and a single space
+   * **Upload CSV file** - this file must have one column named ``tickers`` that contains the stock symbols
+* **Portfolio Settings**:
+   * **Risk-free rate** - users can be enter a value by typing in a number or by using the plus(+) and minus(-) buttons to increment up and down
+   * **Shorting allowed** - users can choose ``True`` or ``False`` by selecting an option from the dropdown menu
+   * **Maximize returns or minimize risk** - users can choose ``maximize returns`` or ``minimize risk`` by selecting an option from the dropdown menu
+
+**OPTIONAL: Database Settings** - when activated, this feature enables users to fetch fresh data from APIs, import it into the database, and execute transformations to generate dbt models, all without performing portfolio optimization
+
+Generated Output
+----------------
+
+After inputting the necessary parameters, you'll need to select ``Run - Manual Input`` to manually load tickers or ``Run - CSV File`` to load tickers via a CSV file.
+If successful, you will see the asset allocation results for each ticker and a plot.
+
+.. figure:: images/streamlit_cloud_deploy.png
+   :width: 800
+   :alt: This is an image
+
+.. figure:: images/streamlit_cloud_deploy_plot.png
+   :width: 800
+   :alt: This is an image
+
 

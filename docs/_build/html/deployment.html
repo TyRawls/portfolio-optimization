@@ -139,7 +139,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -192,7 +192,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -200,17 +200,55 @@
         <article role="main">
           <section id="deployment">
 <h1>Deployment<a class="headerlink" href="#deployment" title="Link to this heading">#</a></h1>
-<p>This project was deployed using <cite>Streamlit</cite>. To deploy <cite>Streamlit</cite>, you will need to navigate to the <code class="docutils literal notranslate"><span class="pre">local-storage</span></code> or
-<code class="docutils literal notranslate"><span class="pre">cloud-storage</span></code> folder via Terminal depending on which setup you configured. This folder will contain a file called <code class="docutils literal notranslate"><span class="pre">app.py</span></code>
-which will be used to deploy the application.</p>
+<p>The deployment of this project utilized <code class="docutils literal notranslate"><span class="pre">Streamlit</span></code>. To deploy with <code class="docutils literal notranslate"><span class="pre">Streamlit</span></code>, you’ll have to access either the
+<code class="docutils literal notranslate"><span class="pre">local-storage</span></code> or <code class="docutils literal notranslate"><span class="pre">cloud-storage</span></code> directory through Terminal, depending on your chosen setup configuration. Within this
+directory, you’ll find a file named <code class="docutils literal notranslate"><span class="pre">app.py</span></code>, which serves as the deployment script for the application.</p>
+<section id="using-the-portfolio-optimizer">
+<h2>Using the Portfolio Optimizer<a class="headerlink" href="#using-the-portfolio-optimizer" title="Link to this heading">#</a></h2>
 <p>Execute the below in Terminal to deploy the application:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>streamlit<span class="w"> </span>run<span class="w"> </span>app.py
 </pre></div>
 </div>
 <p>You should see an application interface that looks like the below.</p>
 <figure class="align-default">
-<img alt="This is an image" src="_images/streamlit_local_deploy.png" />
+<a class="reference internal image-reference" href="_images/streamlit_local_deploy.png"><img alt="This is an image" src="_images/streamlit_local_deploy.png" style="width: 800px;" /></a>
 </figure>
+<section id="user-input">
+<h3>User Input<a class="headerlink" href="#user-input" title="Link to this heading">#</a></h3>
+<p>This application accepts four key inputs from the user (see <cite>About &gt; Stock Prediction Model &gt;</cite> <a class="reference internal" href="about.html#input-parameters"><span class="std std-ref">Input Parameters</span></a> for more details):</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>List of Stock Tickers</strong>:</dt><dd><ul>
+<li><p><strong>Manual input</strong> - list of tickers seperated by a comma and a single space</p></li>
+<li><p><strong>Upload CSV file</strong> - this file must have one column named <code class="docutils literal notranslate"><span class="pre">tickers</span></code> that contains the stock symbols</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Portfolio Settings</strong>:</dt><dd><ul>
+<li><p><strong>Risk-free rate</strong> - users can be enter a value by typing in a number or by using the plus(+) and minus(-) buttons to increment up and down</p></li>
+<li><p><strong>Shorting allowed</strong> - users can choose <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> by selecting an option from the dropdown menu</p></li>
+<li><p><strong>Maximize returns or minimize risk</strong> - users can choose <code class="docutils literal notranslate"><span class="pre">maximize</span> <span class="pre">returns</span></code> or <code class="docutils literal notranslate"><span class="pre">minimize</span> <span class="pre">risk</span></code> by selecting an option from the dropdown menu</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>OPTIONAL: Database Settings</strong> - when activated, this feature enables users to fetch fresh data from APIs, import it into the database, and execute transformations to generate dbt models, all without performing portfolio optimization</p>
+</section>
+<section id="generated-output">
+<h3>Generated Output<a class="headerlink" href="#generated-output" title="Link to this heading">#</a></h3>
+<p>After inputting the necessary parameters, you’ll need to select <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">-</span> <span class="pre">Manual</span> <span class="pre">Input</span></code> to manually load tickers or <code class="docutils literal notranslate"><span class="pre">Run</span> <span class="pre">-</span> <span class="pre">CSV</span> <span class="pre">File</span></code> to load tickers via a CSV file.
+If successful, you will see the asset allocation results for each ticker and a plot.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/streamlit_cloud_deploy.png"><img alt="This is an image" src="_images/streamlit_cloud_deploy.png" style="width: 800px;" /></a>
+</figure>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/streamlit_cloud_deploy_plot.png"><img alt="This is an image" src="_images/streamlit_cloud_deploy_plot.png" style="width: 800px;" /></a>
+</figure>
+</section>
+</section>
 </section>
 
         </article>
@@ -255,8 +293,31 @@ which will be used to deploy the application.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Deployment</a><ul>
+<li><a class="reference internal" href="#using-the-portfolio-optimizer">Using the Portfolio Optimizer</a><ul>
+<li><a class="reference internal" href="#user-input">User Input</a></li>
+<li><a class="reference internal" href="#generated-output">Generated Output</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

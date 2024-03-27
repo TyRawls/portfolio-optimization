@@ -33,9 +33,11 @@ These steps will add the PostgreSQL binaries path to the ``paths`` file on your 
     #. Open the PostgreSQL app and make sure the server is runnning by clicking Start. 
     #. Click on Server Settings and copy the binaries path.
         .. figure:: images/postgresql_binaries_path.png
+           :width: 800   
            :alt: This is an image
     #. Paste the binaries path in the ``paths`` file in Terminal.
         .. figure:: images/paths_file_content.png
+           :width: 800
            :alt: This is an image
     #. Press ``Control + O``, then Enter to save the contents to the ``paths`` file.
     #. Lastly, press ``Control + X`` to exit the ``paths`` file.
@@ -69,6 +71,7 @@ Enter the below command in the PostgreSQL command line::
 Enter ``\q`` in the PostgreSQL command line to exit. Open the PostgreSQL app to verify that the database was created
 
 .. figure:: images/postgresql_company_stock_database.png
+    :width: 800   
     :alt: This is an image
 
 *****************
