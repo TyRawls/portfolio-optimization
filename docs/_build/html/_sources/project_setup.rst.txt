@@ -222,9 +222,8 @@ If done correctly, the output will show "**All checks passed!**". If not, you wi
 Z Shell Run Command (.zshrc) Configuration
 ******************************************
 
-You will need to modify the ``.zshrc`` configuration file to add your database credentials and key for the 
-`Financial Marketing Prep (FMP) <https://site.financialmodelingprep.com/developer/docs>`_ API. If you haven't 
-already you will need to sign up for this API in order to get a FREE key.
+To integrate your database credentials and `Financial Marketing Prep (FMP) <https://site.financialmodelingprep.com/developer/docs>`_ 
+API key, you'll need to update the ``.zshrc`` configuration file. If you haven't done so already, sign up for the API to obtain a FREE key.
 
 .. admonition:: Example
 

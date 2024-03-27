@@ -62,11 +62,8 @@ html_theme_options = {
             "class": "",
         },
     ],
-}
 
-# Announcement banner
-html_theme_options = {
-    "announcement": "<em>Important</em>: This setup is for MAC OS ONLY. Support for Windows OS coming soon!",
+     "announcement": "<em>Important</em>: This setup is for MAC OS ONLY. Support for Windows OS coming soon!",
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
