@@ -79,7 +79,7 @@ The ``daily_stock_data`` table, obtained from the Y!Finance API, possesses a for
 
    Daily stock data in PostgreSQL 
 
-dbt leveraged the ``daily_stock_data`` table to generate additional tables featuring a many-to-many cardinality, all with broader timeframes. These tables were created to represent coarser 
+dbt leveraged the ``daily_stock_data`` table to generate additional tables featuring a many-to-many cardinality, all with broader time frames. These tables were created to represent coarser 
 intervals, such as weekly, monthly, quarterly, and yearly periods, through transformations facilitated by dbt.
 
 * ``company_stock__daily_stock_data``
