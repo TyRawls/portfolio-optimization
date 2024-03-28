@@ -118,12 +118,35 @@ Install the dependencies (requirements) into the Python virtual environment::
 
     pip install -r requirements.txt
 
-
 ******************
 AWS Configurations
 ******************
 .. attention::
-    The below setup is for the local implementation only. If you're not using the local setup, please skip to :ref:`Clone GitHub Repo`. 
+    The below setup is for the cloud implementation only. If you're not using the cloud setup, please skip to :ref:`dbt Setup`.
+
+AWS S3
+------
+To be able to read and write to the S3 bucket from your device, you will need to obtain your ``AWS Access Key ID`` and ``AWS Secret Access Key`` 
+which can be done from your AWS account under `Security Credentials <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user_manage_add-key.html>`_.
+
+Once you've obtained your AWS keys, you will need to set them by executing the below in Terminal::
+
+    aws configure
+
+You will be prompted to enter the below:
+
+* ``AWS Access Key ID``
+* ``AWS Secret Access Key``
+* ``Default region name`` (optional)
+* ``Default output format`` (optional)
+
+Once you've set your AWS keys, you may view your credentials by entering the below in a new Terminal window::
+
+    cd ~ && cd .aws && nano credentials
+
+
+AWS Lambda
+----------
 
 
 *********
@@ -155,7 +178,7 @@ You should see::
 
 Initialization
 --------------
-Switch to the dbt project folder and initialize the project::
+While in the ``local-storage`` or ``cloud-storage`` folder, switch to the dbt project folder and initialize the project::
 
     cd portfolio_optimization_project_dbt && dbt init
 

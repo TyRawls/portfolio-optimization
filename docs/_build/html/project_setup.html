@@ -7,7 +7,7 @@
 
     <!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>Project Setup - Portfolio Optimization v1.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=362ab14a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
@@ -328,8 +328,31 @@ To configure the cloud setup, you’ll be required to establish three components
 <h2>AWS Configurations<a class="headerlink" href="#aws-configurations" title="Link to this heading">#</a></h2>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>The below setup is for the local implementation only. If you’re not using the local setup, please skip to <a class="reference internal" href="#clone-github-repo"><span class="std std-ref">Clone GitHub Repo</span></a>.</p>
+<p>The below setup is for the cloud implementation only. If you’re not using the cloud setup, please skip to <a class="reference internal" href="#dbt-setup"><span class="std std-ref">dbt Setup</span></a>.</p>
 </div>
+<section id="aws-s3">
+<h3>AWS S3<a class="headerlink" href="#aws-s3" title="Link to this heading">#</a></h3>
+<p>To be able to read and write to the S3 bucket from your device, you will need to obtain your <code class="docutils literal notranslate"><span class="pre">AWS</span> <span class="pre">Access</span> <span class="pre">Key</span> <span class="pre">ID</span></code> and <code class="docutils literal notranslate"><span class="pre">AWS</span> <span class="pre">Secret</span> <span class="pre">Access</span> <span class="pre">Key</span></code>
+which can be done from your AWS account under <a class="reference external" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user_manage_add-key.html">Security Credentials</a>.</p>
+<p>Once you’ve obtained your AWS keys, you will need to set them by executing the below in Terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aws<span class="w"> </span>configure
+</pre></div>
+</div>
+<p>You will be prompted to enter the below:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AWS</span> <span class="pre">Access</span> <span class="pre">Key</span> <span class="pre">ID</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AWS</span> <span class="pre">Secret</span> <span class="pre">Access</span> <span class="pre">Key</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Default</span> <span class="pre">region</span> <span class="pre">name</span></code> (optional)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Default</span> <span class="pre">output</span> <span class="pre">format</span></code> (optional)</p></li>
+</ul>
+<p>Once you’ve set your AWS keys, you may view your credentials by entering the below in a new Terminal window:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>.aws<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nano<span class="w"> </span>credentials
+</pre></div>
+</div>
+</section>
+<section id="aws-lambda">
+<h3>AWS Lambda<a class="headerlink" href="#aws-lambda" title="Link to this heading">#</a></h3>
+</section>
 </section>
 <section id="dbt-setup">
 <h2>dbt Setup<a class="headerlink" href="#dbt-setup" title="Link to this heading">#</a></h2>
@@ -360,7 +383,7 @@ version matches the <code class="docutils literal notranslate"><span class="pre"
 </section>
 <section id="initialization">
 <h3>Initialization<a class="headerlink" href="#initialization" title="Link to this heading">#</a></h3>
-<p>Switch to the dbt project folder and initialize the project:</p>
+<p>While in the <code class="docutils literal notranslate"><span class="pre">local-storage</span></code> or <code class="docutils literal notranslate"><span class="pre">cloud-storage</span></code> folder, switch to the dbt project folder and initialize the project:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>portfolio_optimization_project_dbt<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>dbt<span class="w"> </span>init
 </pre></div>
 </div>
@@ -565,7 +588,11 @@ API key, you’ll need to update the <code class="docutils literal notranslate">
 </li>
 <li><a class="reference internal" href="#clone-github-repo">Clone GitHub Repo</a></li>
 <li><a class="reference internal" href="#install-requirements">Install Requirements</a></li>
-<li><a class="reference internal" href="#aws-configurations">AWS Configurations</a></li>
+<li><a class="reference internal" href="#aws-configurations">AWS Configurations</a><ul>
+<li><a class="reference internal" href="#aws-s3">AWS S3</a></li>
+<li><a class="reference internal" href="#aws-lambda">AWS Lambda</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#dbt-setup">dbt Setup</a><ul>
 <li><a class="reference internal" href="#id1">Installation</a></li>
 <li><a class="reference internal" href="#initialization">Initialization</a></li>
