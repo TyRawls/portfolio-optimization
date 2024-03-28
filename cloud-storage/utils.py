@@ -210,7 +210,7 @@ def push_to_s3(content, bucket, key):
     except Exception as e:
         print(f'Upload failed: {e}')
         
-
+        
 def pull_from_s3(bucket):
     # Initialize the S3 client
     s3 = boto3.client('s3')

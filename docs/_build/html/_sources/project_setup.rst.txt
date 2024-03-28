@@ -84,7 +84,7 @@ Open Terminal and navigate to a directory of your choice. Clone the GitHub repos
 This will copy all the project files to your directory.
 
 ********************
-Install Dependencies
+Install Requirements
 ********************
 Navigate to the cloud or local storage directory in Terminal after you have cloned the GitHub repository::
 
@@ -117,6 +117,14 @@ Upgrade the pip version::
 Install the dependencies (requirements) into the Python virtual environment::
 
     pip install -r requirements.txt
+
+
+******************
+AWS Configurations
+******************
+.. attention::
+    The below setup is for the local implementation only. If you're not using the local setup, please skip to :ref:`Clone GitHub Repo`. 
+
 
 *********
 dbt Setup

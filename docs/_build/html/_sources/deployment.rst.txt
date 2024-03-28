@@ -27,7 +27,7 @@ User Input
 ----------
 This application accepts four key inputs from the user (see `About > Stock Prediction Model >` :ref:`Input Parameters` for more details):
 
-* **List of Stock Tickers**:
+* **List of Stock Tickers** (manual or CSV):
    * **Manual input** - list of tickers seperated by a comma and a single space
    * **Upload CSV file** - this file must have one column named ``tickers`` that contains the stock symbols
 * **Portfolio Settings**:

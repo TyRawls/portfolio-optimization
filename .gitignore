@@ -1,5 +1,6 @@
 # root folder
 .DS_Store
+.venv
 
 # cloud-storage folder
 cloud-storage/logs/
