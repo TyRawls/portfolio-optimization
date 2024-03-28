@@ -4,10 +4,11 @@
 
 Project Setup
 =============
-There are two implementations for this project. One utilizes cloud storage, while the other relies on local storage.
+There are two implementations of this project. One utilizes cloud storage, while the other relies on local storage.
 
 .. tip::
-    Before settings up this project, install Python 3.8 or later; support for Python 3.7 and earlier is deprecated for some libraries in this project. 
+    Before settings up this project, install Python 3.8 or later. Support for Python 3.7 and earlier may be deprecated 
+    for some dependencies in this project. 
 
 .. attention::
    This setup is for MAC OS only using Z shell (zsh). I will be providing setup instructions for Windows OS in a later update.
@@ -47,8 +48,8 @@ Upon relaunching Terminal, you should find that you can now utilize the ``psql``
 .. caution::
     If you do not complete the above steps, then you will get ``psql: command not found`` when trying to execute the ``psql`` command in Terminal.
 
-Set Password & Create Database
-------------------------------
+Create Database
+---------------
 .. attention::
     The below setup is for the local implementation only. If you're not using the local setup, please skip to :ref:`Clone GitHub Repo`. 
 
