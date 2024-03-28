@@ -2,7 +2,6 @@
 .. highlight:: bash
    :linenothreshold: 50 
 
-
 Project Setup
 =============
 There are two implementations for this project. One utilizes cloud storage, while the other relies on local storage.
@@ -48,7 +47,6 @@ Upon relaunching Terminal, you should find that you can now utilize the ``psql``
 .. caution::
     If you do not complete the above steps, then you will get ``psql: command not found`` when trying to execute the ``psql`` command in Terminal.
 
-
 Set Password & Create Database
 ------------------------------
 .. attention::
@@ -77,6 +75,7 @@ Enter ``\q`` in the PostgreSQL command line to exit. Open the PostgreSQL app to 
 *****************
 Clone GitHub Repo 
 *****************
+
 Open Terminal and navigate to a directory of your choice. Clone the GitHub repository by running the below command::
 
     git clone https://github.com/tyrawls/portfolio-optimization.git
@@ -86,6 +85,7 @@ This will copy all the project files to your directory.
 ********************
 Install Requirements
 ********************
+
 Navigate to the cloud or local storage directory in Terminal after you have cloned the GitHub repository::
 
     cd portfolio-optimization/cloud-storage      # directory for cloud setup
@@ -95,9 +95,9 @@ Navigate to the cloud or local storage directory in Terminal after you have clon
     You only need to choose one directory. The local directory is more simple, but the cloud directory requires more setup.
     To configure the cloud setup, you'll be required to establish three components within Amazon Web Services (AWS).
 
-    - `Amazon S3 <https://aws.amazon.com/s3/>`_ storage for staging data
+    - `Amazon S3 <https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html>`_ storage for staging data
     - `Amazon Lambda <https://aws.amazon.com/pm/lambda/>`_ to trigger data transfer to the database
-    - `Amazon RDS <https://aws.amazon.com/rds/?p=ft&c=db&z=3>`_ for PostgreSQL database storage
+    - `Amazon RDS <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html>`_ for PostgreSQL database storage
 
 Create a Python virtual environment and activate it::
 
@@ -121,13 +121,16 @@ Install the dependencies (requirements) into the Python virtual environment::
 ******************
 AWS Configurations
 ******************
+
 .. attention::
     The below setup is for the cloud implementation only. If you're not using the cloud setup, please skip to :ref:`dbt Setup`.
 
-AWS S3
-------
-To be able to read and write to the S3 bucket from your device, you will need to obtain your ``AWS Access Key ID`` and ``AWS Secret Access Key`` 
-which can be done from your AWS account under `Security Credentials <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user_manage_add-key.html>`_.
+S3 Bucket
+---------
+You will need to create a `S3 bucket <https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html>`_ to stage your data before it goes to the database.
+To gain access to read and write data to the S3 bucket from your device, you must acquire your ``AWS Access Key ID`` and ``AWS Secret Access Key``. 
+These credentials can be obtained from your AWS account within the 
+`Security Credentials <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user_manage_add-key.html>`_ section.
 
 Once you've obtained your AWS keys, you will need to set them by executing the below in Terminal::
 
@@ -144,14 +147,41 @@ Once you've set your AWS keys, you may view your credentials by entering the bel
 
     cd ~ && cd .aws && nano credentials
 
+Lambda
+------
+When data is stored into the S3 bucket, a ``PutObject`` event occurs. This event can be used as a trigger to transfer data from S3 to RDS (PostgreSQL). 
+You will need to complete the following:
 
-AWS Lambda
-----------
+* Create a Lambda function with a Python 3.8 runtime
+* Create a trigger and select S3 as the Source
+* Select the S3 bucket you created
+* Set the Event Type to ``PUT`` and click Add to create the trigger
+* From the Lambda function, click on the Upload From button and upload the ``lamba_function.zip`` file located in ``portfolio-optimization/cloud-storage/aws-lambda-package/zip-files``
+* Create a Lambda layer with a Python 3.8 runtime and upload the ``python.zip`` file located in ``portfolio-optimization/cloud-storage/aws-lambda-package/zip-files``
+* Click on **Configuration > General configuration** and set the Timeout from 3 secs to 30 secs
+* Click on **Configuration > Environment variables** and create `environment variables <https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html>`_ for your RDS (PostgreSQL) connection.
 
+.. list-table:: 
+   :widths: 10 30 
+   :header-rows: 1
+
+   * - Key
+     - Value
+   * - DBNAME
+     - company_stock
+   * - USER
+     - 
+   * - PASS
+     - 
+   * - HOST
+     -  
+   * - PORT
+     - 5432
 
 *********
 dbt Setup
 *********
+
 In order to conduct data transformations within the database, we must configure dbt to run the data models for execution.
 
 Installation
@@ -287,7 +317,6 @@ You will need to add your credentials to the inputs in the brackets.
 * Press ``Control + O``, then Enter to write to the ``.zshrc`` file.
 * Lastly, press ``Control + X`` to exit the ``.zshrc`` file.
 * Close this Terminal
-
 
 Local Setup
 -----------

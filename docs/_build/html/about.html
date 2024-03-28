@@ -240,8 +240,9 @@ decisions and overall financial well-being. This project aims to do just that.</
 <section id="data-loading">
 <h4>Data Loading<a class="headerlink" href="#data-loading" title="Link to this heading">#</a></h4>
 <p>The Y!Finance API retrieves a decade’s worth of data for each ticker and compares it with the existing database records. If a ticker is not present in the database, all
-10 years of data from Y!Finance are stored in an <a class="reference external" href="https://aws.amazon.com/s3/">Amazon S3</a> bucket (using <a class="reference external" href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html#">Boto3</a>).
-This action triggers an <a class="reference external" href="https://aws.amazon.com/pm/lambda/">Amazon Lambda</a> function, which then pushes the data to a PostgreSQL instance in <a class="reference external" href="https://aws.amazon.com/rds/?p=ft&amp;c=db&amp;z=3">Amazon RDS</a>.
+10 years of data from Y!Finance are stored in an <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html">Amazon S3</a> bucket (using
+<a class="reference external" href="https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html#">Boto3</a>). This action triggers an <a class="reference external" href="https://aws.amazon.com/pm/lambda/">Amazon Lambda</a>
+function, which then pushes the data to a PostgreSQL instance in <a class="reference external" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html">Amazon RDS</a>.
 Conversely, if the ticker already exists in the database, only the new data is kept and stored.</p>
 </section>
 <section id="data-transformation">

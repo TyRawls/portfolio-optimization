@@ -300,9 +300,9 @@ you should observe it within the PostgreSQL app.</p>
 <p>You only need to choose one directory. The local directory is more simple, but the cloud directory requires more setup.
 To configure the cloud setup, you’ll be required to establish three components within Amazon Web Services (AWS).</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://aws.amazon.com/s3/">Amazon S3</a> storage for staging data</p></li>
+<li><p><a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html">Amazon S3</a> storage for staging data</p></li>
 <li><p><a class="reference external" href="https://aws.amazon.com/pm/lambda/">Amazon Lambda</a> to trigger data transfer to the database</p></li>
-<li><p><a class="reference external" href="https://aws.amazon.com/rds/?p=ft&amp;c=db&amp;z=3">Amazon RDS</a> for PostgreSQL database storage</p></li>
+<li><p><a class="reference external" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html">Amazon RDS</a> for PostgreSQL database storage</p></li>
 </ul>
 </div>
 <p>Create a Python virtual environment and activate it:</p>
@@ -330,10 +330,12 @@ To configure the cloud setup, you’ll be required to establish three components
 <p class="admonition-title">Attention</p>
 <p>The below setup is for the cloud implementation only. If you’re not using the cloud setup, please skip to <a class="reference internal" href="#dbt-setup"><span class="std std-ref">dbt Setup</span></a>.</p>
 </div>
-<section id="aws-s3">
-<h3>AWS S3<a class="headerlink" href="#aws-s3" title="Link to this heading">#</a></h3>
-<p>To be able to read and write to the S3 bucket from your device, you will need to obtain your <code class="docutils literal notranslate"><span class="pre">AWS</span> <span class="pre">Access</span> <span class="pre">Key</span> <span class="pre">ID</span></code> and <code class="docutils literal notranslate"><span class="pre">AWS</span> <span class="pre">Secret</span> <span class="pre">Access</span> <span class="pre">Key</span></code>
-which can be done from your AWS account under <a class="reference external" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user_manage_add-key.html">Security Credentials</a>.</p>
+<section id="s3-bucket">
+<h3>S3 Bucket<a class="headerlink" href="#s3-bucket" title="Link to this heading">#</a></h3>
+<p>You will need to create a <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html">S3 bucket</a> to stage your data before it goes to the database.
+To gain access to read and write data to the S3 bucket from your device, you must acquire your <code class="docutils literal notranslate"><span class="pre">AWS</span> <span class="pre">Access</span> <span class="pre">Key</span> <span class="pre">ID</span></code> and <code class="docutils literal notranslate"><span class="pre">AWS</span> <span class="pre">Secret</span> <span class="pre">Access</span> <span class="pre">Key</span></code>.
+These credentials can be obtained from your AWS account within the
+<a class="reference external" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user_manage_add-key.html">Security Credentials</a> section.</p>
 <p>Once you’ve obtained your AWS keys, you will need to set them by executing the below in Terminal:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aws<span class="w"> </span>configure
 </pre></div>
@@ -350,15 +352,57 @@ which can be done from your AWS account under <a class="reference external" href
 </pre></div>
 </div>
 </section>
-<section id="aws-lambda">
-<h3>AWS Lambda<a class="headerlink" href="#aws-lambda" title="Link to this heading">#</a></h3>
+<section id="lambda">
+<h3>Lambda<a class="headerlink" href="#lambda" title="Link to this heading">#</a></h3>
+<p>When data is stored into the S3 bucket, a <code class="docutils literal notranslate"><span class="pre">PutObject</span></code> event occurs. This event can be used as a trigger to transfer data from S3 to RDS (PostgreSQL).
+You will need to complete the following:</p>
+<ul class="simple">
+<li><p>Create a Lambda function with a Python 3.8 runtime</p></li>
+<li><p>Create a trigger and select S3 as the Source</p></li>
+<li><p>Select the S3 bucket you created</p></li>
+<li><p>Set the Event Type to <code class="docutils literal notranslate"><span class="pre">PUT</span></code> and click Add to create the trigger</p></li>
+<li><p>From the Lambda function, click on the Upload From button and upload the <code class="docutils literal notranslate"><span class="pre">lamba_function.zip</span></code> file located in <code class="docutils literal notranslate"><span class="pre">portfolio-optimization/cloud-storage/aws-lambda-package/zip-files</span></code></p></li>
+<li><p>Create a Lambda layer with a Python 3.8 runtime and upload the <code class="docutils literal notranslate"><span class="pre">python.zip</span></code> file located in <code class="docutils literal notranslate"><span class="pre">portfolio-optimization/cloud-storage/aws-lambda-package/zip-files</span></code></p></li>
+<li><p>Click on <strong>Configuration &gt; General configuration</strong> and set the Timeout from 3 secs to 30 secs</p></li>
+<li><p>Click on <strong>Configuration &gt; Environment variables</strong> and create <a class="reference external" href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a> for your RDS (PostgreSQL) connection.</p></li>
+</ul>
+<div class="table-wrapper colwidths-given docutils container">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DBNAME</p></td>
+<td><p>company_stock</p></td>
+</tr>
+<tr class="row-odd"><td><p>USER</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PASS</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>HOST</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>PORT</p></td>
+<td><p>5432</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 <section id="dbt-setup">
 <h2>dbt Setup<a class="headerlink" href="#dbt-setup" title="Link to this heading">#</a></h2>
 <p>In order to conduct data transformations within the database, we must configure dbt to run the data models for execution.</p>
-<section id="id1">
-<h3>Installation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h3>Installation<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Install the <code class="docutils literal notranslate"><span class="pre">dbt-postgres</span></code> adapter version used for this project:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>dbt-postgres<span class="o">==</span><span class="m">1</span>.7.0
 </pre></div>
@@ -589,12 +633,12 @@ API key, you’ll need to update the <code class="docutils literal notranslate">
 <li><a class="reference internal" href="#clone-github-repo">Clone GitHub Repo</a></li>
 <li><a class="reference internal" href="#install-requirements">Install Requirements</a></li>
 <li><a class="reference internal" href="#aws-configurations">AWS Configurations</a><ul>
-<li><a class="reference internal" href="#aws-s3">AWS S3</a></li>
-<li><a class="reference internal" href="#aws-lambda">AWS Lambda</a></li>
+<li><a class="reference internal" href="#s3-bucket">S3 Bucket</a></li>
+<li><a class="reference internal" href="#lambda">Lambda</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#dbt-setup">dbt Setup</a><ul>
-<li><a class="reference internal" href="#id1">Installation</a></li>
+<li><a class="reference internal" href="#id2">Installation</a></li>
 <li><a class="reference internal" href="#initialization">Initialization</a></li>
 </ul>
 </li>
