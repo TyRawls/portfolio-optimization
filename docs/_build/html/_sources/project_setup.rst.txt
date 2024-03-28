@@ -147,6 +147,8 @@ Once you've set your AWS keys, you may view your credentials by entering the bel
 
     cd ~ && cd .aws && nano credentials
 
+Finally, you'll need to modify the ``bucket`` variable in the ``utils.py`` file, specifically on `line 244`, with the name of your S3 bucket.
+
 Lambda
 ------
 When data is stored into the S3 bucket, a ``PutObject`` event occurs. This event can be used as a trigger to transfer data from S3 to RDS (PostgreSQL). 
