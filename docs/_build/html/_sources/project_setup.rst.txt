@@ -24,29 +24,29 @@ Install `PostgreSQL <https://postgresapp.com/>`_ and start the database server. 
 
 Configure PATHS File
 --------------------
-After installing PostgreSQL, you will need to complete the below steps so that the ``psql`` command will work in Terminal. 
-These steps will add the PostgreSQL binaries path to the ``paths`` file on your computer:
+After installing ``PostgreSQL``, you will need to complete the below steps so that the ``psql`` command will work in ``Terminal``. 
+These steps will add the ``PostgreSQL`` binaries path to the ``paths`` file on your computer:
 
-    #. Open Terminal and type ``sudo nano /etc/paths``, then press Enter to open the ``paths`` file. 
+    #. Open ``Terminal`` and type ``sudo nano /etc/paths``, then press Enter to open the ``paths`` file. 
         .. note::
             You will be prompted to enter a password to edit the ``paths`` file.
-    #. Open the PostgreSQL app and make sure the server is runnning by clicking Start. 
-    #. Click on Server Settings and copy the binaries path.
+    #. Open the ``PostgreSQL`` app and make sure the server is runnning by clicking **Start**. 
+    #. Click on **Server Settings** and copy the binaries path.
         .. figure:: images/postgresql_binaries_path.png
            :width: 800   
            :alt: This is an image
-    #. Paste the binaries path in the ``paths`` file in Terminal.
+    #. Paste the binaries path in the ``paths`` file in ``Terminal``.
         .. figure:: images/paths_file_content.png
            :width: 800
            :alt: This is an image
-    #. Press ``Control + O``, then Enter to save the contents to the ``paths`` file.
+    #. Press ``Control + O``, then **Enter** to save the contents to the ``paths`` file.
     #. Lastly, press ``Control + X`` to exit the ``paths`` file.
-    #. Close Terminal and relaunch it.
+    #. Close ``Terminal`` and relaunch it.
 
-Upon relaunching Terminal, you should find that you can now utilize the ``psql`` command. 
+Upon relaunching ``Terminal``, you should find that you can now utilize the ``psql`` command. 
 
 .. caution::
-    If you do not complete the above steps, then you will get ``psql: command not found`` when trying to execute the ``psql`` command in Terminal.
+    If you do not complete the above steps, then you will get ``psql: command not found`` when trying to execute the ``psql`` command in ``Terminal``.
 
 Create Database
 ---------------
@@ -54,40 +54,41 @@ Create Database
     The below setup is for the local implementation only. If you're not using the local setup, please skip to :ref:`Clone GitHub Repo`. 
 
 We need to set a password for the local database connection which will be used later to connect ``dbt``.
-Enter the below in Terminal to launch the PostgreSQL command line::
+Enter the below in ``Terminal`` to launch the ``PostgreSQL`` command line interface (CLI)::
 
     psql -U postgres
 
 To set the password, enter ``\password postgres``. You'll be prompted to create a password.
 
-You must establish a database called ``company_stock`` to store the stock data. Upon successful creation, 
-you should observe it within the PostgreSQL app. 
+You must establish a database called ``company_stock`` to store the stock data. 
 
-Enter the below command in the PostgreSQL command line::
+Enter the below command in the ``PostgreSQL`` CLI::
 
     CREATE DATABASE company_stock;
 
-Enter ``\q`` in the PostgreSQL command line to exit. Open the PostgreSQL app to verify that the database was created
+Upon successful creation, you should observe it within the ``PostgreSQL`` app. Open the ``PostgreSQL`` app to verify that the database was created
 
 .. figure:: images/postgresql_company_stock_database.png
     :width: 800   
     :alt: This is an image
 
+Enter ``\q`` in the ``PostgreSQL`` CLI to exit. 
+
 *****************
 Clone GitHub Repo 
 *****************
 
-Open Terminal and navigate to a directory of your choice. Clone the GitHub repository by running the below command::
+Open ``Terminal`` and navigate to a directory of your choice. Clone the GitHub repository by running the below command::
 
     git clone https://github.com/tyrawls/portfolio-optimization.git
 
-This will copy all the project files to your directory.
+This will copy all the project files to your current directory.
 
 ********************
 Install Requirements
 ********************
 
-Navigate to the cloud or local storage directory in Terminal after you have cloned the GitHub repository::
+Navigate to the cloud or local storage directory in ``Terminal`` after you have cloned the GitHub repository::
 
     cd portfolio-optimization/cloud-storage      # directory for cloud setup
     cd portfolio-optimization/local-storage      # directory for local setup
@@ -98,12 +99,12 @@ Navigate to the cloud or local storage directory in Terminal after you have clon
 
     - `Amazon S3 <https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html>`_ storage for staging data
     - `Amazon Lambda <https://aws.amazon.com/pm/lambda/>`_ to trigger data transfer to the database
-    - `Amazon RDS <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html>`_ for PostgreSQL database storage
+    - `Amazon RDS <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html>`_ for ``PostgreSQL`` database storage
 
 Create a Python virtual environment and activate it::
 
-    python -m venv .venv              # create the environment
-    source .venv/bin/activate         # activate the environment for Mac and Linux
+    python -m venv .venv              
+    source .venv/bin/activate         
 
 You should now be in your virtual environment (.venv).
 
@@ -115,7 +116,7 @@ Upgrade the pip version::
 
     pip install --upgrade pip
 
-Install the dependencies (requirements) into the Python virtual environment::
+Install the dependencies into the Python virtual environment::
 
     pip install -r requirements.txt
 
@@ -133,7 +134,7 @@ To gain access to read and write data to the S3 bucket from your device, you mus
 These credentials can be obtained from your AWS account within the 
 `Security Credentials <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user_manage_add-key.html>`_ section.
 
-Once you've obtained your AWS keys, you will need to set them by executing the below in Terminal::
+Once you've obtained your AWS keys, you will need to configure them by executing the below in ``Terminal`` to access the AWS CLI::
 
     aws configure
 
@@ -144,26 +145,30 @@ You will be prompted to enter the below:
 * ``Default region name`` (optional)
 * ``Default output format`` (optional)
 
-Once you've set your AWS keys, you may view your credentials by entering the below in a new Terminal window::
+Once you've set your AWS keys, you may view your credentials by entering the below in a new ``Terminal`` window::
 
     cd ~ && cd .aws && nano credentials
 
 Finally, you'll need to modify the ``bucket`` variable in the ``utils.py`` file located in the ``cloud-storage`` folder, 
-specifically on `line 244`, with the name of your S3 bucket.
+specifically on `line 244`, with the name of your S3 bucket. If you cannot view the line numbers, then you can locate the 
+``bucket`` variable inside the ``get_historical_stock_data()`` function.
+
+.. figure:: images/utils_bucket_variable.png
+    :width: 800   
+    :alt: This is an image
 
 Lambda
 ------
-When data is stored into the S3 bucket, a ``PutObject`` event occurs. This event can be used as a trigger to transfer data from S3 to RDS (PostgreSQL). 
+When data is stored into the S3 bucket, a ``PutObject`` event occurs. This event can be used as a trigger to transfer data from S3 to RDS (``PostgreSQL``). 
 You will need to complete the following:
 
-* Create a Lambda function with a Python 3.8 runtime
-* Create a trigger and select S3 as the Source
-* Select the S3 bucket you created
-* Set the Event Type to ``PUT`` and click Add to create the trigger
-* From the Lambda function, click on the Upload From button and upload the ``lamba_function.zip`` file located in ``portfolio-optimization/cloud-storage/aws-lambda-package/zip-files``
-* Create a Lambda layer with a Python 3.8 runtime and upload the ``python.zip`` file located in ``portfolio-optimization/cloud-storage/aws-lambda-package/zip-files``
-* Click on **Configuration > General configuration** and set the Timeout from 3 secs to 30 secs
-* Click on **Configuration > Environment variables** and create `environment variables <https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html>`_ for your RDS (PostgreSQL) connection.
+    #. Create a **Lambda Function** with a **Python 3.8 runtime**
+    #. Create a **Trigger** and select the S3 bucket you created as the **Source**
+    #. Set the **Trigger Event Type** to ``PUT`` and click **Add** to create the trigger
+    #. From the **Lambda Function**, click on the **Upload From** button and upload the ``lambda_function.zip`` file located in ``portfolio-optimization/cloud-storage/aws-lambda-package/zip-files``
+    #. Create a `Lambda Layer <https://docs.aws.amazon.com/lambda/latest/dg/adding-layers.html>`_ with a **Python 3.8 runtime** and upload the ``python.zip`` file located in ``portfolio-optimization/cloud-storage/aws-lambda-package/zip-files``
+    #. Click on **Configuration > General configuration** and set the `Timeout <https://docs.aws.amazon.com/lambda/latest/dg/configuration-timeout.html>`_ to **30 secs**.
+    #. Click on **Configuration > Environment variables** and create `Environment Variables <https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html>`_ for your RDS (``PostgreSQL``) connection. You will need to set the ``Key`` and ``Value`` with your database credentials.
 
 .. list-table:: 
    :widths: 10 30 
@@ -186,7 +191,7 @@ You will need to complete the following:
 dbt Setup
 *********
 
-In order to conduct data transformations within the database, we must configure dbt to run the data models for execution.
+In order to conduct data transformations within the database, we must configure ``dbt`` to run the data models for execution.
 
 Installation
 ------------
@@ -212,7 +217,7 @@ You should see::
 
 Initialization
 --------------
-While in the ``local-storage`` or ``cloud-storage`` folder, switch to the dbt project folder and initialize the project::
+While in the ``local-storage`` or ``cloud-storage`` folder, switch to the ``dbt`` project folder and initialize the project::
 
     cd portfolio_optimization_project_dbt && dbt init
 
@@ -228,11 +233,11 @@ press enter. You should see the something like the below::
 
     Enter a number: 1
     Profile portfolio_optimization_project_dbt written to /Users/rootuser/.dbt/profiles.yml using targets sample 
-    configuration. Once updated, youll be able to start developing with dbt.
+    configuration. Once updated, you will be able to start developing with dbt.
 
 This will the create the ``profiles.yml`` file to add your database credentials.
 
-Open a separate Terminal window. Copy and paste the below::
+Open a separate ``Terminal`` window. Copy and paste the below::
 
     cd ~                    # switch to root directory
     cd .dbt                 # switch to .dbt folder
@@ -278,9 +283,9 @@ To save the ``profiles.yml`` content:
 
 * Press ``Control + O``, then Enter to write to the ``profiles.yml`` file.
 * Lastly, press ``Control + X`` to exit the ``profiles.yml`` file.
-* Close this Terminal
+* Close this ``Terminal``
 
-Go back to the initial Terminal and test the database connection::
+Go back to the initial ``Terminal`` and test the database connection::
 
     dbt debug
 
@@ -297,7 +302,7 @@ API key, you'll need to update the ``.zshrc`` configuration file. If you haven't
 
     FMP_API_KEY="?apikey=257u72xb87f2953y557example407n41"
 
-To modify the ``.zshrc`` file, open a separate Terminal and execute the below::
+To modify the ``.zshrc`` file, open a separate ``Terminal`` and execute the below::
 
     cd ~ && nano .zshrc
 
@@ -305,7 +310,7 @@ Cloud Setup
 -----------
 For cloud setup, add the below to the ``.zshrc`` file::
 
-    # AWS RDS (PostgreSQL) credentials
+    # AWS RDS (``PostgreSQL``) credentials
     export CLOUD_HOST=[HOST]
     export CLOUD_PORT="5432"
     export CLOUD_USER=[USERNAME]
@@ -320,13 +325,13 @@ You will need to add your credentials to the inputs in the brackets.
 
 * Press ``Control + O``, then Enter to write to the ``.zshrc`` file.
 * Lastly, press ``Control + X`` to exit the ``.zshrc`` file.
-* Close this Terminal
+* Close this ``Terminal``
 
 Local Setup
 -----------
 For local setup, add the below to the ``.zshrc`` file::
 
-    # Local (PostgreSQL) credentials
+    # Local (``PostgreSQL``) credentials
     export LOCAL_HOST="localhost"
     export LOCAL_PORT="5432"
     export LOCAL_USER="postgres"
@@ -341,4 +346,4 @@ You will need to add your credentials to the inputs in the brackets.
 
 * Press ``Control + O``, then Enter to write to the ``.zshrc`` file.
 * Lastly, press ``Control + X`` to exit the ``.zshrc`` file.
-* Close this Terminal
+* Close this ``Terminal``

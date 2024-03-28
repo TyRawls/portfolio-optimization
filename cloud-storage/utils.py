@@ -241,12 +241,7 @@ def get_historical_stock_data(tickers):
     price_cols = ['date', 'ticker', 'open', 'high', 'low', 'close', 'volume']
     
     # Set the name of the S3 bucket that was already created in AWS
-    bucket = 'api-team-bucket-1'
-    
-    # # Get current and parent directory, then switch to parent directory.
-    # directory = os.getcwd() 
-    # parent_directory = os.path.dirname(directory)
-    # os.chdir(parent_directory)
+    bucket = 's3-bucket-name-goes-here'
         
     try:
         # Pull all company info and stock data from the database, then convert them into a DataFrame

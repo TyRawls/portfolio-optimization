@@ -219,42 +219,42 @@ for some dependencies in this project.</p>
 </section>
 <section id="configure-paths-file">
 <h3>Configure PATHS File<a class="headerlink" href="#configure-paths-file" title="Link to this heading">#</a></h3>
-<p>After installing PostgreSQL, you will need to complete the below steps so that the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command will work in Terminal.
-These steps will add the PostgreSQL binaries path to the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file on your computer:</p>
+<p>After installing <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code>, you will need to complete the below steps so that the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command will work in <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>.
+These steps will add the <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> binaries path to the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file on your computer:</p>
 <blockquote>
 <div><ol class="arabic">
 <li><dl>
-<dt>Open Terminal and type <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/paths</span></code>, then press Enter to open the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</dt><dd><div class="admonition note">
+<dt>Open <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> and type <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">nano</span> <span class="pre">/etc/paths</span></code>, then press Enter to open the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</dt><dd><div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You will be prompted to enter a password to edit the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p>
 </div>
 </dd>
 </dl>
 </li>
-<li><p>Open the PostgreSQL app and make sure the server is runnning by clicking Start.</p></li>
+<li><p>Open the <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> app and make sure the server is runnning by clicking <strong>Start</strong>.</p></li>
 <li><dl>
-<dt>Click on Server Settings and copy the binaries path.</dt><dd><figure class="align-default">
+<dt>Click on <strong>Server Settings</strong> and copy the binaries path.</dt><dd><figure class="align-default">
 <a class="reference internal image-reference" href="_images/postgresql_binaries_path.png"><img alt="This is an image" src="_images/postgresql_binaries_path.png" style="width: 800px;" /></a>
 </figure>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt>Paste the binaries path in the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file in Terminal.</dt><dd><figure class="align-default">
+<dt>Paste the binaries path in the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file in <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>.</dt><dd><figure class="align-default">
 <a class="reference internal image-reference" href="_images/paths_file_content.png"><img alt="This is an image" src="_images/paths_file_content.png" style="width: 800px;" /></a>
 </figure>
 </dd>
 </dl>
 </li>
-<li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to save the contents to the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then <strong>Enter</strong> to save the contents to the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
 <li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">paths</span></code> file.</p></li>
-<li><p>Close Terminal and relaunch it.</p></li>
+<li><p>Close <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> and relaunch it.</p></li>
 </ol>
 </div></blockquote>
-<p>Upon relaunching Terminal, you should find that you can now utilize the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command.</p>
+<p>Upon relaunching <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>, you should find that you can now utilize the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p>If you do not complete the above steps, then you will get <code class="docutils literal notranslate"><span class="pre">psql:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code> when trying to execute the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command in Terminal.</p>
+<p>If you do not complete the above steps, then you will get <code class="docutils literal notranslate"><span class="pre">psql:</span> <span class="pre">command</span> <span class="pre">not</span> <span class="pre">found</span></code> when trying to execute the <code class="docutils literal notranslate"><span class="pre">psql</span></code> command in <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>.</p>
 </div>
 </section>
 <section id="create-database">
@@ -264,34 +264,34 @@ These steps will add the PostgreSQL binaries path to the <code class="docutils l
 <p>The below setup is for the local implementation only. If you’re not using the local setup, please skip to <a class="reference internal" href="#clone-github-repo"><span class="std std-ref">Clone GitHub Repo</span></a>.</p>
 </div>
 <p>We need to set a password for the local database connection which will be used later to connect <code class="docutils literal notranslate"><span class="pre">dbt</span></code>.
-Enter the below in Terminal to launch the PostgreSQL command line:</p>
+Enter the below in <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> to launch the <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> command line interface (CLI):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>psql<span class="w"> </span>-U<span class="w"> </span>postgres
 </pre></div>
 </div>
 <p>To set the password, enter <code class="docutils literal notranslate"><span class="pre">\password</span> <span class="pre">postgres</span></code>. You’ll be prompted to create a password.</p>
-<p>You must establish a database called <code class="docutils literal notranslate"><span class="pre">company_stock</span></code> to store the stock data. Upon successful creation,
-you should observe it within the PostgreSQL app.</p>
-<p>Enter the below command in the PostgreSQL command line:</p>
+<p>You must establish a database called <code class="docutils literal notranslate"><span class="pre">company_stock</span></code> to store the stock data.</p>
+<p>Enter the below command in the <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> CLI:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>CREATE<span class="w"> </span>DATABASE<span class="w"> </span>company_stock<span class="p">;</span>
 </pre></div>
 </div>
-<p>Enter <code class="docutils literal notranslate"><span class="pre">\q</span></code> in the PostgreSQL command line to exit. Open the PostgreSQL app to verify that the database was created</p>
+<p>Upon successful creation, you should observe it within the <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> app. Open the <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> app to verify that the database was created</p>
 <figure class="align-default">
 <a class="reference internal image-reference" href="_images/postgresql_company_stock_database.png"><img alt="This is an image" src="_images/postgresql_company_stock_database.png" style="width: 800px;" /></a>
 </figure>
+<p>Enter <code class="docutils literal notranslate"><span class="pre">\q</span></code> in the <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> CLI to exit.</p>
 </section>
 </section>
 <section id="clone-github-repo">
 <h2>Clone GitHub Repo<a class="headerlink" href="#clone-github-repo" title="Link to this heading">#</a></h2>
-<p>Open Terminal and navigate to a directory of your choice. Clone the GitHub repository by running the below command:</p>
+<p>Open <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> and navigate to a directory of your choice. Clone the GitHub repository by running the below command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/tyrawls/portfolio-optimization.git
 </pre></div>
 </div>
-<p>This will copy all the project files to your directory.</p>
+<p>This will copy all the project files to your current directory.</p>
 </section>
 <section id="install-requirements">
 <h2>Install Requirements<a class="headerlink" href="#install-requirements" title="Link to this heading">#</a></h2>
-<p>Navigate to the cloud or local storage directory in Terminal after you have cloned the GitHub repository:</p>
+<p>Navigate to the cloud or local storage directory in <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> after you have cloned the GitHub repository:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>portfolio-optimization/cloud-storage<span class="w">      </span><span class="c1"># directory for cloud setup</span>
 <span class="nb">cd</span><span class="w"> </span>portfolio-optimization/local-storage<span class="w">      </span><span class="c1"># directory for local setup</span>
 </pre></div>
@@ -303,12 +303,12 @@ To configure the cloud setup, you’ll be required to establish three components
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html">Amazon S3</a> storage for staging data</p></li>
 <li><p><a class="reference external" href="https://aws.amazon.com/pm/lambda/">Amazon Lambda</a> to trigger data transfer to the database</p></li>
-<li><p><a class="reference external" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html">Amazon RDS</a> for PostgreSQL database storage</p></li>
+<li><p><a class="reference external" href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html">Amazon RDS</a> for <code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code> database storage</p></li>
 </ul>
 </div>
 <p>Create a Python virtual environment and activate it:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv<span class="w">              </span><span class="c1"># create the environment</span>
-<span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">         </span><span class="c1"># activate the environment for Mac and Linux</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 </pre></div>
 </div>
 <p>You should now be in your virtual environment (.venv).</p>
@@ -320,7 +320,7 @@ To configure the cloud setup, you’ll be required to establish three components
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
 </pre></div>
 </div>
-<p>Install the dependencies (requirements) into the Python virtual environment:</p>
+<p>Install the dependencies into the Python virtual environment:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </pre></div>
 </div>
@@ -337,7 +337,7 @@ To configure the cloud setup, you’ll be required to establish three components
 To gain access to read and write data to the S3 bucket from your device, you must acquire your <code class="docutils literal notranslate"><span class="pre">AWS</span> <span class="pre">Access</span> <span class="pre">Key</span> <span class="pre">ID</span></code> and <code class="docutils literal notranslate"><span class="pre">AWS</span> <span class="pre">Secret</span> <span class="pre">Access</span> <span class="pre">Key</span></code>.
 These credentials can be obtained from your AWS account within the
 <a class="reference external" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user_manage_add-key.html">Security Credentials</a> section.</p>
-<p>Once you’ve obtained your AWS keys, you will need to set them by executing the below in Terminal:</p>
+<p>Once you’ve obtained your AWS keys, you will need to configure them by executing the below in <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> to access the AWS CLI:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aws<span class="w"> </span>configure
 </pre></div>
 </div>
@@ -348,27 +348,32 @@ These credentials can be obtained from your AWS account within the
 <li><p><code class="docutils literal notranslate"><span class="pre">Default</span> <span class="pre">region</span> <span class="pre">name</span></code> (optional)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Default</span> <span class="pre">output</span> <span class="pre">format</span></code> (optional)</p></li>
 </ul>
-<p>Once you’ve set your AWS keys, you may view your credentials by entering the below in a new Terminal window:</p>
+<p>Once you’ve set your AWS keys, you may view your credentials by entering the below in a new <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> window:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>.aws<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nano<span class="w"> </span>credentials
 </pre></div>
 </div>
 <p>Finally, you’ll need to modify the <code class="docutils literal notranslate"><span class="pre">bucket</span></code> variable in the <code class="docutils literal notranslate"><span class="pre">utils.py</span></code> file located in the <code class="docutils literal notranslate"><span class="pre">cloud-storage</span></code> folder,
-specifically on <cite>line 244</cite>, with the name of your S3 bucket.</p>
+specifically on <cite>line 244</cite>, with the name of your S3 bucket. If you cannot view the line numbers, then you can locate the
+<code class="docutils literal notranslate"><span class="pre">bucket</span></code> variable inside the <code class="docutils literal notranslate"><span class="pre">get_historical_stock_data()</span></code> function.</p>
+<figure class="align-default">
+<a class="reference internal image-reference" href="_images/utils_bucket_variable.png"><img alt="This is an image" src="_images/utils_bucket_variable.png" style="width: 800px;" /></a>
+</figure>
 </section>
 <section id="lambda">
 <h3>Lambda<a class="headerlink" href="#lambda" title="Link to this heading">#</a></h3>
-<p>When data is stored into the S3 bucket, a <code class="docutils literal notranslate"><span class="pre">PutObject</span></code> event occurs. This event can be used as a trigger to transfer data from S3 to RDS (PostgreSQL).
+<p>When data is stored into the S3 bucket, a <code class="docutils literal notranslate"><span class="pre">PutObject</span></code> event occurs. This event can be used as a trigger to transfer data from S3 to RDS (<code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code>).
 You will need to complete the following:</p>
-<ul class="simple">
-<li><p>Create a Lambda function with a Python 3.8 runtime</p></li>
-<li><p>Create a trigger and select S3 as the Source</p></li>
-<li><p>Select the S3 bucket you created</p></li>
-<li><p>Set the Event Type to <code class="docutils literal notranslate"><span class="pre">PUT</span></code> and click Add to create the trigger</p></li>
-<li><p>From the Lambda function, click on the Upload From button and upload the <code class="docutils literal notranslate"><span class="pre">lamba_function.zip</span></code> file located in <code class="docutils literal notranslate"><span class="pre">portfolio-optimization/cloud-storage/aws-lambda-package/zip-files</span></code></p></li>
-<li><p>Create a Lambda layer with a Python 3.8 runtime and upload the <code class="docutils literal notranslate"><span class="pre">python.zip</span></code> file located in <code class="docutils literal notranslate"><span class="pre">portfolio-optimization/cloud-storage/aws-lambda-package/zip-files</span></code></p></li>
-<li><p>Click on <strong>Configuration &gt; General configuration</strong> and set the Timeout from 3 secs to 30 secs</p></li>
-<li><p>Click on <strong>Configuration &gt; Environment variables</strong> and create <a class="reference external" href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a> for your RDS (PostgreSQL) connection.</p></li>
-</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Create a <strong>Lambda Function</strong> with a <strong>Python 3.8 runtime</strong></p></li>
+<li><p>Create a <strong>Trigger</strong> and select the S3 bucket you created as the <strong>Source</strong></p></li>
+<li><p>Set the <strong>Trigger Event Type</strong> to <code class="docutils literal notranslate"><span class="pre">PUT</span></code> and click <strong>Add</strong> to create the trigger</p></li>
+<li><p>From the <strong>Lambda Function</strong>, click on the <strong>Upload From</strong> button and upload the <code class="docutils literal notranslate"><span class="pre">lambda_function.zip</span></code> file located in <code class="docutils literal notranslate"><span class="pre">portfolio-optimization/cloud-storage/aws-lambda-package/zip-files</span></code></p></li>
+<li><p>Create a <a class="reference external" href="https://docs.aws.amazon.com/lambda/latest/dg/adding-layers.html">Lambda Layer</a> with a <strong>Python 3.8 runtime</strong> and upload the <code class="docutils literal notranslate"><span class="pre">python.zip</span></code> file located in <code class="docutils literal notranslate"><span class="pre">portfolio-optimization/cloud-storage/aws-lambda-package/zip-files</span></code></p></li>
+<li><p>Click on <strong>Configuration &gt; General configuration</strong> and set the <a class="reference external" href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-timeout.html">Timeout</a> to <strong>30 secs</strong>.</p></li>
+<li><p>Click on <strong>Configuration &gt; Environment variables</strong> and create <a class="reference external" href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Environment Variables</a> for your RDS (<code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code>) connection. You will need to set the <code class="docutils literal notranslate"><span class="pre">Key</span></code> and <code class="docutils literal notranslate"><span class="pre">Value</span></code> with your database credentials.</p></li>
+</ol>
+</div></blockquote>
 <div class="table-wrapper colwidths-given docutils container">
 <table class="docutils align-default">
 <colgroup>
@@ -403,7 +408,7 @@ You will need to complete the following:</p>
 </section>
 <section id="dbt-setup">
 <h2>dbt Setup<a class="headerlink" href="#dbt-setup" title="Link to this heading">#</a></h2>
-<p>In order to conduct data transformations within the database, we must configure dbt to run the data models for execution.</p>
+<p>In order to conduct data transformations within the database, we must configure <code class="docutils literal notranslate"><span class="pre">dbt</span></code> to run the data models for execution.</p>
 <section id="id2">
 <h3>Installation<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>Install the <code class="docutils literal notranslate"><span class="pre">dbt-postgres</span></code> adapter version used for this project:</p>
@@ -430,7 +435,7 @@ version matches the <code class="docutils literal notranslate"><span class="pre"
 </section>
 <section id="initialization">
 <h3>Initialization<a class="headerlink" href="#initialization" title="Link to this heading">#</a></h3>
-<p>While in the <code class="docutils literal notranslate"><span class="pre">local-storage</span></code> or <code class="docutils literal notranslate"><span class="pre">cloud-storage</span></code> folder, switch to the dbt project folder and initialize the project:</p>
+<p>While in the <code class="docutils literal notranslate"><span class="pre">local-storage</span></code> or <code class="docutils literal notranslate"><span class="pre">cloud-storage</span></code> folder, switch to the <code class="docutils literal notranslate"><span class="pre">dbt</span></code> project folder and initialize the project:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>portfolio_optimization_project_dbt<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>dbt<span class="w"> </span>init
 </pre></div>
 </div>
@@ -445,11 +450,11 @@ Which<span class="w"> </span>database<span class="w"> </span>would<span class="w
 
 Enter<span class="w"> </span>a<span class="w"> </span>number:<span class="w"> </span><span class="m">1</span>
 Profile<span class="w"> </span>portfolio_optimization_project_dbt<span class="w"> </span>written<span class="w"> </span>to<span class="w"> </span>/Users/rootuser/.dbt/profiles.yml<span class="w"> </span>using<span class="w"> </span>targets<span class="w"> </span>sample
-configuration.<span class="w"> </span>Once<span class="w"> </span>updated,<span class="w"> </span>youll<span class="w"> </span>be<span class="w"> </span>able<span class="w"> </span>to<span class="w"> </span>start<span class="w"> </span>developing<span class="w"> </span>with<span class="w"> </span>dbt.
+configuration.<span class="w"> </span>Once<span class="w"> </span>updated,<span class="w"> </span>you<span class="w"> </span>will<span class="w"> </span>be<span class="w"> </span>able<span class="w"> </span>to<span class="w"> </span>start<span class="w"> </span>developing<span class="w"> </span>with<span class="w"> </span>dbt.
 </pre></div>
 </div>
 <p>This will the create the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file to add your database credentials.</p>
-<p>Open a separate Terminal window. Copy and paste the below:</p>
+<p>Open a separate <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> window. Copy and paste the below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w">                    </span><span class="c1"># switch to root directory</span>
 <span class="nb">cd</span><span class="w"> </span>.dbt<span class="w">                 </span><span class="c1"># switch to .dbt folder</span>
 nano<span class="w"> </span>profiles.yml<span class="w">       </span><span class="c1"># open yml file for editing</span>
@@ -496,9 +501,9 @@ nano<span class="w"> </span>profiles.yml<span class="w">       </span><span clas
 <ul class="simple">
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file.</p></li>
 <li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file.</p></li>
-<li><p>Close this Terminal</p></li>
+<li><p>Close this <code class="docutils literal notranslate"><span class="pre">Terminal</span></code></p></li>
 </ul>
-<p>Go back to the initial Terminal and test the database connection:</p>
+<p>Go back to the initial <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> and test the database connection:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dbt<span class="w"> </span>debug
 </pre></div>
 </div>
@@ -513,14 +518,14 @@ API key, you’ll need to update the <code class="docutils literal notranslate">
 <p class="admonition-title">Example</p>
 <p>FMP_API_KEY=”?apikey=257u72xb87f2953y557example407n41”</p>
 </div>
-<p>To modify the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file, open a separate Terminal and execute the below:</p>
+<p>To modify the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file, open a separate <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> and execute the below:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nano<span class="w"> </span>.zshrc
 </pre></div>
 </div>
 <section id="cloud-setup">
 <h3>Cloud Setup<a class="headerlink" href="#cloud-setup" title="Link to this heading">#</a></h3>
 <p>For cloud setup, add the below to the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># AWS RDS (PostgreSQL) credentials</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># AWS RDS (``PostgreSQL``) credentials</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CLOUD_HOST</span><span class="o">=[</span>HOST<span class="o">]</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CLOUD_PORT</span><span class="o">=</span><span class="s2">&quot;5432&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CLOUD_USER</span><span class="o">=[</span>USERNAME<span class="o">]</span>
@@ -536,13 +541,13 @@ API key, you’ll need to update the <code class="docutils literal notranslate">
 <ul class="simple">
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file.</p></li>
 <li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file.</p></li>
-<li><p>Close this Terminal</p></li>
+<li><p>Close this <code class="docutils literal notranslate"><span class="pre">Terminal</span></code></p></li>
 </ul>
 </section>
 <section id="local-setup">
 <h3>Local Setup<a class="headerlink" href="#local-setup" title="Link to this heading">#</a></h3>
 <p>For local setup, add the below to the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Local (PostgreSQL) credentials</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Local (``PostgreSQL``) credentials</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">LOCAL_HOST</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">LOCAL_PORT</span><span class="o">=</span><span class="s2">&quot;5432&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">LOCAL_USER</span><span class="o">=</span><span class="s2">&quot;postgres&quot;</span>
@@ -558,7 +563,7 @@ API key, you’ll need to update the <code class="docutils literal notranslate">
 <ul class="simple">
 <li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file.</p></li>
 <li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file.</p></li>
-<li><p>Close this Terminal</p></li>
+<li><p>Close this <code class="docutils literal notranslate"><span class="pre">Terminal</span></code></p></li>
 </ul>
 </section>
 </section>
