@@ -43,7 +43,7 @@ Data Loading
 ^^^^^^^^^^^^
 The Y!Finance API retrieves a decade's worth of data for each ticker and compares it with the existing database records. If a ticker is not present in the database, all 
 10 years of data from Y!Finance are stored in an `Amazon S3 <https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html>`_ bucket (using 
-`Boto3 <https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html#>`_). This action triggers an `Amazon Lambda <https://aws.amazon.com/pm/lambda/>`_ 
+`Boto3 <https://boto3.amazonaws.com/v1/documentation/api/latest/index.html>`_). This action triggers an `Amazon Lambda <https://aws.amazon.com/pm/lambda/>`_ 
 function, which then pushes the data to a PostgreSQL instance in `Amazon RDS <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateDBInstance.html>`_. 
 Conversely, if the ticker already exists in the database, only the new data is kept and stored.
 

@@ -254,7 +254,7 @@ def get_historical_stock_data(tickers):
         print('Sucessfully created database and tables.')
         info_df_db_all, price_df_db_all = read_stock_database()
     
-    # Define schema for stock price and company info DataFrame.
+    # Define schema for company info and stock price DataFrame.
     info_schema = {
               'ticker': 'str',
         'company_name': 'str',
