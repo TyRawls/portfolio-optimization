@@ -1,4 +1,4 @@
-.. Allow bash inline coding. Will only include line numbers if code has 5 of more lines.
+.. Allow bash inline coding. Will only include line numbers if code has 25 of more lines.
 .. highlight:: bash
    :linenothreshold: 50 
 

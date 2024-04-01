@@ -1,7 +1,6 @@
-.. Allow bash inline coding. Will only include line numbers if code has 5 of more lines.
+.. Allow bash inline coding. Will only include line numbers if code has 25 of more lines.
 .. highlight:: bash
    :linenothreshold: 50 
-
 
 Deployment
 ==========
@@ -39,8 +38,6 @@ This application accepts four key inputs from the user (see `About > Stock Predi
 
 Generated Output
 ----------------
-
-
 Once you've entered the essential parameters, you should choose ``Run - Manual Input`` to input tickers manually or ``Run - CSV File`` to load tickers from 
 a CSV file. Upon successful execution, you'll observe the asset allocation outcomes for each ticker along with a plot demonstrating Markowitz's Efficient 
 Frontier utilizing the Sharpe Ratio and Capital Allocation Line (CAL).
@@ -52,5 +49,3 @@ Frontier utilizing the Sharpe Ratio and Capital Allocation Line (CAL).
 .. figure:: images/streamlit_cloud_deploy_plot.png
    :width: 800
    :alt: This is an image
-
-
