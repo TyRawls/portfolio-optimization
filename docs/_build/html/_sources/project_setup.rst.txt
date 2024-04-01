@@ -90,8 +90,8 @@ Install Requirements
 
 Navigate to the cloud or local storage directory in ``Terminal`` after you have cloned the GitHub repository::
 
-    cd portfolio-optimization/cloud-storage      # directory for cloud setup
-    cd portfolio-optimization/local-storage      # directory for local setup
+    cd portfolio-optimization/src/cloud-storage      # directory for cloud setup
+    cd portfolio-optimization/src/local-storage      # directory for local setup
 
 .. note::
     You only need to choose one directory. The local directory is more simple, but the cloud directory requires more setup.
@@ -165,8 +165,8 @@ You will need to complete the following:
     #. Create a **Lambda Function** with a **Python 3.8 runtime**
     #. Create a **Trigger** and select the S3 bucket you created as the **Source**
     #. Set the **Trigger Event Type** to ``PUT`` and click **Add** to create the trigger
-    #. From the **Lambda Function**, click on the **Upload From** button and upload the ``lambda_function.zip`` file located in ``portfolio-optimization/cloud-storage/aws-lambda-package/zip-files``
-    #. Create a `Lambda Layer <https://docs.aws.amazon.com/lambda/latest/dg/adding-layers.html>`_ with a **Python 3.8 runtime** and upload the ``python.zip`` file located in ``portfolio-optimization/cloud-storage/aws-lambda-package/zip-files``
+    #. From the **Lambda Function**, click on the **Upload From** button and upload the ``lambda_function.zip`` file located in ``portfolio-optimization/src/cloud-storage/aws-lambda-package/zip-files``
+    #. Create a `Lambda Layer <https://docs.aws.amazon.com/lambda/latest/dg/adding-layers.html>`_ with a **Python 3.8 runtime** and upload the ``python.zip`` file located in ``portfolio-optimization/src/cloud-storage/aws-lambda-package/zip-files``
     #. Click on **Configuration > General configuration** and set the `Timeout <https://docs.aws.amazon.com/lambda/latest/dg/configuration-timeout.html>`_ to **30 secs**.
     #. Click on **Configuration > Environment variables** and create `Environment Variables <https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html>`_ for your RDS (``PostgreSQL``) connection. You will need to set the ``Key`` and ``Value`` with your database credentials.
 

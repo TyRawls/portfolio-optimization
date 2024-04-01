@@ -292,8 +292,8 @@ Enter the below in <code class="docutils literal notranslate"><span class="pre">
 <section id="install-requirements">
 <h2>Install Requirements<a class="headerlink" href="#install-requirements" title="Link to this heading">#</a></h2>
 <p>Navigate to the cloud or local storage directory in <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> after you have cloned the GitHub repository:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>portfolio-optimization/cloud-storage<span class="w">      </span><span class="c1"># directory for cloud setup</span>
-<span class="nb">cd</span><span class="w"> </span>portfolio-optimization/local-storage<span class="w">      </span><span class="c1"># directory for local setup</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>portfolio-optimization/src/cloud-storage<span class="w">      </span><span class="c1"># directory for cloud setup</span>
+<span class="nb">cd</span><span class="w"> </span>portfolio-optimization/src/local-storage<span class="w">      </span><span class="c1"># directory for local setup</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -368,8 +368,8 @@ You will need to complete the following:</p>
 <li><p>Create a <strong>Lambda Function</strong> with a <strong>Python 3.8 runtime</strong></p></li>
 <li><p>Create a <strong>Trigger</strong> and select the S3 bucket you created as the <strong>Source</strong></p></li>
 <li><p>Set the <strong>Trigger Event Type</strong> to <code class="docutils literal notranslate"><span class="pre">PUT</span></code> and click <strong>Add</strong> to create the trigger</p></li>
-<li><p>From the <strong>Lambda Function</strong>, click on the <strong>Upload From</strong> button and upload the <code class="docutils literal notranslate"><span class="pre">lambda_function.zip</span></code> file located in <code class="docutils literal notranslate"><span class="pre">portfolio-optimization/cloud-storage/aws-lambda-package/zip-files</span></code></p></li>
-<li><p>Create a <a class="reference external" href="https://docs.aws.amazon.com/lambda/latest/dg/adding-layers.html">Lambda Layer</a> with a <strong>Python 3.8 runtime</strong> and upload the <code class="docutils literal notranslate"><span class="pre">python.zip</span></code> file located in <code class="docutils literal notranslate"><span class="pre">portfolio-optimization/cloud-storage/aws-lambda-package/zip-files</span></code></p></li>
+<li><p>From the <strong>Lambda Function</strong>, click on the <strong>Upload From</strong> button and upload the <code class="docutils literal notranslate"><span class="pre">lambda_function.zip</span></code> file located in <code class="docutils literal notranslate"><span class="pre">portfolio-optimization/src/cloud-storage/aws-lambda-package/zip-files</span></code></p></li>
+<li><p>Create a <a class="reference external" href="https://docs.aws.amazon.com/lambda/latest/dg/adding-layers.html">Lambda Layer</a> with a <strong>Python 3.8 runtime</strong> and upload the <code class="docutils literal notranslate"><span class="pre">python.zip</span></code> file located in <code class="docutils literal notranslate"><span class="pre">portfolio-optimization/src/cloud-storage/aws-lambda-package/zip-files</span></code></p></li>
 <li><p>Click on <strong>Configuration &gt; General configuration</strong> and set the <a class="reference external" href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-timeout.html">Timeout</a> to <strong>30 secs</strong>.</p></li>
 <li><p>Click on <strong>Configuration &gt; Environment variables</strong> and create <a class="reference external" href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">Environment Variables</a> for your RDS (<code class="docutils literal notranslate"><span class="pre">PostgreSQL</span></code>) connection. You will need to set the <code class="docutils literal notranslate"><span class="pre">Key</span></code> and <code class="docutils literal notranslate"><span class="pre">Value</span></code> with your database credentials.</p></li>
 </ol>
