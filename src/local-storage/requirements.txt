@@ -6,6 +6,6 @@ psycopg2==2.9.9
 psycopg2-binary==2.9.9
 scipy==1.11.4
 streamlit==1.32.2
-yfinance==0.2.33
+yfinance==0.2.37
 
 

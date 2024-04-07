@@ -1,6 +1,7 @@
 # root folder
 .DS_Store
 .venv
+.vscode
 
 # cloud-storage folder
 src/cloud-storage/logs/
