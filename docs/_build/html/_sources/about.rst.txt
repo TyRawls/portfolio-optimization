@@ -94,7 +94,6 @@ intervals, such as weekly, monthly, quarterly, and yearly periods, through trans
 
    ERD created using DDL and dbt
 
-
 ######################
 Stock Prediction Model
 ######################
@@ -146,13 +145,3 @@ In order to conduct MVO on a portfolio, I developed an API that accepted the fol
      - ``bool`` 
      - achieve the highest possible return or lowest risk on an investment (maximize return = ``true``, minimize risk = ``false``)
      - ``true``
-
-
-
-.. ##################
-.. Indices and tables
-.. ##################
-
-.. * :ref:`genindex`
-.. * :ref:`modindex`
-.. * :ref:`search`

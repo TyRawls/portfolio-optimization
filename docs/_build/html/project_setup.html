@@ -510,21 +510,21 @@ nano<span class="w"> </span>profiles.yml<span class="w">       </span><span clas
 <p>If done correctly, the output will show “<strong>All checks passed!</strong>”. If not, you will need to verify that the <code class="docutils literal notranslate"><span class="pre">profiles.yml</span></code> file has the correct info.</p>
 </section>
 </section>
-<section id="z-shell-run-command-zshrc-configuration">
-<h2>Z Shell Run Command (.zshrc) Configuration<a class="headerlink" href="#z-shell-run-command-zshrc-configuration" title="Link to this heading">#</a></h2>
+<section id="source-file-configuration">
+<h2>Source File Configuration<a class="headerlink" href="#source-file-configuration" title="Link to this heading">#</a></h2>
 <p>To integrate your database credentials and <a class="reference external" href="https://site.financialmodelingprep.com/developer/docs">Financial Marketing Prep (FMP)</a>
-API key, you’ll need to update the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> configuration file. If you haven’t done so already, sign up for the API to obtain a FREE key.</p>
+API key, you’ll need to create a source file to add the information. If you haven’t done so already, sign up for the API to obtain a FREE key.</p>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>FMP_API_KEY=”?apikey=257u72xb87f2953y557example407n41”</p>
 </div>
-<p>To modify the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file, open a separate <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> and execute the below:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nano<span class="w"> </span>.zshrc
+<p>To cretae a source file named <code class="docutils literal notranslate"><span class="pre">.portoptrc</span></code>, open a separate <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> and execute the below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>~<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>touch<span class="w"> </span>.portoptrc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nano<span class="w"> </span>.portoptrc
 </pre></div>
 </div>
 <section id="cloud-setup">
 <h3>Cloud Setup<a class="headerlink" href="#cloud-setup" title="Link to this heading">#</a></h3>
-<p>For cloud setup, add the below to the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file:</p>
+<p>For cloud setup, add the below to the <code class="docutils literal notranslate"><span class="pre">.portoptrc</span></code> file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># AWS RDS (``PostgreSQL``) credentials</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CLOUD_HOST</span><span class="o">=[</span>HOST<span class="o">]</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">CLOUD_PORT</span><span class="o">=</span><span class="s2">&quot;5432&quot;</span>
@@ -539,14 +539,14 @@ API key, you’ll need to update the <code class="docutils literal notranslate">
 </div>
 <p>You will need to add your credentials to the inputs in the brackets.</p>
 <ul class="simple">
-<li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file.</p></li>
-<li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">.portoptrc</span></code> file.</p></li>
+<li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">.portoptrc</span></code> file.</p></li>
 <li><p>Close this <code class="docutils literal notranslate"><span class="pre">Terminal</span></code></p></li>
 </ul>
 </section>
 <section id="local-setup">
 <h3>Local Setup<a class="headerlink" href="#local-setup" title="Link to this heading">#</a></h3>
-<p>For local setup, add the below to the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file:</p>
+<p>For local setup, add the below to the <code class="docutils literal notranslate"><span class="pre">.portoptrc</span></code> file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Local (``PostgreSQL``) credentials</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">LOCAL_HOST</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span>
 <span class="nb">export</span><span class="w"> </span><span class="nv">LOCAL_PORT</span><span class="o">=</span><span class="s2">&quot;5432&quot;</span>
@@ -561,8 +561,8 @@ API key, you’ll need to update the <code class="docutils literal notranslate">
 </div>
 <p>You will need to add your credentials to the inputs in the brackets.</p>
 <ul class="simple">
-<li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file.</p></li>
-<li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">.zshrc</span></code> file.</p></li>
+<li><p>Press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">O</span></code>, then Enter to write to the <code class="docutils literal notranslate"><span class="pre">.portoptrc</span></code> file.</p></li>
+<li><p>Lastly, press <code class="docutils literal notranslate"><span class="pre">Control</span> <span class="pre">+</span> <span class="pre">X</span></code> to exit the <code class="docutils literal notranslate"><span class="pre">.portoptrc</span></code> file.</p></li>
 <li><p>Close this <code class="docutils literal notranslate"><span class="pre">Terminal</span></code></p></li>
 </ul>
 </section>
@@ -650,7 +650,7 @@ API key, you’ll need to update the <code class="docutils literal notranslate">
 <li><a class="reference internal" href="#initialization">Initialization</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#z-shell-run-command-zshrc-configuration">Z Shell Run Command (.zshrc) Configuration</a><ul>
+<li><a class="reference internal" href="#source-file-configuration">Source File Configuration</a><ul>
 <li><a class="reference internal" href="#cloud-setup">Cloud Setup</a></li>
 <li><a class="reference internal" href="#local-setup">Local Setup</a></li>
 </ul>

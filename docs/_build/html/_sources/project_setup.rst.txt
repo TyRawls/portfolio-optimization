@@ -1,4 +1,4 @@
-.. Allow bash inline coding. Will only include line numbers if code has 5 of more lines.
+.. Allow bash inline coding. Will only include line numbers if code has 25 of more lines.
 .. highlight:: bash
    :linenothreshold: 50 
 
@@ -292,23 +292,23 @@ Go back to the initial ``Terminal`` and test the database connection::
 If done correctly, the output will show "**All checks passed!**". If not, you will need to verify that the ``profiles.yml`` file has the correct info.
 
 ******************************************
-Z Shell Run Command (.zshrc) Configuration
+Source File Configuration
 ******************************************
 
 To integrate your database credentials and `Financial Marketing Prep (FMP) <https://site.financialmodelingprep.com/developer/docs>`_ 
-API key, you'll need to update the ``.zshrc`` configuration file. If you haven't done so already, sign up for the API to obtain a FREE key.
+API key, you'll need to create a source file to add the information. If you haven't done so already, sign up for the API to obtain a FREE key.
 
 .. admonition:: Example
 
     FMP_API_KEY="?apikey=257u72xb87f2953y557example407n41"
 
-To modify the ``.zshrc`` file, open a separate ``Terminal`` and execute the below::
+To cretae a source file named ``.portoptrc``, open a separate ``Terminal`` and execute the below::
 
-    cd ~ && nano .zshrc
+    cd ~ && touch .portoptrc && nano .portoptrc
 
 Cloud Setup
 -----------
-For cloud setup, add the below to the ``.zshrc`` file::
+For cloud setup, add the below to the ``.portoptrc`` file::
 
     # AWS RDS (``PostgreSQL``) credentials
     export CLOUD_HOST=[HOST]
@@ -323,13 +323,13 @@ For cloud setup, add the below to the ``.zshrc`` file::
 
 You will need to add your credentials to the inputs in the brackets.
 
-* Press ``Control + O``, then Enter to write to the ``.zshrc`` file.
-* Lastly, press ``Control + X`` to exit the ``.zshrc`` file.
+* Press ``Control + O``, then Enter to write to the ``.portoptrc`` file.
+* Lastly, press ``Control + X`` to exit the ``.portoptrc`` file.
 * Close this ``Terminal``
 
 Local Setup
 -----------
-For local setup, add the below to the ``.zshrc`` file::
+For local setup, add the below to the ``.portoptrc`` file::
 
     # Local (``PostgreSQL``) credentials
     export LOCAL_HOST="localhost"
@@ -344,6 +344,6 @@ For local setup, add the below to the ``.zshrc`` file::
 
 You will need to add your credentials to the inputs in the brackets.
 
-* Press ``Control + O``, then Enter to write to the ``.zshrc`` file.
-* Lastly, press ``Control + X`` to exit the ``.zshrc`` file.
+* Press ``Control + O``, then Enter to write to the ``.portoptrc`` file.
+* Lastly, press ``Control + X`` to exit the ``.portoptrc`` file.
 * Close this ``Terminal``
